@@ -1,0 +1,23 @@
+*UTILIZAR UM SERVIDOR PHP
+
+Para o correto funcionamento, crie um banco de dados no localhost chamado 'projeto_base' e importe o arquivo 'banco.sql'.
+
+Utilizando o email 'admin@admin' e a senha 'admin' no modal de login, é acessado o login de administrador, localmente, com seus respectivos submenus.
+Quaisquer outros email ou senha, é acessado o login de Cliente, localmente, com seus respectivos submenus.
+
+Há a possibilidade de acessar as páginas, passando os seguintes parâmetros na url:
+boloPote
+carrinho
+home
+montarBolo
+sobreNos
+usuario
+listarEnderecos
+listarClientes
+listasPedidosAdmin
+listarPedidosCliente
+visualizarBoloDePote
+visualizarBoloMontado
+editarBoloPersonalizado
+editarBoloPote
+

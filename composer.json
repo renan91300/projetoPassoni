@@ -1,0 +1,19 @@
+{
+  "description": "Projeto Web",
+  "authors": [
+    {
+      "name": "Renan Gomes Poggian",
+      "email": "renanpoggiangomes@gmail.com"
+    }
+  ],
+  "require": {
+    
+  },
+  "autoload": {
+    "psr-4": {
+      "Site\\": "app/site",
+      "Config\\": "config",
+      "App\\": "app"
+    }
+  }
+}

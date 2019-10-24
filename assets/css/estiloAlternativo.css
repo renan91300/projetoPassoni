@@ -1,0 +1,881 @@
+.principal {
+    background-image: url("../img/bolos/casamento-festa-3.jpg");
+    background-position-x: center;
+    background-position-y: 70px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 300px;
+    padding-bottom: 360px;
+    margin-bottom:5%;
+}
+
+@font-face {
+    font-family: 'Oswald-Light';
+    src: url("../fonts/Oswald-Light.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url("../fonts/proxima-nova.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald-Regular';
+    src: url("../fonts/Oswald-Regular.ttf") format('truetype');
+}
+
+
+/*modal login*/
+
+#btnLogin {
+    color: #c5455e;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+#btnLogin:hover {
+    opacity: 1;
+}
+
+#loginModal {
+    left: 0;
+    top: 0;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #474e5d69;
+    padding-top: 50px;
+}
+
+.contentLogin {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    /* Could be more or less, depending on screen size */
+}
+
+.borderLogin{
+    border-color: #DCDCDC;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 8px;
+    margin-left: 1.5%;
+}
+
+.right {
+    margin-left: 1.5%;
+    margin-right: 1.5%; 
+    border-color: #DCDCDC;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 8px;
+}
+
+.left {
+    border-color: #DCDCDC;
+    border-style: solid;
+    margin-left: 1.5%;
+    border-width: thin;
+    border-radius: 8px;
+
+}
+
+.entrada {
+    margin-top: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+}
+
+.formCadLog {
+    min-height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #eecda3;
+    background: -webkit-linear-gradient(to right, #eecda3, #ef629f);
+    background: linear-gradient(to right, #eecda3, #ef629f);
+}
+
+.box{
+    margin: 20px;
+    background-color: white;
+    border-radius: 0.5em;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+.box a{
+    color: rgb(78,115,224);
+}
+
+
+
+
+/* Full-width input fields */
+
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+/* Add a background color when the inputs get focus */
+
+input[type=text]:focus,
+input[type=date]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+select,
+input[type=text],
+input[type=date],
+input[type=email],
+input[type=number]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.modalTit {
+    color: #FF6347;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.modalSub {
+    color: #FF6347;
+    font-size: 17px;
+}
+
+.espaco {
+    margin-top: 6%;
+}
+
+
+/* Add padding to container elements */
+
+
+/* The Close Button (x) */
+
+.closeLogin {
+    z-index: 2;
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #e6d6d6;
+}
+
+.closeLogin:hover,
+.closeLogin:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+
+/* Style the horizontal ruler */
+
+hr {
+    border: 1px solid #f1f1f1;
+    
+}
+
+.test{
+    margin: 20px;
+}
+
+
+/*FIM DO MODAL*/
+
+/*DROPDOWN USUARIO LOGADO*/
+.dropdown-toggle {
+    float: right !important;
+}
+.dropdown-menu{
+    margin-top:-20px;
+}
+.btnsFormLogin{
+    width: 100% !important;
+    margin-bottom:1em;
+}
+/*FIM DO DROPDOWN USUARIO LOGADO*/
+
+
+/* BACKGROUND CARRINHO */
+
+.cart {
+    background: #eecda3;
+    background: -webkit-linear-gradient(to right, #eecda3, #ef629f);
+    background: linear-gradient(to right, #eecda3, #ef629f);
+    min-height: 100vh;
+}
+
+
+/* CARDS INDEX*/
+
+.card1 {
+    margin-top: 10%;
+    position: relative;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.90);
+}
+
+.bodyCard {
+    position: relative;
+    margin-left: 50px;
+    margin-top: 180px;
+}
+
+.bodyCard a {
+    margin-top: 30px;
+}
+
+.card1 img {
+    width: 30em;
+    height: 37em;
+}
+
+.bloco1 {    
+    position: relative;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.90);
+}
+
+@media screen and (max-width:800px) {
+    .bloco1 {
+        flex-direction: column;
+    }
+    .bodyCard {
+        margin: 0px;
+        margin-bottom: 15px;
+    }
+    .bodyCard a {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.img1 {
+    height: 600px;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.title {
+    font-size: 3em;
+    letter-spacing: 3px;
+    font-family: proxima-nova;
+    color: #f36464;
+}
+
+.subtext {
+    line-height: 180%;
+    padding-top: 0%;
+    color: #c5455e;
+    font-size: 1.5em;
+    font-family: proxima-nova;
+}
+
+#logosite {
+    position: absolute;
+    margin-top: -1px;
+    left: 1%;
+    top: 0%;
+    width: 16%;
+    height: 30%;
+    z-index: 17;
+}
+
+#menu {
+    position: absolute;
+    color: white !important;
+    z-index: 17;
+    text-decoration: none;
+    font-size: 28;
+    font-family: 'Oswald-Regular', sans-serif;
+    margin-top: -1%;
+    margin-left: 16%;
+}
+
+.ti {
+    font-size: 50px;
+    letter-spacing: 3px;
+    font-family: Oswald-Regular;
+    color: #f36464;
+}
+
+.te {
+    line-height: 180%;
+    padding-top: 0%;
+    color: #c5455e;
+    font-size: 26px;
+    font-family: proxima-nova;
+}
+
+.ti1 {
+    z-index: 10;
+    text-indent: 2px;
+}
+
+.te1 {
+    z-index: 12;
+    text-align: left;
+}
+
+.ti2 {
+    z-index: 2;
+    text-indent: 260;
+    padding-top: 5%;
+    padding-right: 10%;
+}
+
+.te2 {
+    z-index: 15;
+    text-align: right;
+    padding-right: 10%;
+}
+
+.botaoMonteBolo {
+    background-color: #c5455e;
+    font-family: Oswald-ExtraLight;
+    color: #FFF;
+    font-size: 25px;
+    border: none;
+}
+
+.bodyCard a:link:hover {
+    text-decoration: none;
+}
+
+#img2 {
+    padding-top: 1%;
+    padding-right: 10%;
+}
+
+.botaoBolodePote {
+    z-index: 8;
+    padding: 18px 30px;
+    border: 2px;
+    border-radius: 8px;
+    background-color: #c5455e;
+    font-family: Oswald-ExtraLight;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 25;
+    position: relative;
+    left: 65%;
+}
+
+.ti3 {
+    margin-top: 2%;
+    font-size: 23;
+}
+
+.te3 {
+    font-size: 17;
+}
+
+.dev {
+    font-size: 11;
+}
+
+
+/* BLOCOS BOLO DE POTE  */
+
+.imgproduct {
+    height: 30em;
+    width: 30em;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    padding-bottom: 2rem;
+    
+}
+
+.buttonaddcart {
+    padding: 12px 25px;
+    letter-spacing: 1px;
+    background: #fc3d1b;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.buttonaddcart:hover {
+    background-color: black;
+    /* Green */
+    color: white;
+}
+
+.container h3 {
+    font-family: proxima-nova;
+    color: #fc7945;
+    font-weight: bolder;
+    font-size: 3.3em;
+    text-align: center;
+    margin-top: 0em;
+}
+
+.brief label {
+    font-size: 23px;
+    color: #8c8c8c;
+}
+
+.brief .cake_price {
+    font-size: 2.4em;
+    color: #2bebb1;
+    margin-top: -2em;
+}
+
+.flavors p {
+    font-size: 1.3em;
+    color: #777676;
+    margin-top: 1.5em;
+}
+
+.flavors .buttonCake_flavor {
+    display: inline-block;
+    line-height: 3em;
+    text-align: center;
+    background-color: #fd8555;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    margin-bottom: 0.5em;
+    border-style: none;
+    height: 3em;
+    width: 32%;
+    cursor: pointer;
+}
+
+.flavors .buttonCake_flavor:hover {
+    background-color: #2bebcb;
+}
+
+.flavors .buttonCake_flavor label{
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    
+}
+
+.flavors input[type=radio]{
+    display: none;
+}
+
+
+.productDescription h4 {
+    color: #2bebb1;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.productDescription ul li {
+    list-style: inside;
+    margin-top: 0.5em;
+    font-size: 15px;
+    font-family: Roboto;
+    color: #4d4d4d;
+}
+
+.productDescription label {
+    font-size: 1em;
+}
+
+
+/* MONTAR SEU BOLO */
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame {
+    border: solid black 5px;
+}
+
+
+/* SOBRE NOS  ABOUT US */
+
+.aboutusbg {
+    background-image: url("../img/bolos/casamento3.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-y: -3em;
+    background-position-x: center;
+    padding-top: 10em;
+    padding-bottom: 360px;
+
+    /*background-size: 100% 45%; 
+	background-attachment: initial;*/
+}
+
+.aboutustop {
+    height: 10em;
+    font-family: proxima-nova;
+    color: white;
+    padding-top: 2em;
+    margin-right: 4em;
+}
+
+.aboutustop .titaboutus {
+    font-family: Roboto;
+    float: right;
+    color: rgb(30, 144, 255);
+    margin-left: 15em;    
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: rgba(255, 255, 255, 0.72);
+}
+
+.aboutustop .aboutussub {
+    height: 7em;
+    width: 50em;
+    text-align: center;
+    /*background-color: rgb(2,2,2);
+		background-color: rgba(0,0,0,0.4);*/
+    margin-left: auto;
+    background-color: rgba(0, 191, 255, 0.692);
+    margin-top: 10em;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: white;
+    float: right;
+}
+
+.aboutustop span {
+    font-weight: bolder;
+    font-size: 1.2em;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.aboutussub .p2 {
+    font-size: 1.6em;
+}
+
+.aboutussec {
+    background-image: url("../img/bolos/cafe.jpeg");
+    background-repeat: no-repeat;
+    background-color: #e67422;
+    background-attachment: fixed;
+    background-position-x: right;
+    background-size: 50%;
+    padding-left: 2em;
+    height: 22rem;
+    padding-top: 2em;
+    display: flex;
+    position: relative;
+}
+
+.aboutussec p {
+    padding-top: 2em;
+    color: white;
+    font-family: Roboto;
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 1.5em;
+}
+
+.aboutussec span {
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2em;
+    text-decoration-line: overline;
+    text-align: right;
+}
+
+.sectionaboutus .row {
+    height: 20em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    width: 100%;
+    background-color: #333232;
+    text-align: center;
+}
+
+.sectionaboutus .col {
+    border-left: 2px solid;
+}
+
+.cardtitle {
+    font-family: Oswald-Regular;
+    color: #DCDCDC;
+    vertical-align: middle;
+    font-size: 5em;
+}
+
+.cardtitle hr {
+    background-color: white;
+}
+
+.cardsubtitle {
+    font-family: Oswald-Regular;
+    color: #808080;
+    font-size: 2em;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .aboutustop .titaboutus {
+        font-size: 2em;      
+        height: 9em;
+    }
+
+    .aboutustop .aboutussub {
+        height: 7em;
+        width: 20em;
+        font-size: 1em;
+        margin-top: 2em;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .aboutustop .titaboutus {
+        font-size: 2em;      
+        height: 6em;
+        width: 15em;
+    }
+
+    .aboutustop .aboutussub {
+        height: 7em;
+        width: 50em;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .aboutustop .titaboutus {
+        font-size: 2.3em;      
+        height: 4em;
+        width: 20em;
+        font-weight: bolder;
+    }
+
+}
+
+
+/* USUARIO */
+
+
+/* USUARIO*/
+
+
+input[type=radio],
+input[type=checkbox] {
+    display: none;
+    /* Esconde os inputs */
+}
+input[type=radio]+label,
+input[type=checkbox]+label {
+    display: inline-block;
+    height: 20px;
+    padding: 0 0 0 25px;
+    margin: 20px 10px 0 18px;
+    background-image: url(http://www.webcis.com.br/images/imagens-noticias/checkbox/ico-master.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+input[type=checkbox]+label {
+    background-position: 0 -60px;
+    /* Muda a posição do background só no checkbox */
+}
+
+input[type=radio]:checked+label {
+    background-position: 0 -30px;
+}
+
+input[type=checkbox]:checked+label {
+    background-position: 0 -90px;
+}
+
+
+/*LISTAR CLIENTES*/
+
+@media (max-width: 768px) {
+    .table-action thead{
+        display: none;
+    }
+    .table-action tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    .table-action td {
+      border: 0;
+    }
+    .table-action td:not(:last-child) {
+      display: block;
+    }
+    .table-action td:first-child{
+      font-weight: bold;
+    }
+
+}
+
+/*QUANTIDADE PRODUTO*/
+.quantity{
+  
+    align-content: center;
+  }
+  .quantity input{
+  border-style: hidden;
+  font-family: Roboto;
+  color: #696969;
+  
+  
+  }
+  
+  .quantity button{
+  
+      color: white;
+      padding: 14px 20px;
+      background-color: rgb(183, 228, 193);
+      cursor: pointer;
+      opacity: 0.9;
+      font-family: Roboto;
+      border-style: hidden;
+  
+  }
+
+/*footer 2.0*/
+
+.page-footer {
+    background-color: white;
+}
+
+.footer-copyright {
+    background-color: whitesmoke;
+}
+
+.fab {
+    font-size: 30px;
+}
+
+.fab:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background-color: blue;
+}
+
+.fa-twitter {
+    color: #55ACEE;
+}
+
+.fa-instagram {
+    color: #125688;
+}
+
+
+/*Fim do footer*/
+
+
+/* listar endereco */
+
+.listCard {
+    border: #dad8d8;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 1em;
+    padding-top: 1em;
+    display: flex;
+}
+
+.actionsIcons{
+    display: flex;
+}
+.actionsIconsClientes{
+    display: flex;
+}
+
+.icon{
+    padding-right: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    .actionsIcons{
+        flex-direction: row;
+    }
+    .actionsIconsClientes{
+        flex-direction: column;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .actionsIcons{
+        flex-direction: column;
+    }
+    .actionsIconsClientes{
+        flex-direction: row;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Animação do Modal de Login */
+
+.animate {
+    -webkit-animation: animatezoom 0.3s;
+    animation: animatezoom 0.3s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}

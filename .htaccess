@@ -1,0 +1,17 @@
+#ativar a escrita no arquivo
+RewriteEngine On
+
+#Diretorio base onde se encontra o htaccess
+
+
+#informando a regra para pegar os valores
+# e não acessar o diretório, nem arquivo e
+#nem link
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+#Pega o conteúdo após o nome do projeto
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+Options -Indexes

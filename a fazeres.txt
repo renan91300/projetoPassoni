@@ -1,0 +1,25 @@
+Alterações a fazer:
+
+(*) - Urgente/essencial
+
+Pedido:
+	Criar tabela de status de pedido
+	Criar tabela forma de entrega
+	
+	Criar filtragem de pedidos na dashboard
+	Criar paginação
+	
+	*Na alteração de pedido, adicionar a opção do administrador poder 
+	remover ou adicionar um novo bolo ao pedido, alterar a quantidade/sabor ou tamanho de um bolo
+
+Carrinho:
+	(*)Implementar a adição da observação do pedido
+
+Usuário:
+	(*)Alterar senha;
+
+Endereço:
+	Criar visualizar endereço
+
+
+

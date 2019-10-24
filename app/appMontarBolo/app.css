@@ -1,0 +1,249 @@
+body {
+    background-color: rgb(6, 107, 85);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 960px;
+    height: 614px;
+    position: relative;
+    background-image: url('fundo.png');
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 410px;
+    top: 61px;
+    left: 532px;
+}
+
+.bts {
+    max-width: 400px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    top: 155px;
+    left: 538px;
+}
+
+.itens {
+    padding-top: 10px;
+}
+
+#OpsHex {
+    width: 175px;
+    visibility: hidden;
+    /*animation: fadeIn 3s;*/
+}
+
+#OpsCirc {
+    width: 175px;
+    visibility: hidden;
+}
+
+.prosseguir {
+    position: absolute;
+    display: flex;
+    top: 21.5em;
+    left: 7em;
+}
+
+.aplicartds {
+    position: absolute;
+    display: flex;
+    top: 21em;
+    left: 5em;
+}
+
+#bColor1 {
+    display: none;
+}
+
+#bColor2 {
+    display: none;
+}
+
+#bColor3 {
+    display: none;
+}
+
+#bColor4 {
+    display: none;
+}
+
+#bColor5 {
+    display: none;
+}
+
+#bColor6 {
+    display: none;
+}
+
+#pross2 {
+    position: absolute;
+    display: flex;
+    margin-top: 50px;
+}
+
+#pross3 {
+    position: absolute;
+    display: flex;
+    margin-top: 50px;
+}
+
+#selecionarcor {
+    position: absolute;
+    display: flex;
+    width: 410px;
+    top: 61px;
+    left: 532px;
+}
+
+.voltar {
+    position: absolute;
+    top: 28em;
+    left: 7em;
+}
+
+.colorpicker {
+    visibility: hidden;
+    width: 960px;
+    top: 0;
+    height: 614px;
+    position: absolute;
+}
+
+.CorItens {
+    position: relative;
+    justify-content: space-between;
+    top: 105px;
+    margin-top: 5px;
+    max-width: 140px;
+    left: 538px;
+}
+
+.decoracao {
+    visibility: hidden;
+    width: 960px;
+    top: 0;
+    height: 614px;
+    position: absolute;
+}
+
+.decoracao .decItens {
+    position: relative;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    left: 538px;
+}
+
+.picker {
+    top: 10em;
+    left: 50em;
+    position: absolute;
+    z-index: 30;
+}
+
+Canvas {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+}
+
+#oneHex {
+    position: absolute;
+    bottom: 80px;
+    left: 90px;
+}
+
+#twoHex {
+    position: absolute;
+    bottom: 185px;
+    left: 120px;
+}
+
+#threeHex {
+    position: absolute;
+    bottom: 265px;
+    left: 135px;
+}
+
+#fourHex {
+    position: absolute;
+    bottom: 335px;
+    left: 150px;
+}
+
+#fiveHex {
+    position: absolute;
+    bottom: 395px;
+    left: 172px;
+}
+
+#sixHex {
+    position: absolute;
+    bottom: 445px;
+    left: 185px;
+}
+
+#oneCirc {
+    position: absolute;
+    bottom: 80px;
+    left: 90px;
+}
+
+#twoCirc {
+    position: absolute;
+    bottom: 190px;
+    left: 125px;
+}
+
+#threeCirc {
+    position: absolute;
+    bottom: 275px;
+    left: 153px;
+}
+
+#fourCirc {
+    position: absolute;
+    bottom: 340px;
+    left: 170px;
+}
+
+#fiveCirc {
+    position: absolute;
+    bottom: 390px;
+    left: 190px;
+}
+
+#sixCirc {
+    position: absolute;
+    bottom: 430px;
+    left: 203px;
+}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .container {
+        width: 660px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 900px) {}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,657 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+
+    <title>Aplicação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="app.css" />
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="buttons">
+            <img id="bHex" src="CamadaButton/Hexagono.png" onClick="showBts(1)" onMouseOut="getElementById('bHex').src='CamadaButton/Hexagono.png'" onMouseOver="getElementById('bHex').src='CamadaButton/hexagonoOVER.png'">
+            <img id="bCirc" src="CamadaButton/Redondo.png" onClick="showBts(2)" onMouseOut="getElementById('bCirc').src='CamadaButton/Redondo.png'" onMouseOver="getElementById('bCirc').src='CamadaButton/RedondoOver.png'">
+
+        </div>
+
+        <div class="bts">
+            <div id="OpsHex">
+                <img id="bTwoHex" class="itens" src="CamadaButton/2.png" onMouseOut="getElementById('bTwoHex').src='CamadaButton/2.png'" onMouseOver="getElementById('bTwoHex').src='CamadaButton/2OVER.png'" onClick="showHex(2, cor1, cor2)">
+                <img id="bThreeHex" class="itens" src="CamadaButton/3.png" onMouseOut="getElementById('bThreeHex').src='CamadaButton/3.png'" onMouseOver="getElementById('bThreeHex').src='CamadaButton/3OVER.png'" onClick="showHex(3, cor1, cor2)">
+                <img id="bFourHex" class="itens" src="CamadaButton/4.png" onMouseOut="getElementById('bFourHex').src='CamadaButton/4.png'" onMouseOver="getElementById('bFourHex').src='CamadaButton/4OVER.png'" onClick="showHex(4, cor1, cor2)">
+                <img id="bFiveHex" class="itens" src="CamadaButton/5.png" onMouseOut="getElementById('bFiveHex').src='CamadaButton/5.png'" onMouseOver="getElementById('bFiveHex').src='CamadaButton/5OVER.png'" onClick="showHex(5, cor1, cor2)">
+                <img id="bSixHex" class="itens" src="CamadaButton/6.png" onMouseOut="getElementById('bSixHex').src='CamadaButton/6.png'" onMouseOver="getElementById('bSixHex').src='CamadaButton/6OVER.png'" onClick="showHex(6, cor1, cor2)">
+
+            </div>
+
+            <div id="OpsCirc">
+                <img id="bTwoCirc" class="itens" src="CamadaButton/2.png" onMouseOut="getElementById('bTwoCirc').src='CamadaButton/2.png'" onMouseOver="getElementById('bTwoCirc').src='CamadaButton/2OVER.png'" onClick="showCirc(2, cor1, cor2)">
+                <img id="bThreeCirc" class="itens" src="CamadaButton/3.png" onMouseOut="getElementById('bThreeCirc').src='CamadaButton/3.png'" onMouseOver="getElementById('bThreeCirc').src='CamadaButton/3OVER.png'" onClick="showCirc(3, cor1, cor2)">
+                <img id="bFourCirc" class="itens" src="CamadaButton/4.png" onMouseOut="getElementById('bFourCirc').src='CamadaButton/4.png'" onMouseOver="getElementById('bFourCirc').src='CamadaButton/4OVER.png'" onClick="showCirc(4, cor1, cor2)">
+                <img id="bFiveCirc" class="itens" src="CamadaButton/5.png" onMouseOut="getElementById('bFiveCirc').src='CamadaButton/5.png'" onMouseOver="getElementById('bFiveCirc').src='CamadaButton/5OVER.png'" onClick="showCirc(5, cor1, cor2)">
+                <img id="bSixCirc" class="itens" src="CamadaButton/6.png" onMouseOut="getElementById('bSixCirc').src='CamadaButton/6.png'" onMouseOver="getElementById('bSixCirc').src='CamadaButton/6OVER.png'" onClick="showCirc(6, cor1, cor2)">
+            </div>
+            <img class="prosseguir" id="pross1" src="Buttons/proximo.png" onClick="mostrarCamCor()" onMouseOut="getElementById('pross1').src='Buttons/proximo.png'" onMouseOver="getElementById('pross1').src='Buttons/proximoOVER.png'">
+
+        </div>
+
+    </div>
+    <div class="colorpicker">
+        <div class="containercor">
+            <img id="selecionarcor" src="Buttons/sel.png">
+
+            <div class="picker" id="color-picker-container"></div>
+            <img id="bColor1" class="CorItens" src="CamadaButton/1a.png" onClick="executar(1)">
+            <img id="bColor2" class="CorItens" src="CamadaButton/2a.png" onClick="executar(2)">
+            <img id="bColor3" class="CorItens" src="CamadaButton/3a.png" onClick="executar(3)">
+            <img id="bColor4" class="CorItens" src="CamadaButton/4a.png" onClick="executar(4)">
+            <img id="bColor5" class="CorItens" src="CamadaButton/5a.png" onClick="executar(5)">
+            <img id="bColor6" class="CorItens" src="CamadaButton/6a.png" onClick="executar(6)">
+
+        </div>
+        <div class="buttons">
+            <img class="aplicartds" id="aplicartds" src="Buttons/aplicartodos.png" onClick="executar(7)" onMouseOut="getElementById('aplicartds').src='Buttons/aplicartodos.png'" onMouseOver="getElementById('aplicartds').src='Buttons/aplicartodosOVER.png'">
+            <img class="prosseguir" id="pross2" src="Buttons/proximo.png" onMouseOut="getElementById('pross2').src='Buttons/proximo.png'" onMouseOver="getElementById('pross2').src='Buttons/proximoOVER.png'">
+            <img class="voltar" id="volt1" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt1').src='Buttons/voltar.png'" onMouseOver="getElementById('volt1').src='Buttons/voltarOVER.png'">
+        </div>
+    </div>
+
+    <div class="decoracao">
+        <img id="decoracoes" class="decItens" src="Decoracao/Decoracoes.png" onClick="showFlores(1)">
+
+
+        <img id="flores" class="decItens" src="Decoracao/Flores.png" onClick="showFlores()" onMouseOut="getElementById('flores').src='Decoracao/Flores.png'" onMouseOver="getElementById('flores').src='Decoracao/FloresOver.png'">
+        <img id="textura" class="decItens" src="Decoracao/Texturas.png" onClick="executar()" onMouseOut="getElementById('textura').src='Decoracao/Texturas.png'" onMouseOver="getElementById('textura').src='Decoracao/TexturasOVER.png'">
+        <img id="laco" class="decItens" src="Decoracao/lacos.png" onClick="executar()" onMouseOut="getElementById('laco').src='Decoracao/lacos.png'" onMouseOver="getElementById('laco').src='Decoracao/lacosOVER.png'">
+
+
+        <div class="buttons">
+            <img class="prosseguir" id="pross3" src="Buttons/proximo.png" onMouseOut="getElementById('pross3').src='Buttons/proximo.png'" onMouseOver="getElementById('pross3').src='Buttons/proximoOVER.png'">
+            <img class="voltar" id="volt2" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt2').src='Buttons/voltar.png'" onMouseOver="getElementById('volt2').src='Buttons/voltarOVER.png'">
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!--<script type="text/javascript" src="app.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="iro.min.js"></script>
+    <script src="tinycolor.js"></script>
+    <script>
+        var n;
+        var qtdCam;
+        var circ;
+        var cor1 = "#EAEFFE";
+        var cor2 = "#fafbff";
+        var x;
+        var y = 0;
+        var colorPicker = new iro.ColorPicker('#color-picker-container', {
+            width: 140
+        });
+
+        function setup() {
+
+
+        }
+
+        function mostrarCamCor() {
+
+            for (var i = 1; i <= qtdCam; i++) {
+                document.getElementById("bColor" + i).style.display = 'flex';
+            }
+        }
+
+        function ocultarCamCor() {
+
+            for (var i = 1; i <= 6; i++) {
+                document.getElementById("bColor" + i).style.display = 'none';
+            }
+        }
+
+
+        function executar(n) {
+            /*for (var i = 0; i < w; i++) {
+            
+            }*/
+            var cor = tinycolor(colorPicker.color.hexString);
+            cor1 = cor.desaturate(20).toHexString();
+            cor2 = cor.lighten().toHexString();
+
+            if (circ) {
+                if (n == 1) {
+                    circ1(cor1, cor2);
+                }
+                if (n == 2 & qtdCam >= n) {
+                    circ2(cor1, cor2);
+                }
+                if (n == 3 & qtdCam >= n) {
+                    circ3(cor1, cor2);
+                }
+                if (n == 4 & qtdCam >= n) {
+                    circ4(cor1, cor2);
+                }
+                if ((n == 5) & (qtdCam >= n)) {
+                    circ5(cor1, cor2);
+                }
+                if (n == 6 & qtdCam >= n) {
+                    circ6(cor1, cor2);
+                }
+                if (n == 7) {
+                    showCirc(qtdCam, cor1, cor2);
+                }
+
+            } else {
+                if (n == 1) {
+                    hex1(cor1, cor2);
+                }
+                if (n == 2 & qtdCam >= n) {
+                    hex2(cor1, cor2);
+                }
+                if (n == 3 & qtdCam >= n) {
+                    hex3(cor1, cor2);
+                }
+                if (n == 4 & qtdCam >= n) {
+                    hex4(cor1, cor2);
+                }
+                if ((n == 5) & (qtdCam >= n)) {
+                    hex5(cor1, cor2);
+                }
+                if (n == 6 & qtdCam >= n) {
+                    hex6(cor1, cor2);
+                }
+                if (n == 7) {
+                    showHex(qtdCam, cor1, cor2);
+                }
+
+            }
+        }
+
+        function showHex(n, x, y) {
+            createCanvas(500, 550);
+            qtdCam = n;
+            circ = false;
+            if (n >= 1) {
+                hex1(x, y);
+            }
+            if (n >= 2) {
+                hex2(x, y);
+            }
+            if (n >= 3) {
+                hex3(x, y);
+            }
+            if (n >= 4) {
+                hex4(x, y);
+            }
+            if (n >= 5) {
+                hex5(x, y);
+            }
+            if (n >= 6) {
+                hex6(x, y);
+            }
+        }
+
+        function showCirc(n, x, y) {
+            qtdCam = n;
+            createCanvas(500, 550);
+
+            circ = true;
+            if (n >= 1) {
+                circ1(x, y);
+            }
+            if (n >= 2) {
+                circ2(x, y);
+            }
+            if (n >= 3) {
+                circ3(x, y);
+            }
+            if (n >= 4) {
+                circ4(x, y);
+            }
+            if (n >= 5) {
+                circ5(x, y);
+            }
+            if (n >= 6) {
+                circ6(x, y);
+            }
+        }
+
+        function showFlores() {
+            y = y + 1;
+            if (y == 1) {
+                push();
+                scale(0.8);
+                translate(204, 92);
+
+                //frô
+
+                noStroke();
+                scale(0.6);
+                translate(260, 160);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 10; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 5);
+                }
+            }
+            if (y == 2) {
+                scale(0.4);
+                translate(-50, 270);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 10; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 5);
+                }
+
+                scale(1.6);
+                translate(-50, 30);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 10; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 5);
+                }
+            }
+            if (y == 3) {
+
+
+
+                scale(1.3);
+                translate(-50, 100);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 20; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 10);
+                }
+            }
+            if (y == 4) {
+                scale(0.7);
+                translate(-70, 150);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 10; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 5);
+                }
+                scale(0.5);
+                translate(-70, 120);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 10; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 5);
+                }
+            }
+            if (y == 5) {
+                scale(3);
+                translate(-30, 80);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 10; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 5);
+                }
+                scale(0.6);
+                translate(90, -60);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 10; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 5);
+                }
+
+                scale(0.8);
+                translate(50, 140);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 10; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 5);
+                }
+            }
+            if (y == 6) {
+                scale(3.4);
+                translate(-60, 100);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 20; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / 10);
+                }
+
+                scale(0.6);
+                translate(90, 0);
+                fill(255, 255, 255, 127);
+                for (let i = 0; i < 12; i++) {
+                    ellipse(0, 30, 20, 80);
+                    rotate(PI / -14);
+                }
+                pop();
+            }
+        }
+
+
+
+        function hex1(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+
+                scale(1.7);
+                translate(44, 143);
+
+                // Set colors
+                fill(x);
+                stroke(x);
+
+                // A rectangle
+                rect(40, 120, 120, 40);
+                // An ellipse
+
+                //lado esquerdo
+                triangle(20, 100, 40, 120, 20, 140);
+                triangle(20, 140, 40, 120, 40, 160);
+                //lado direito
+                triangle(180, 100, 160, 120, 180, 140);
+
+                triangle(180, 140, 160, 120, 160, 160);
+
+                fill(y);
+                stroke(y);
+                triangle(20, 100, 40, 90, 40, 120);
+                rect(40, 90, 120, 30);
+                triangle(180, 100, 160, 90, 160, 120);
+                pop();
+            }
+
+        }
+
+        function hex2(x, y) {
+            for (var i = 0; i < 30; i++) {
+
+                push();
+                scale(1.5);
+                translate(63, 129);
+                // Set colors
+                fill(x);
+                stroke(x);
+                // A rectangle
+                rect(40, 120, 120, 40);
+                // An ellipse
+
+                //lado esquerdo
+                triangle(20, 100, 40, 120, 20, 140);
+                triangle(20, 140, 40, 120, 40, 160);
+                //lado direito
+                triangle(180, 100, 160, 120, 180, 140);
+
+                triangle(180, 140, 160, 120, 160, 160);
+
+                fill(y);
+                stroke(y);
+                triangle(20, 100, 40, 90, 40, 120);
+                rect(40, 90, 120, 30);
+                triangle(180, 100, 160, 90, 160, 120);
+                pop();
+            }
+        }
+
+        function hex3(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(1.3);
+                translate(88, 118);
+                // Set colors
+                fill(x);
+                stroke(x);
+
+                // A rectangle
+                rect(40, 120, 120, 40);
+                // An ellipse
+
+                //lado esquerdo
+                triangle(20, 100, 40, 120, 20, 140);
+                triangle(20, 140, 40, 120, 40, 160);
+                //lado direito
+                triangle(180, 100, 160, 120, 180, 140);
+
+                triangle(180, 140, 160, 120, 160, 160);
+
+                fill(y);
+                stroke(y);
+                triangle(20, 100, 40, 90, 40, 120);
+                rect(40, 90, 120, 30);
+                triangle(180, 100, 160, 90, 160, 120);
+                pop();
+            }
+        }
+
+        function hex4(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(1.12);
+                translate(118, 108);
+                // Set colors
+                fill(x);
+                stroke(x);
+                // A rectangle
+                rect(40, 120, 120, 40);
+                // An ellipse
+
+                //lado esquerdo
+                triangle(20, 100, 40, 120, 20, 140);
+                triangle(20, 140, 40, 120, 40, 160);
+                //lado direito
+                triangle(180, 100, 160, 120, 180, 140);
+
+                triangle(180, 140, 160, 120, 160, 160);
+
+                fill(y);
+                stroke(y);
+                triangle(20, 100, 40, 90, 40, 120);
+                rect(40, 90, 120, 30);
+                triangle(180, 100, 160, 90, 160, 120);
+                pop();
+            }
+
+        }
+
+        function hex5(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(0.95);
+                translate(156, 100);
+                // Set colors
+                fill(x);
+                stroke(x);
+
+                // A rectangle
+                rect(40, 120, 120, 40);
+                // An ellipse
+
+                //lado esquerdo
+                triangle(20, 100, 40, 120, 20, 140);
+                triangle(20, 140, 40, 120, 40, 160);
+                //lado direito
+                triangle(180, 100, 160, 120, 180, 140);
+
+                triangle(180, 140, 160, 120, 160, 160);
+
+                fill(y);
+                stroke(y);
+                triangle(20, 100, 40, 90, 40, 120);
+                rect(40, 90, 120, 30);
+                triangle(180, 100, 160, 90, 160, 120);
+                pop();
+            }
+
+        }
+
+        function hex6(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(0.8);
+                translate(204, 92);
+                // Set colors
+                fill(x);
+                stroke(x);
+
+                // A rectangle
+                rect(40, 120, 120, 40);
+                // An ellipse
+
+                //lado esquerdo
+                triangle(20, 100, 40, 120, 20, 140);
+                triangle(20, 140, 40, 120, 40, 160);
+                //lado direito
+                triangle(180, 100, 160, 120, 180, 140);
+
+                triangle(180, 140, 160, 120, 160, 160);
+
+                fill(y);
+                stroke(y);
+                triangle(20, 100, 40, 90, 40, 120);
+                rect(40, 90, 120, 30);
+                triangle(180, 100, 160, 90, 160, 120);
+                pop();
+            }
+
+        }
+
+
+
+
+
+        function circ1(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                //tamanho
+                scale(2.3);
+                //setando cores
+                fill(x);
+                stroke(x);
+                //movendo
+                translate(6.6, 55);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+                // Set colors
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+        }
+
+        function circ2(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                //Criando 2ª camada
+                scale(1.9);
+
+                fill(x);
+                stroke(x);
+
+                translate(29.2, 48);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+        }
+
+        function circ3(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                //Criando 3ª camada
+                scale(1.5);
+
+                fill(x);
+                stroke(x);
+
+                translate(63.2, 48.5);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+
+        }
+
+        function circ4(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                //Criando 3ª camada
+                scale(1.25);
+
+                fill(x);
+                stroke(x);
+
+                translate(96, 38);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+
+        }
+
+        function circ5(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                //Criando 3ª camada
+                scale(1);
+
+                fill(x);
+                stroke(x);
+
+                translate(144.6, 32);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+
+        }
+
+        function circ6(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                //Criando 3ª camada
+                scale(0.8);
+
+                fill(x);
+                stroke(x);
+                translate(206, 24);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+
+            }
+        }
+    </script>
+</body>
+
+</html>
