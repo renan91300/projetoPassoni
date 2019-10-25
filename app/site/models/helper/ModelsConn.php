@@ -9,8 +9,10 @@ if (!defined('URL')){
 }
 
 
+
 class ModelsConn{
-	public static $host = "localhost";
+		
+	public static $host = HOST;
 	public static $dbname = DBNAME;
 	public static $user = USER;
 	public static $pass = PASS;

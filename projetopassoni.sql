@@ -18,17 +18,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
+
 -- Database: `projetopassoni`
---
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `adm_cor`
---
 
-DROP TABLE IF EXISTS `adm_cor`;
 CREATE TABLE IF NOT EXISTS `adm_cor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(40) NOT NULL,
@@ -38,9 +32,6 @@ CREATE TABLE IF NOT EXISTS `adm_cor` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `adm_cor`
---
 
 INSERT INTO `adm_cor` (`id`, `nome`, `cor`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Azul', 'primary', '2019-05-15 00:00:00', NULL),
