@@ -12,11 +12,11 @@ class ListarPedidosCliente{
     public function index(){
 	    if(isset($_SESSION['user'])){
 
-	    	$listar_pedidos = new \Site\Models\Pedido();
+	    	$listar_pedidos = new \Site\models\Pedido();
     		$this->dados['pedidos'] = $listar_pedidos->listar();
 
 
-	    	$carregarView = new \Config\ConfigView("ListarPedidosCliente/index", $this->dados);
+	    	$carregarView = new \Config\ConfigView("listarPedidosCliente/index", $this->dados);
 	        $carregarView->renderizar();
 	    }
 	    else{

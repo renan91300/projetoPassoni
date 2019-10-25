@@ -12,7 +12,7 @@ class ListarEnderecos{
 
     public function index(){
     	if(isset($_SESSION['user'])){
-    		$listar_enderecos = new \Site\Models\Endereco();
+    		$listar_enderecos = new \Site\models\Endereco();
     		$this->dados['enderecos'] = $listar_enderecos->listar();
 
 	        $carregarView = new \Config\ConfigView("listarEnderecos/index", $this->dados);
@@ -27,7 +27,7 @@ class ListarEnderecos{
     public function addEndereco(){
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-        $listar_enderecos = new \Site\Models\Endereco();
+        $listar_enderecos = new \Site\models\Endereco();
         $this->dados['enderecos'] = $listar_enderecos->listar();
 
         if(empty($this->dados['enderecos'])){
@@ -40,7 +40,7 @@ class ListarEnderecos{
 
         if (!empty($this->dados['btnFormAddEndereco'])) {
             unset($this->dados['btnFormAddEndereco']);
-            $addEndereco = new \Site\Models\Endereco();
+            $addEndereco = new \Site\models\Endereco();
             $addEndereco->addEndereco($this->dados);
         }
         $urlDestino = URL . 'listarEnderecos/index';
@@ -55,7 +55,7 @@ class ListarEnderecos{
 
         if(!empty($this->dados['fomEditarEnd'])){
         	unset($this->dados['fomEditarEnd']);
-    		$editarEndereco = new \Site\Models\Endereco();
+    		$editarEndereco = new \Site\models\Endereco();
     		$editarEndereco->altEndereco($this->dados);
 
     		$urlDestino = URL . 'listarEnderecos/index';
@@ -63,7 +63,7 @@ class ListarEnderecos{
         }
         else{
         	if(!empty($this->dadosId)){
-        		$verEndereco = new \Site\Models\Endereco();
+        		$verEndereco = new \Site\models\Endereco();
 	            $this->dados['endereco'] = $verEndereco->verEndereco($this->dadosId);
 
 	            $carregarView = new \Config\ConfigView("listarEnderecos/editarEndereco", $this->dados);
@@ -81,7 +81,7 @@ class ListarEnderecos{
         $this->dadosId = $dadosId;
 
         if(isset($_SESSION['user'])){
-            $verEndereco = new \Site\Models\Endereco();
+            $verEndereco = new \Site\models\Endereco();
             $this->dados['endereco'] = $verEndereco->verEndereco($this->dadosId);
             if($this->dados['endereco'][0]['padrao']==0){
                 $this->dados['endereco'][0]['padrao'] = 1;
@@ -90,7 +90,7 @@ class ListarEnderecos{
                 $this->dados['endereco'][0]['padrao'] = 0;
             }
 
-            $editarEndereco = new \Site\Models\Endereco();
+            $editarEndereco = new \Site\models\Endereco();
             $editarEndereco->alterarEnderecoPadrao($this->dados);            
 
             $urlDestino = URL . 'listarEnderecos/index';
@@ -105,23 +105,23 @@ class ListarEnderecos{
     public function apagarEndereco($id = null){
         $this->id = $id;
 
-        $verEndereco = new \Site\Models\Endereco();
+        $verEndereco = new \Site\models\Endereco();
         $this->dados['endereco'] = $verEndereco->verEndereco($this->id);
         if($this->dados['endereco'][0]['padrao']==1){
             $this->padrao = true;
         }
 
         if (!empty($this->id)) {
-            $apagarEndereco = new \Site\Models\Endereco();
+		$apagarEndereco = new \Site\models\Endereco();
             $apagarEndereco->delEndereco($this->id);
 
             if($apagarEndereco->getResult()){
-                $listar_enderecos = new \Site\Models\Endereco();
+                $listar_enderecos = new \Site\models\Endereco();
                 $this->dados['enderecos'] = $listar_enderecos->listar();
 
                 if(!empty($this->dados['enderecos']) AND $this->padrao){
                     $this->dados['enderecos'][0]['padrao'] = 1;
-                    $editarEndereco = new \Site\Models\Endereco();
+                    $editarEndereco = new \Site\models\Endereco();
                     $editarEndereco->altEndereco($this->dados['enderecos'][0]);
                 }
             }

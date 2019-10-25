@@ -45,7 +45,7 @@ class Usuario{
                 unset($this->dados['formAddUser']);
                 if($this->dados['senha'] == $this->dados['senhaRepeat']){
                     unset($this->dados['senhaRepeat']);
-                    $addUsuario = new \Site\Models\Usuario();
+                    $addUsuario = new \Site\models\Usuario();
                     $addUsuario->addUser($this->dados);
                     if (!$addUsuario->getResult()){
                         $this->dados['formRetorno'] = $this->dados;
@@ -75,7 +75,7 @@ class Usuario{
         else{
             if (!empty($this->dados['formLogar'])) {
                 unset($this->dados['formLogar']);
-                $entrar = new \Site\Models\Usuario();
+                $entrar = new \Site\models\Usuario();
                 $entrar ->logar($this->dados);
                 if (!$entrar->getResult()){
                     $this->dados['formRetorno'] = $this->dados;
@@ -111,7 +111,7 @@ class Usuario{
 
                 $this->dados['imagem_nova'] = ($_FILES['imagem_nova'] ? $_FILES['imagem_nova'] : null);
 
-                $editarUsuario = new \Site\Models\Usuario();
+                $editarUsuario = new \Site\models\Usuario();
                 $editarUsuario->altUsuario($this->dados);
 
                 $urlDestino = URL . 'usuario/visualizar/' . $this->dadosId;
@@ -119,7 +119,7 @@ class Usuario{
             }
             else{
                 if(!empty($this->dadosId)){
-                    $verUsuario = new \Site\Models\Usuario();
+                    $verUsuario = new \Site\models\Usuario();
                     $this->dados['usuario'] = $verUsuario->visualizarUsuario($this->dadosId);
 
                     $carregarView = new \Config\ConfigView("usuario/editarUsuario", $this->dados);
@@ -143,7 +143,7 @@ class Usuario{
     public function delUsuario($id = null){
         $this->id = (int) $id;
         if (!empty($this->id)) {
-            $apagarUsuario = new \Site\Models\Usuario();
+            $apagarUsuario = new \Site\models\Usuario();
             $apagarUsuario->apagarUsuario($this->id);
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Necessário selecionar um usuário!</div>";

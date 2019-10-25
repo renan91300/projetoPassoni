@@ -71,7 +71,7 @@ class Endereco{
 
     public function verEndereco($id=null, $padrao=null){
         if($padrao){
-            $verAdress = new \Site\Models\helper\ModelsRead();
+            $verAdress = new \Site\models\helper\ModelsRead();
             $verAdress->exeReadEspecifico("SELECT e.idEndereco, e.identificacao, e.bairro, e.logradouro, 
                                             e.numero, e.cep, e.padrao
                                             FROM {$this->tabela} as e
@@ -81,7 +81,7 @@ class Endereco{
         }
         else{
             $this->id = (int) $id;        
-            $verAdress = new \Site\Models\helper\ModelsRead();
+            $verAdress = new \Site\models\helper\ModelsRead();
             $verAdress->exeReadEspecifico("SELECT e.idEndereco, e.identificacao, e.bairro, e.logradouro, 
                                         e.numero, e.cep, e.complemento, e.pontoDeRef, e.padrao
                                         FROM {$this->tabela} as e
@@ -104,7 +104,7 @@ class Endereco{
         }
         
 
-        $upEndereco = new \Site\Models\helper\ModelsUpdate();
+        $upEndereco = new \Site\models\helper\ModelsUpdate();
         $upEndereco->exeUpdate("endereco", $this->dados, "WHERE idEndereco =:id", "id=" . $this->id);
 
         if ($upEndereco->getResult()) {
@@ -119,7 +119,7 @@ class Endereco{
     public function alterarEnderecoPadrao(array $dados){
         $this->dados = $dados['endereco'][0];
 
-        $upEndereco = new \Site\Models\helper\ModelsUpdate();
+        $upEndereco = new \Site\models\helper\ModelsUpdate();
         $upEndereco->exeUpdateEspecifico("
             UPDATE endereco e
             SET e.padrao = CASE e.idEndereco

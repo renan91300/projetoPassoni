@@ -19,11 +19,9 @@ class ModelsCreate extends ModelsConn {
     public function exeCreate($tabela, array $dados){
         $this->tabela = (string) $tabela;
         $this->dados = $dados;
-        
+
         $this->getInstrucao();
         $this->executarInstrucao();
-
-
     }
 
     public function getInstrucao(){

@@ -48,23 +48,26 @@
           exit();*/
         }   
         
-        public function carregar(){
-            $listarPg = new \App\site\models\Pagina();
+	public function carregar(){
+		/*echo $this->urlController;*/
+            $listarPg= new \App\site\models\Pagina();
 
             $this->paginas = $listarPg->listarPaginas($this->urlController, $this->urlMetodo);
             if ($this->paginas) {
-                /*var_dump($this->paginas);
-                exit();*/
+	        /*var_dump($this->paginas);
+		exit;*/
 
                 $this->class = "\\App\\{$this->paginas[0]['tipo_tpg']}\\controllers\\" . $this->urlController;
-                /*echo $this->class;
-                exit();*/
+		/*echo $this->class;
+		exit;*/
+               
                 if (class_exists($this->class)) {
-                    /*echo "Existe";
-                    exit();*/
+                  
                     $this->carregarMetodo();
-                } else {
-                    $this->urlController = ERROR404;
+		} else {
+			/*echo "nao existe";*/
+			
+	            $this->urlController = ERROR404;
                     $this->carregar();
                 }
             }else {
