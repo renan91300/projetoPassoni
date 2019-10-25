@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -- phpMyAdmin SQL Dump
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
@@ -22,6 +23,8 @@ SET time_zone = "+00:00";
 -- Database: `projetopassoni`
 
 
+=======
+>>>>>>> 6b8f6acd218fa187286a5a1071922de3d8298ca0
 
 CREATE TABLE IF NOT EXISTS `adm_cor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -32,7 +35,10 @@ CREATE TABLE IF NOT EXISTS `adm_cor` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b8f6acd218fa187286a5a1071922de3d8298ca0
 INSERT INTO `adm_cor` (`id`, `nome`, `cor`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Azul', 'primary', '2019-05-15 00:00:00', NULL),
 (2, 'Cinza', 'secundary', '2019-05-09 00:00:00', NULL),
@@ -43,11 +49,6 @@ INSERT INTO `adm_cor` (`id`, `nome`, `cor`, `data_criacao`, `data_modificacao`) 
 (7, 'Claro', 'light', '2019-05-09 00:00:00', NULL),
 (8, 'Cinza escuro', 'dark', '2019-05-09 00:00:00', NULL);
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `adm_situacao`
---
 
 DROP TABLE IF EXISTS `adm_situacao`;
 CREATE TABLE IF NOT EXISTS `adm_situacao` (
@@ -59,20 +60,12 @@ CREATE TABLE IF NOT EXISTS `adm_situacao` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `adm_situacao`
---
 
 INSERT INTO `adm_situacao` (`id`, `nome`, `adm_cor_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Ativo', 3, '2019-05-10 00:00:00', NULL),
 (2, 'Inativo', 4, '2019-05-10 00:00:00', NULL),
 (3, 'Em Análise', 5, '2019-05-10 00:00:00', NULL);
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `bairro`
---
 
 DROP TABLE IF EXISTS `bairro`;
 CREATE TABLE IF NOT EXISTS `bairro` (
@@ -81,9 +74,6 @@ CREATE TABLE IF NOT EXISTS `bairro` (
   PRIMARY KEY (`idBairro`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `bairro`
---
 
 INSERT INTO `bairro` (`idBairro`, `nomeBairro`) VALUES
 (1, 'Agostinho Simonato'),
@@ -91,11 +81,6 @@ INSERT INTO `bairro` (`idBairro`, `nomeBairro`) VALUES
 (3, 'IBC'),
 (4, 'BNH');
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `bolo`
---
 
 DROP TABLE IF EXISTS `bolo`;
 CREATE TABLE IF NOT EXISTS `bolo` (
@@ -107,11 +92,6 @@ CREATE TABLE IF NOT EXISTS `bolo` (
   PRIMARY KEY (`idBolo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `bolodepote`
---
 
 DROP TABLE IF EXISTS `bolodepote`;
 CREATE TABLE IF NOT EXISTS `bolodepote` (
@@ -124,9 +104,6 @@ CREATE TABLE IF NOT EXISTS `bolodepote` (
   PRIMARY KEY (`idBoloDePote`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `bolodepote`
---
 
 INSERT INTO `bolodepote` (`idBoloDePote`, `sabor`, `tamanho`, `preco`, `imagem`, `descricao`) VALUES
 (1, 'Limão', '250ml', 15, 'limao.jpg', 'Bolo de limão com recheio de limão natural.'),
@@ -134,10 +111,6 @@ INSERT INTO `bolodepote` (`idBoloDePote`, `sabor`, `tamanho`, `preco`, `imagem`,
 (3, 'Tiramisu', '250ml', 30, 'tiramisu.jpg', 'Bolo de baunilha com biscoitos e creme inglês');
 
 -- --------------------------------------------------------
-
---
--- Estrutura da tabela `carousel`
---
 
 DROP TABLE IF EXISTS `carousel`;
 CREATE TABLE IF NOT EXISTS `carousel` (
@@ -157,20 +130,12 @@ CREATE TABLE IF NOT EXISTS `carousel` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `carousel`
---
-
 INSERT INTO `carousel` (`id`, `nome`, `imagem`, `titulo`, `descricao`, `posicao_text`, `titulo_botao`, `link`, `ordem`, `adm_cor_id`, `adm_situacao_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Banner 01', 'banner01.jpg', 'Exemplo testando o banner 01', 'Mussum Ipsum, cacilds vidis litro abertis. Quem manda na minha terra sou euzis! Viva Forevis aptent taciti sociosqu ad litora torquent. Não sou faixa preta cumpadi.', 'text-left', 'Clique aqui', 'http://www.ifes.edu.br', 1, 1, 1, '2019-05-08 08:31:15', NULL),
 (2, 'Banner 02', 'banner02.jpg', 'Exemplo testando o banner 02', 'Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Suco de cevadiss deixa as pessoas mais interessantis. Vehicula non. Ut sed ex eros.', 'text-center', 'Comprar agora', 'http://www.ci.ifes.edu.br', 2, 5, 1, '2019-05-08 09:08:25', NULL),
 (3, 'Banner 03', 'banner03.jpg', 'Exemplo testando o banner 03', 'Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Praesent malesuada urna nisi, quis volutpat erat hendrerit non.', 'text-right', 'Inscreva-se', 'http://www.google.com.br', 3, 4, 1, '2019-05-08 09:19:32', NULL);
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `categoria_noticia`
---
 
 DROP TABLE IF EXISTS `categoria_noticia`;
 CREATE TABLE IF NOT EXISTS `categoria_noticia` (
@@ -181,20 +146,12 @@ CREATE TABLE IF NOT EXISTS `categoria_noticia` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `categoria_noticia`
---
-
 INSERT INTO `categoria_noticia` (`id`, `nome`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Esporte', '2019-05-17 00:00:00', NULL),
 (2, 'Tecnologia', '2019-05-17 00:00:00', NULL),
 (3, 'Economia', '2019-05-17 00:00:00', NULL);
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `contato`
---
 
 DROP TABLE IF EXISTS `contato`;
 CREATE TABLE IF NOT EXISTS `contato` (
@@ -208,10 +165,6 @@ CREATE TABLE IF NOT EXISTS `contato` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `contato`
---
-
 INSERT INTO `contato` (`id`, `nome`, `email`, `assunto`, `mensagem`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Flavio Izo', 'flavio@flavioizo.com', 'Sugestão', 'sd', '2019-05-28 00:00:00', NULL),
 (2, 'Flavio Izo', 'flavio@flavioizo.com', 'Sugestão', 'sd', '2019-05-28 00:00:00', NULL),
@@ -221,11 +174,6 @@ INSERT INTO `contato` (`id`, `nome`, `email`, `assunto`, `mensagem`, `data_criac
 (6, 'Flavio Izo', 'flavio@flavioizo.com', 'Dúvidas', 'sdsd', '2019-05-28 22:15:24', NULL),
 (7, 'Renan Gomes Poggian', 'renanpoggiangomes@gmail.com', 'Sugestão', 'addsadsasdf', '2019-08-24 13:23:00', NULL);
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `endereco`
---
 
 DROP TABLE IF EXISTS `endereco`;
 CREATE TABLE IF NOT EXISTS `endereco` (
@@ -243,9 +191,6 @@ CREATE TABLE IF NOT EXISTS `endereco` (
   KEY `idCliente` (`idCliente`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `endereco`
---
 
 INSERT INTO `endereco` (`idEndereco`, `idCliente`, `identificacao`, `bairro`, `logradouro`, `complemento`, `numero`, `pontoDeRef`, `cep`, `padrao`) VALUES
 (26, 15, 'Casa', 'Agostinho Simonato', 'Rua Wagner Alves Emery', 'Casa', 17, 'Próximo a quadra', '29311785', 0),
@@ -254,11 +199,7 @@ INSERT INTO `endereco` (`idEndereco`, `idCliente`, `identificacao`, `bairro`, `l
 (30, 14, 'Casa', 'Marbrasa', 'Rua Horacy Amarantes Mattos', 'Apto', 80, 'Rua asfaltada', '29313668', 0),
 (46, 32, 'jkn', 'Monte Belo', 'Rua dos Ipês', 'jn', 12, 'kjn', '29314777', 1);
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `estoque`
---
 
 DROP TABLE IF EXISTS `estoque`;
 CREATE TABLE IF NOT EXISTS `estoque` (
@@ -270,11 +211,6 @@ CREATE TABLE IF NOT EXISTS `estoque` (
   KEY `idBolodePote` (`idBolodePote`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `noticia`
---
 
 DROP TABLE IF EXISTS `noticia`;
 CREATE TABLE IF NOT EXISTS `noticia` (
@@ -299,9 +235,6 @@ CREATE TABLE IF NOT EXISTS `noticia` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `noticia`
---
 
 INSERT INTO `noticia` (`id`, `titulo`, `descricao`, `conteudo`, `imagem`, `slug`, `keywords`, `description`, `author`, `resumo`, `hits`, `robots_id`, `adm_user_id`, `adm_situacoes_id`, `tipo_noticia_id`, `categoria_noticia_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Notícia 01', 'Quem manda na minha terra sou euzis! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.', '<p>Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo é motivis de denguis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Quem manda na minha terra sou euzis! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>', 'noticia.jpg', 'noticia-teste-1', 'noticia, mussum, teste', 'Aqui teremos a descrição do texto da notícia.', 'DW', '<p>Aqui teremos um resumo público para demonstrar um texto de notícia</p>', 0, 1, 1, 1, 1, 1, '2019-05-17 00:00:00', NULL),
@@ -309,11 +242,6 @@ INSERT INTO `noticia` (`id`, `titulo`, `descricao`, `conteudo`, `imagem`, `slug`
 (3, 'Notícia 03', 'Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.', '<p>Leite de capivaris, leite de mula manquis sem cabeça. A ordem dos tratores não altera o pão duris. Casamentiss faiz malandris se pirulitá. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.</p>', 'noticia.jpg', 'noticia-teste-3', 'noticia, mussum, teste3', 'Aqui teremos a descrição do texto da notícia 3.', 'DW', '<p>Aqui teremos um resumo público para demonstrar um texto de notícia 3</p>', 0, 1, 1, 1, 1, 1, '2019-05-17 00:00:00', NULL),
 (4, 'Noticia 4', 'Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Si u mundo tá muito paradis?', '<p>Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Sapien in monti palavris qui num significa nadis i pareci latim. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Paisis, filhis, espiritis santis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Cevadis im ampola pa arma uma pindureta.</p>', 'noticia.jpg', 'noticia-teste-1', 'noticia, mussum, teste', 'Aqui teremos a descrição do texto da notícia 4.', 'DW', '<p>Aqui teremos um resumo público para demonstrar um texto de notícia 4</p>', 0, 1, 1, 1, 1, 3, '2019-05-17 00:00:00', NULL);
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `pagina`
---
 
 DROP TABLE IF EXISTS `pagina`;
 CREATE TABLE IF NOT EXISTS `pagina` (
@@ -334,9 +262,6 @@ CREATE TABLE IF NOT EXISTS `pagina` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `pagina`
---
 
 INSERT INTO `pagina` (`id`, `controller`, `metodo`, `nome`, `titulo`, `obs`, `keywords`, `description`, `author`, `icone`, `tp_pagina_id`, `robots_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Home', 'index', 'Página principal', 'DW - Página inicial', 'Página principal', 'dw, programação, php', 'Site para exibir a página inicial do projeto', 'DW', 'home.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
@@ -408,9 +333,6 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   KEY `pedido_endereco` (`idEndereco`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `pedido`
---
 
 INSERT INTO `pedido` (`idPedido`, `idCliente`, `status`, `prontaEntrega`, `precoTotal`, `dataPedido`, `dataEntrega`, `formaEntrega`, `formaPagamento`, `idEndereco`, `statusPagamento`, `observacao`) VALUES
 (1, 15, 'Entregue', NULL, 225, '2019-09-21', '2019-09-21', 'Delivery', 'Dinheiro', 27, 'Aguardando Pagamento', ''),
@@ -441,10 +363,6 @@ CREATE TABLE IF NOT EXISTS `pedido_bolodepote` (
   KEY `idBoloDePote` (`idBoloDePote`),
   KEY `idPedido` (`idPedido`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `pedido_bolodepote`
---
 
 INSERT INTO `pedido_bolodepote` (`idPedido`, `idBoloDePote`, `quantidade`) VALUES
 (1, 1, 4),
@@ -484,20 +402,11 @@ CREATE TABLE IF NOT EXISTS `quem_somos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `quem_somos`
---
 
 INSERT INTO `quem_somos` (`id`, `titulo`, `descricao`, `imagem`, `ordem`, `adm_situacao_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Histórico', 'Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Mé faiz elementum girarzis, nisi eros vermeio. Detraxit consequat et quo num tendi nada. Cevadis im ampola pa arma uma pindureta.\r\n\r\nPaisis, filhis, espiritis santis. Quem num gosta di mim que vai caçá sua turmis! Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.', 'historico.jpg', 1, 1, '2019-05-17 00:00:00', NULL),
 (2, 'Fundadores', 'Copo furadis é disculpa de bebadis, arcu quam euismod magna.  Sapien in monti palavris qui num significa nadis i pareci latim. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Viva Forevis aptent taciti sociosqu ad litora torquent.\r\n\r\nSuco de cevadiss deixa as pessoas mais interessantis. Delegadis gente finis, bibendum egestas augue arcu ut est. Per aumento de cachacis, eu reclamis. Si num tem leite então bota uma pinga aí cumpadi!', 'fundadores.jpg', 2, 1, '2019-05-17 00:00:00', NULL),
 (3, 'Produtos e serviços', 'Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Sapien in monti palavris qui num significa nadis i pareci latim. A ordem dos tratores não altera o pão duris.\r\n\r\nSuco de cevadiss deixa as pessoas mais interessantis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Paisis, filhis, espiritis santis.', 'produtos_servicos.jpg', 3, 1, '2019-05-17 00:00:00', NULL);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `robots`
---
 
 DROP TABLE IF EXISTS `robots`;
 CREATE TABLE IF NOT EXISTS `robots` (
@@ -509,10 +418,6 @@ CREATE TABLE IF NOT EXISTS `robots` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `robots`
---
-
 INSERT INTO `robots` (`id`, `nome`, `tipo`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Indexar a página e seguir os links', 'index,follow', '2019-05-16 00:00:00', NULL),
 (2, 'Não indexar a página, mas seguir os links', 'noindex,follow', '2019-05-16 00:00:00', NULL),
@@ -520,11 +425,6 @@ INSERT INTO `robots` (`id`, `nome`, `tipo`, `data_criacao`, `data_modificacao`) 
 (4, 'Não indexar a página e nem seguir os links', 'noindex,nofollow', '2019-05-17 00:00:00', NULL),
 (5, 'Não exibir a versão em cache da página', 'noarchive', '2019-05-17 00:00:00', NULL);
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `servico`
---
 
 DROP TABLE IF EXISTS `servico`;
 CREATE TABLE IF NOT EXISTS `servico` (
@@ -538,11 +438,6 @@ CREATE TABLE IF NOT EXISTS `servico` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tipo_noticia`
---
 
 DROP TABLE IF EXISTS `tipo_noticia`;
 CREATE TABLE IF NOT EXISTS `tipo_noticia` (
@@ -553,20 +448,13 @@ CREATE TABLE IF NOT EXISTS `tipo_noticia` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `tipo_noticia`
---
+
 
 INSERT INTO `tipo_noticia` (`id`, `nome`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Pública', '2019-05-17 00:00:00', NULL),
 (2, 'Privada', '2019-05-17 00:00:00', NULL),
 (3, 'Privada com resumo público', '2019-05-17 00:00:00', NULL);
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tipo_pagina`
---
 
 DROP TABLE IF EXISTS `tipo_pagina`;
 CREATE TABLE IF NOT EXISTS `tipo_pagina` (
@@ -580,19 +468,11 @@ CREATE TABLE IF NOT EXISTS `tipo_pagina` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `tipo_pagina`
---
-
 INSERT INTO `tipo_pagina` (`id`, `tipo`, `nome`, `obs`, `ordem`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Site', 'Site principal', 'Site principal do projeto', 1, '2019-05-17 00:00:00', NULL),
 (2, 'adm', 'Área administrativa', 'Área administrativa do projeto', 2, '2019-05-17 00:00:00', NULL);
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `user`
---
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
@@ -607,20 +487,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`idUsuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `user`
---
 
 INSERT INTO `user` (`idUsuario`, `cpf`, `nome`, `email`, `telefone`, `senha`, `dataNascimento`, `adm`) VALUES
 (5, '16118554706', 'Renan Gomes Poggian', 'renanpoggiangomes@gmail.com', '28999871283', 'rerenanjsudn', '2000-12-02', 1),
 (6, '18745968731', 'Renan', 'admin@admin.com', NULL, 'admin', NULL, 1),
 (21, NULL, 'Renan', 'renanpoggiangomes@gmail.com', NULL, '123', NULL, NULL);
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `usuarios`
---
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -640,10 +512,6 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   UNIQUE KEY `cpf` (`cpf`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `usuarios`
---
-
 INSERT INTO `usuarios` (`idUsuario`, `cpf`, `imagem`, `nome`, `sobrenome`, `genero`, `telefone`, `senha`, `email`, `dataNascimento`, `adm`, `data_criacao`) VALUES
 (8, NULL, 'download.jpg', 'Renan-ADM', 'Gomes Poggian', 'm', '999857846', 'e10adc3949ba59abbe56e057f20f883e', 'renanpoggiangomes@gmail.com', '2001-12-02', 1, '2019-09-08'),
 (14, NULL, 'lydia.jpg', 'Lydia', 'Martin Banshee', 'o', '999656565', '202cb962ac59075b964b07152d234b70', 'lydia@gmail.com', '1998-07-07', 0, '2019-09-17'),
@@ -658,11 +526,7 @@ INSERT INTO `usuarios` (`idUsuario`, `cpf`, `imagem`, `nome`, `sobrenome`, `gene
 (31, NULL, '20180217-140925.jpg', 'Vitória', 'Gomes', 'o', '999857463', 'e10adc3949ba59abbe56e057f20f883e', 'vic@gmail.com', '1999-02-15', 0, '2019-10-02'),
 (32, NULL, 'perwomjpg.jpg', 'Laís', 'Carvalho', 'f', '999272788', 'e10adc3949ba59abbe56e057f20f883e', 'lais@gmail.com', '1998-10-03', 0, '2019-10-17');
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `video`
---
 
 DROP TABLE IF EXISTS `video`;
 CREATE TABLE IF NOT EXISTS `video` (
@@ -675,38 +539,19 @@ CREATE TABLE IF NOT EXISTS `video` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `video`
---
-
 INSERT INTO `video` (`id`, `titulo`, `descricao`, `link`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'O que é reciclagem?', 'Reciclagem é o processo em que há a transformação do resíduo sólido que não seria aproveitado, com mudanças em seus estados físico, físico-químico ou biológico.', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OQ5jpiKzNqg\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '2019-05-18 00:00:00', NULL);
 
---
--- Constraints for dumped tables
---
 
---
--- Limitadores para a tabela `endereco`
---
 ALTER TABLE `endereco`
   ADD CONSTRAINT `endereço_cliente` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
--- Limitadores para a tabela `pedido`
---
 ALTER TABLE `pedido`
   ADD CONSTRAINT `pedido_cliente` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`idUsuario`),
   ADD CONSTRAINT `pedido_endereco` FOREIGN KEY (`idEndereco`) REFERENCES `endereco` (`idEndereco`);
 
---
--- Limitadores para a tabela `pedido_bolodepote`
---
+
 ALTER TABLE `pedido_bolodepote`
   ADD CONSTRAINT `pedidobolo_bolo` FOREIGN KEY (`idBoloDePote`) REFERENCES `bolodepote` (`idBoloDePote`),
   ADD CONSTRAINT `pedidobolo_pedido` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
