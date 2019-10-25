@@ -1,4 +1,6 @@
 <?php
+    echo "Teste";
+    exit();
     require "./vendor/autoload.php";
 require "./config/Config.php";
 
