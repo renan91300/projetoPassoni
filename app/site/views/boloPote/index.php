@@ -21,11 +21,11 @@ if (!defined('URL')){
     }
 ?>
 
-<div class="container product">
+<div class="container">
     <h3>BOLO NO POTÃO</h3>
     <hr>
     <!-- Rows -->
-    <div class="row">
+    <div class="row product">
         <?php
             if(isset($_POST['sabor'])){
                 $this->escolhaSabor = $_POST['sabor'];
@@ -41,11 +41,11 @@ if (!defined('URL')){
             }
         ?>
 
-        <div class="col-md-6 imageCakepot">
+        <div class="col-md-5 imageCakepot">
             <img id="cake_photo" src="<?=URL;?>assets/img/bolos/bolosdepote/<?=$idBoloDePote;?>/<?=$imagem;?>" class="imgproduct"
                 alt="error">
         </div>
-        <div class="col-md-6 brief">
+        <div class="col-md-7 brief">
             
             <label class="cake_price">R$<?=$preco;?>,00</label>
             <label><?=$tamanho;?></label>
@@ -66,7 +66,6 @@ if (!defined('URL')){
 
 
             <div class="flavors">              
-
                 <p>Escolha um sabor</p>
                 <form method="post" action="">
                     <?php

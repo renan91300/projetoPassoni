@@ -400,14 +400,15 @@ a {
 /* BLOCOS BOLO DE POTE  */
 
 .imgproduct {
-    height: 30em;
-    width: 30em;
+    height: 25m;
+    width: 25em;
     max-width: 100%;
     height: auto;
     display: block;
     padding-bottom: 2rem;
     
 }
+
 
 .buttonaddcart {
     padding: 12px 25px;
