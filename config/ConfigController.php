@@ -57,7 +57,7 @@
 	        /*var_dump($this->paginas);
 		exit;*/
 
-                $this->class = "\\App\\{$this->paginas[0]['tipo_tpg']}\\controllers\\" . $this->urlController;
+                $this->class = "\\App\\{$this->paginas[0]['tipo_tpg']}\\controllers\\" . $this->paginas[0]['controller'];
 		/*echo $this->class;
 		exit;*/
                

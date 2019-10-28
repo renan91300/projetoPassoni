@@ -18,7 +18,7 @@ class Pagina{
         /*echo $this->urlController;
         echo "<br>".$this->urlMetodo;*/
         $listar = new \Site\models\helper\ModelsRead();
-        $listar->exeReadEspecifico('SELECT pag.id,
+        $listar->exeReadEspecifico('SELECT pag.id, pag.controller,
                 tpg.tipo tipo_tpg
                 FROM pagina pag
                 INNER JOIN tipo_pagina tpg ON tpg.id=pag.tp_pagina_id                                                
