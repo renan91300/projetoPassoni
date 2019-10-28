@@ -32,6 +32,7 @@ if (!defined('URL')){
                 foreach ($this->dados['bolos'] as $bolos) {
                     if($bolos['sabor'] == $this->escolhaSabor){
                         extract($bolos);
+                        $this->dados['boloDescricao'] = $descricao;
                     };
                 }
             }
@@ -69,8 +70,8 @@ if (!defined('URL')){
                 <p>Escolha um sabor</p>
                 <form method="post" action="">
                     <?php
-                        foreach ($this->dados['bolos'] as $bolo) {
-                            extract($bolo);?>
+                        foreach ($this->dados['bolos'] as $boloDescricao) {
+                            extract($boloDescricao);?>
                             <div class="buttonCake_flavor">
                                 <label  for="<?=$sabor;?>"><?=$sabor;?></label>
                                 <input type="radio" id="<?=$sabor;?>" name="sabor" value="<?=$sabor;?>" onchange="form.submit()">
@@ -88,7 +89,14 @@ if (!defined('URL')){
             <div class="productDescription">
                 <p>
                     <h4 id="desc">
-                        <?=$this->dados['bolos'][0]['descricao'];?>
+                        <?php
+                            if(isset($this->dados['boloDescricao'])){
+                                echo $this->dados['boloDescricao'];
+                            }
+                            else{
+                                echo $this->dados['bolos'][0]['descricao'];
+                            }
+                        ?>
                     </h4>
                     <ul>
                         <li>

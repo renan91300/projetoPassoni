@@ -1,16 +1,13 @@
-<<<<<<< HEAD
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: 18-Out-2019 às 11:40
--- Versão do servidor: 5.7.26
--- versão do PHP: 7.2.18
+-- Host: localhost:3306
+-- Tempo de geração: 28/10/2019 às 22:21
+-- Versão do servidor: 10.1.41-MariaDB-0+deb9u1
+-- Versão do PHP: 7.0.33-0+deb9u5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,26 +16,28 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Banco de dados: `projetopassoni`
+--
 
--- Database: `projetopassoni`
+-- --------------------------------------------------------
 
+--
+-- Estrutura para tabela `adm_cor`
+--
 
-=======
->>>>>>> 6b8f6acd218fa187286a5a1071922de3d8298ca0
-
-CREATE TABLE IF NOT EXISTS `adm_cor` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `adm_cor` (
+  `id` int(11) NOT NULL,
   `nome` varchar(40) NOT NULL,
   `cor` varchar(40) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-<<<<<<< HEAD
+--
+-- Fazendo dump de dados para tabela `adm_cor`
+--
 
-=======
->>>>>>> 6b8f6acd218fa187286a5a1071922de3d8298ca0
 INSERT INTO `adm_cor` (`id`, `nome`, `cor`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Azul', 'primary', '2019-05-15 00:00:00', NULL),
 (2, 'Cinza', 'secundary', '2019-05-09 00:00:00', NULL),
@@ -49,31 +48,43 @@ INSERT INTO `adm_cor` (`id`, `nome`, `cor`, `data_criacao`, `data_modificacao`) 
 (7, 'Claro', 'light', '2019-05-09 00:00:00', NULL),
 (8, 'Cinza escuro', 'dark', '2019-05-09 00:00:00', NULL);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `adm_situacao`;
-CREATE TABLE IF NOT EXISTS `adm_situacao` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `adm_situacao`
+--
+
+CREATE TABLE `adm_situacao` (
+  `id` int(11) NOT NULL,
   `nome` varchar(60) NOT NULL,
   `adm_cor_id` int(11) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `adm_situacao`
+--
 
 INSERT INTO `adm_situacao` (`id`, `nome`, `adm_cor_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Ativo', 3, '2019-05-10 00:00:00', NULL),
 (2, 'Inativo', 4, '2019-05-10 00:00:00', NULL),
 (3, 'Em Análise', 5, '2019-05-10 00:00:00', NULL);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `bairro`;
-CREATE TABLE IF NOT EXISTS `bairro` (
-  `idBairro` int(11) NOT NULL AUTO_INCREMENT,
-  `nomeBairro` varchar(50) NOT NULL,
-  PRIMARY KEY (`idBairro`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+--
+-- Estrutura para tabela `bairro`
+--
 
+CREATE TABLE `bairro` (
+  `idBairro` int(11) NOT NULL,
+  `nomeBairro` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `bairro`
+--
 
 INSERT INTO `bairro` (`idBairro`, `nomeBairro`) VALUES
 (1, 'Agostinho Simonato'),
@@ -81,29 +92,38 @@ INSERT INTO `bairro` (`idBairro`, `nomeBairro`) VALUES
 (3, 'IBC'),
 (4, 'BNH');
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `bolo`;
-CREATE TABLE IF NOT EXISTS `bolo` (
-  `idBolo` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `bolo`
+--
+
+CREATE TABLE `bolo` (
+  `idBolo` int(11) NOT NULL,
   `formato` varchar(100) NOT NULL,
   `qtdCamadas` int(11) NOT NULL,
   `descricao` int(255) NOT NULL,
-  `imagem` varchar(150) NOT NULL,
-  PRIMARY KEY (`idBolo`)
+  `imagem` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `bolodepote`;
-CREATE TABLE IF NOT EXISTS `bolodepote` (
-  `idBoloDePote` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `bolodepote`
+--
+
+CREATE TABLE `bolodepote` (
+  `idBoloDePote` int(11) NOT NULL,
   `sabor` enum('Morango','Limão','Coco','Tiramisu') NOT NULL,
   `tamanho` enum('150ml','250ml') NOT NULL,
   `preco` float NOT NULL,
   `imagem` varchar(60) DEFAULT NULL,
-  `descricao` varchar(200) NOT NULL,
-  PRIMARY KEY (`idBoloDePote`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `descricao` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `bolodepote`
+--
 
 INSERT INTO `bolodepote` (`idBoloDePote`, `sabor`, `tamanho`, `preco`, `imagem`, `descricao`) VALUES
 (1, 'Limão', '250ml', 15, 'limao.jpg', 'Bolo de limão com recheio de limão natural.'),
@@ -112,9 +132,12 @@ INSERT INTO `bolodepote` (`idBoloDePote`, `sabor`, `tamanho`, `preco`, `imagem`,
 
 -- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `carousel`;
-CREATE TABLE IF NOT EXISTS `carousel` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `carousel`
+--
+
+CREATE TABLE `carousel` (
+  `id` int(11) NOT NULL,
   `nome` varchar(150) NOT NULL,
   `imagem` varchar(100) NOT NULL,
   `titulo` varchar(150) DEFAULT NULL,
@@ -126,44 +149,59 @@ CREATE TABLE IF NOT EXISTS `carousel` (
   `adm_cor_id` int(11) DEFAULT NULL,
   `adm_situacao_id` int(11) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `carousel`
+--
 
 INSERT INTO `carousel` (`id`, `nome`, `imagem`, `titulo`, `descricao`, `posicao_text`, `titulo_botao`, `link`, `ordem`, `adm_cor_id`, `adm_situacao_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Banner 01', 'banner01.jpg', 'Exemplo testando o banner 01', 'Mussum Ipsum, cacilds vidis litro abertis. Quem manda na minha terra sou euzis! Viva Forevis aptent taciti sociosqu ad litora torquent. Não sou faixa preta cumpadi.', 'text-left', 'Clique aqui', 'http://www.ifes.edu.br', 1, 1, 1, '2019-05-08 08:31:15', NULL),
 (2, 'Banner 02', 'banner02.jpg', 'Exemplo testando o banner 02', 'Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Suco de cevadiss deixa as pessoas mais interessantis. Vehicula non. Ut sed ex eros.', 'text-center', 'Comprar agora', 'http://www.ci.ifes.edu.br', 2, 5, 1, '2019-05-08 09:08:25', NULL),
 (3, 'Banner 03', 'banner03.jpg', 'Exemplo testando o banner 03', 'Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Praesent malesuada urna nisi, quis volutpat erat hendrerit non.', 'text-right', 'Inscreva-se', 'http://www.google.com.br', 3, 4, 1, '2019-05-08 09:19:32', NULL);
 
+-- --------------------------------------------------------
 
+--
+-- Estrutura para tabela `categoria_noticia`
+--
 
-DROP TABLE IF EXISTS `categoria_noticia`;
-CREATE TABLE IF NOT EXISTS `categoria_noticia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `categoria_noticia` (
+  `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `categoria_noticia`
+--
 
 INSERT INTO `categoria_noticia` (`id`, `nome`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Esporte', '2019-05-17 00:00:00', NULL),
 (2, 'Tecnologia', '2019-05-17 00:00:00', NULL),
 (3, 'Economia', '2019-05-17 00:00:00', NULL);
 
+-- --------------------------------------------------------
 
+--
+-- Estrutura para tabela `contato`
+--
 
-DROP TABLE IF EXISTS `contato`;
-CREATE TABLE IF NOT EXISTS `contato` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contato` (
+  `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `assunto` varchar(100) NOT NULL,
   `mensagem` text NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `contato`
+--
 
 INSERT INTO `contato` (`id`, `nome`, `email`, `assunto`, `mensagem`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Flavio Izo', 'flavio@flavioizo.com', 'Sugestão', 'sd', '2019-05-28 00:00:00', NULL),
@@ -174,10 +212,14 @@ INSERT INTO `contato` (`id`, `nome`, `email`, `assunto`, `mensagem`, `data_criac
 (6, 'Flavio Izo', 'flavio@flavioizo.com', 'Dúvidas', 'sdsd', '2019-05-28 22:15:24', NULL),
 (7, 'Renan Gomes Poggian', 'renanpoggiangomes@gmail.com', 'Sugestão', 'addsadsasdf', '2019-08-24 13:23:00', NULL);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `endereco`;
-CREATE TABLE IF NOT EXISTS `endereco` (
-  `idEndereco` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `endereco`
+--
+
+CREATE TABLE `endereco` (
+  `idEndereco` int(11) NOT NULL,
   `idCliente` int(11) NOT NULL,
   `identificacao` varchar(40) NOT NULL,
   `bairro` varchar(60) NOT NULL,
@@ -186,35 +228,42 @@ CREATE TABLE IF NOT EXISTS `endereco` (
   `numero` int(11) NOT NULL,
   `pontoDeRef` varchar(100) DEFAULT NULL,
   `cep` varchar(8) NOT NULL,
-  `padrao` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`idEndereco`),
-  KEY `idCliente` (`idCliente`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+  `padrao` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `endereco`
+--
 
 INSERT INTO `endereco` (`idEndereco`, `idCliente`, `identificacao`, `bairro`, `logradouro`, `complemento`, `numero`, `pontoDeRef`, `cep`, `padrao`) VALUES
 (26, 15, 'Casa', 'Agostinho Simonato', 'Rua Wagner Alves Emery', 'Casa', 17, 'Próximo a quadra', '29311785', 0),
 (27, 15, 'Apartamento', 'Agostinho Simonato', 'Rua João Gonçalves de Freitas', '', 20, 'Esquina', '29311747', 0),
 (28, 15, 'Serviço', 'Caiçara', 'Rua José Olympio Gomes', '', 666, 'Rua calçada', '29311740', 0),
-(30, 14, 'Casa', 'Marbrasa', 'Rua Horacy Amarantes Mattos', 'Apto', 80, 'Rua asfaltada', '29313668', 0),
-(46, 32, 'jkn', 'Monte Belo', 'Rua dos Ipês', 'jn', 12, 'kjn', '29314777', 1);
+(30, 14, 'Casa', 'Marbrasa', 'Rua Horacy Amarantes Mattos', 'Apto', 80, 'Rua asfaltada', '29313668', 1),
+(46, 32, 'jkn', 'Monte Belo', 'Rua dos Ipês', 'jn', 12, 'kjn', '29314777', 0),
+(47, 14, 'Casa', 'Agostinho Simonato', 'Beco Um', 'Fundos', 555, 'proximo a quadra', '29311777', 0);
 
+-- --------------------------------------------------------
 
+--
+-- Estrutura para tabela `estoque`
+--
 
-DROP TABLE IF EXISTS `estoque`;
-CREATE TABLE IF NOT EXISTS `estoque` (
-  `idEstoque` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `estoque` (
+  `idEstoque` int(11) NOT NULL,
   `idBolodePote` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `dataEstoque` date NOT NULL,
-  PRIMARY KEY (`idEstoque`),
-  KEY `idBolodePote` (`idBolodePote`)
+  `dataEstoque` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `noticia`;
-CREATE TABLE IF NOT EXISTS `noticia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `noticia`
+--
+
+CREATE TABLE `noticia` (
+  `id` int(11) NOT NULL,
   `titulo` varchar(250) NOT NULL,
   `descricao` text NOT NULL,
   `conteudo` text NOT NULL,
@@ -231,10 +280,12 @@ CREATE TABLE IF NOT EXISTS `noticia` (
   `tipo_noticia_id` int(11) NOT NULL,
   `categoria_noticia_id` int(11) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `noticia`
+--
 
 INSERT INTO `noticia` (`id`, `titulo`, `descricao`, `conteudo`, `imagem`, `slug`, `keywords`, `description`, `author`, `resumo`, `hits`, `robots_id`, `adm_user_id`, `adm_situacoes_id`, `tipo_noticia_id`, `categoria_noticia_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Notícia 01', 'Quem manda na minha terra sou euzis! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.', '<p>Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo é motivis de denguis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Quem manda na minha terra sou euzis! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>', 'noticia.jpg', 'noticia-teste-1', 'noticia, mussum, teste', 'Aqui teremos a descrição do texto da notícia.', 'DW', '<p>Aqui teremos um resumo público para demonstrar um texto de notícia</p>', 0, 1, 1, 1, 1, 1, '2019-05-17 00:00:00', NULL),
@@ -242,10 +293,14 @@ INSERT INTO `noticia` (`id`, `titulo`, `descricao`, `conteudo`, `imagem`, `slug`
 (3, 'Notícia 03', 'Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio.', '<p>Leite de capivaris, leite de mula manquis sem cabeça. A ordem dos tratores não altera o pão duris. Casamentiss faiz malandris se pirulitá. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.</p>', 'noticia.jpg', 'noticia-teste-3', 'noticia, mussum, teste3', 'Aqui teremos a descrição do texto da notícia 3.', 'DW', '<p>Aqui teremos um resumo público para demonstrar um texto de notícia 3</p>', 0, 1, 1, 1, 1, 1, '2019-05-17 00:00:00', NULL),
 (4, 'Noticia 4', 'Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Si u mundo tá muito paradis?', '<p>Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Sapien in monti palavris qui num significa nadis i pareci latim. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Paisis, filhis, espiritis santis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Cevadis im ampola pa arma uma pindureta.</p>', 'noticia.jpg', 'noticia-teste-1', 'noticia, mussum, teste', 'Aqui teremos a descrição do texto da notícia 4.', 'DW', '<p>Aqui teremos um resumo público para demonstrar um texto de notícia 4</p>', 0, 1, 1, 1, 1, 3, '2019-05-17 00:00:00', NULL);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `pagina`;
-CREATE TABLE IF NOT EXISTS `pagina` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `pagina`
+--
+
+CREATE TABLE `pagina` (
+  `id` int(11) NOT NULL,
   `controller` varchar(50) NOT NULL,
   `metodo` varchar(50) NOT NULL,
   `nome` varchar(100) NOT NULL,
@@ -258,15 +313,17 @@ CREATE TABLE IF NOT EXISTS `pagina` (
   `tp_pagina_id` int(11) NOT NULL,
   `robots_id` int(11) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `pagina`
+--
 
 INSERT INTO `pagina` (`id`, `controller`, `metodo`, `nome`, `titulo`, `obs`, `keywords`, `description`, `author`, `icone`, `tp_pagina_id`, `robots_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Home', 'index', 'Página principal', 'DW - Página inicial', 'Página principal', 'dw, programação, php', 'Site para exibir a página inicial do projeto', 'DW', 'home.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
 (2, 'Sobrenos', 'index', 'Página sobre a empresa', 'DW - Sobre Nós', 'Página sobre a empresa', 'dw, programação, php', 'Site para exibir a página quem somos do projeto', 'DW', 'sobrenos.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
-(3, 'montarBolo', 'index', 'Aplicação montar bolo', 'DW - Montar bolo', 'Aplicação para montar bolo', 'dw, programação, php', 'Site para exibir a página de aplicação de montar bolo', 'DW', 'montarBolo.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
+(3, 'Montarbolo', 'index', 'Aplicação montar bolo', 'DW - Montar bolo', 'Aplicação para montar bolo', 'dw, programação, php', 'Site para exibir a página de aplicação de montar bolo', 'DW', 'montarBolo.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
 (4, 'Bolopote', 'index', 'Página de visualização da notícia', 'DW - Notícias', 'Página de notícias', 'dw, programação, php', 'Site para exibir a página de notícias do projeto', 'DW', 'noticias.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
 (5, 'Usuario', 'login', 'Página de login do cliente', 'DW - Login', 'Página login do cliente', 'dw, programação, php', 'Site para exibir a página de login', 'DW', 'login.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
 (6, 'Error404', 'index', 'Página de Erro', 'DW - Erro 404', 'Página de erro', 'dw, programação, php', 'Site para exibir a página de erro do projeto', 'DW', 'erro.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
@@ -306,17 +363,17 @@ INSERT INTO `pagina` (`id`, `controller`, `metodo`, `nome`, `titulo`, `obs`, `ke
 (40, 'Listarenderecos', 'visualizarEndereco', 'Página de visualizarEndereco', 'DW - Página de visualizarEndereco', 'Página de visualizarEndereco', 'dw, programação, php', 'Site para exibir a Página de visualizarEndereco', 'DW', 'endereco.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
 (41, 'Listarenderecos', 'apagarEndereco', 'Página de apagarEndereco', 'DW - Página de apagarEndereco', 'Página de apagarEndereco', 'dw, programação, php', 'Site para exibir a Página de apagarEndereco', 'DW', 'endereco.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
 (42, 'Checkout', 'finalizarCompra', 'Página de finalizarCompra', 'DW - Página de finalizarCompra', 'Página de carrinho', 'dw, programação, php', 'Site para exibir a Página de finalizarCompra', 'DW', 'checkout.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
-(43, 'Carrinho', 'upPreco', 'Função de atualizar o preço', 'DW - Página de Função de atualizar o preço', 'Função de atualizar o preço', 'dw, programação, php', 'Função de atualizar o preço', 'DW', 'carrinho.jpg', 1, 1, '2019-05-24 00:00:00', NULL);
+(43, 'Carrinho', 'upPreco', 'Função de atualizar o preço', 'DW - Página de Função de atualizar o preço', 'Função de atualizar o preço', 'dw, programação, php', 'Função de atualizar o preço', 'DW', 'carrinho.jpg', 1, 1, '2019-05-24 00:00:00', NULL),
+(44, 'Carrinho', 'deletarBolo', 'Função que deletarBolo', 'DW - Página de deletarBolo', 'Função que deletarBolo', 'dw, programação, php', 'Função que deletarBolo', 'DW', 'carrinho.jpg', 1, 1, '2019-05-24 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pedido`
+-- Estrutura para tabela `pedido`
 --
 
-DROP TABLE IF EXISTS `pedido`;
-CREATE TABLE IF NOT EXISTS `pedido` (
-  `idPedido` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pedido` (
+  `idPedido` int(11) NOT NULL,
   `idCliente` int(11) NOT NULL,
   `status` enum('Recusado','Em andamento','Em entrega','Entregue') DEFAULT 'Em andamento',
   `prontaEntrega` tinyint(1) DEFAULT NULL,
@@ -327,12 +384,12 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   `formaPagamento` enum('Dinheiro','Cartão') NOT NULL,
   `idEndereco` int(11) NOT NULL,
   `statusPagamento` enum('Aguardando Pagamento','Pagamento Efetuado') NOT NULL DEFAULT 'Aguardando Pagamento',
-  `observacao` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`idPedido`),
-  KEY `idCliente` (`idCliente`),
-  KEY `pedido_endereco` (`idEndereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+  `observacao` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `pedido`
+--
 
 INSERT INTO `pedido` (`idPedido`, `idCliente`, `status`, `prontaEntrega`, `precoTotal`, `dataPedido`, `dataEntrega`, `formaEntrega`, `formaPagamento`, `idEndereco`, `statusPagamento`, `observacao`) VALUES
 (1, 15, 'Entregue', NULL, 225, '2019-09-21', '2019-09-21', 'Delivery', 'Dinheiro', 27, 'Aguardando Pagamento', ''),
@@ -351,18 +408,18 @@ INSERT INTO `pedido` (`idPedido`, `idCliente`, `status`, `prontaEntrega`, `preco
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pedido_bolodepote`
+-- Estrutura para tabela `pedido_bolodepote`
 --
 
-DROP TABLE IF EXISTS `pedido_bolodepote`;
-CREATE TABLE IF NOT EXISTS `pedido_bolodepote` (
-  `idPedido` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pedido_bolodepote` (
+  `idPedido` int(11) NOT NULL,
   `idBoloDePote` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  PRIMARY KEY (`idPedido`,`idBoloDePote`),
-  KEY `idBoloDePote` (`idBoloDePote`),
-  KEY `idPedido` (`idPedido`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+  `quantidade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `pedido_bolodepote`
+--
 
 INSERT INTO `pedido_bolodepote` (`idPedido`, `idBoloDePote`, `quantidade`) VALUES
 (1, 1, 4),
@@ -386,37 +443,46 @@ INSERT INTO `pedido_bolodepote` (`idPedido`, `idBoloDePote`, `quantidade`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `quem_somos`
+-- Estrutura para tabela `quem_somos`
 --
 
-DROP TABLE IF EXISTS `quem_somos`;
-CREATE TABLE IF NOT EXISTS `quem_somos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `quem_somos` (
+  `id` int(11) NOT NULL,
   `titulo` varchar(250) NOT NULL,
   `descricao` text NOT NULL,
   `imagem` varchar(220) NOT NULL,
   `ordem` int(11) NOT NULL,
   `adm_situacao_id` int(11) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `quem_somos`
+--
 
 INSERT INTO `quem_somos` (`id`, `titulo`, `descricao`, `imagem`, `ordem`, `adm_situacao_id`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Histórico', 'Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Mé faiz elementum girarzis, nisi eros vermeio. Detraxit consequat et quo num tendi nada. Cevadis im ampola pa arma uma pindureta.\r\n\r\nPaisis, filhis, espiritis santis. Quem num gosta di mim que vai caçá sua turmis! Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.', 'historico.jpg', 1, 1, '2019-05-17 00:00:00', NULL),
 (2, 'Fundadores', 'Copo furadis é disculpa de bebadis, arcu quam euismod magna.  Sapien in monti palavris qui num significa nadis i pareci latim. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Viva Forevis aptent taciti sociosqu ad litora torquent.\r\n\r\nSuco de cevadiss deixa as pessoas mais interessantis. Delegadis gente finis, bibendum egestas augue arcu ut est. Per aumento de cachacis, eu reclamis. Si num tem leite então bota uma pinga aí cumpadi!', 'fundadores.jpg', 2, 1, '2019-05-17 00:00:00', NULL),
 (3, 'Produtos e serviços', 'Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Sapien in monti palavris qui num significa nadis i pareci latim. A ordem dos tratores não altera o pão duris.\r\n\r\nSuco de cevadiss deixa as pessoas mais interessantis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Paisis, filhis, espiritis santis.', 'produtos_servicos.jpg', 3, 1, '2019-05-17 00:00:00', NULL);
 
-DROP TABLE IF EXISTS `robots`;
-CREATE TABLE IF NOT EXISTS `robots` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `robots`
+--
+
+CREATE TABLE `robots` (
+  `id` int(11) NOT NULL,
   `nome` varchar(150) NOT NULL,
   `tipo` varchar(100) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `robots`
+--
 
 INSERT INTO `robots` (`id`, `nome`, `tipo`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Indexar a página e seguir os links', 'index,follow', '2019-05-16 00:00:00', NULL),
@@ -425,78 +491,102 @@ INSERT INTO `robots` (`id`, `nome`, `tipo`, `data_criacao`, `data_modificacao`) 
 (4, 'Não indexar a página e nem seguir os links', 'noindex,nofollow', '2019-05-17 00:00:00', NULL),
 (5, 'Não exibir a versão em cache da página', 'noarchive', '2019-05-17 00:00:00', NULL);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `servico`;
-CREATE TABLE IF NOT EXISTS `servico` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `servico`
+--
+
+CREATE TABLE `servico` (
+  `id` int(11) NOT NULL,
   `nome` varchar(40) NOT NULL,
   `descricao` varchar(210) NOT NULL,
   `imagem` varchar(40) NOT NULL,
   `adm_cor_id` int(11) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `data_modificacao` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `tipo_noticia`;
-CREATE TABLE IF NOT EXISTS `tipo_noticia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `tipo_noticia`
+--
+
+CREATE TABLE `tipo_noticia` (
+  `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+--
+-- Fazendo dump de dados para tabela `tipo_noticia`
+--
 
 INSERT INTO `tipo_noticia` (`id`, `nome`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'Pública', '2019-05-17 00:00:00', NULL),
 (2, 'Privada', '2019-05-17 00:00:00', NULL),
 (3, 'Privada com resumo público', '2019-05-17 00:00:00', NULL);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `tipo_pagina`;
-CREATE TABLE IF NOT EXISTS `tipo_pagina` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `tipo_pagina`
+--
+
+CREATE TABLE `tipo_pagina` (
+  `id` int(11) NOT NULL,
   `tipo` varchar(100) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `obs` varchar(150) NOT NULL,
   `ordem` int(11) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `tipo_pagina`
+--
 
 INSERT INTO `tipo_pagina` (`id`, `tipo`, `nome`, `obs`, `ordem`, `data_criacao`, `data_modificacao`) VALUES
-(1, 'Site', 'Site principal', 'Site principal do projeto', 1, '2019-05-17 00:00:00', NULL),
+(1, 'site', 'Site principal', 'Site principal do projeto', 1, '2019-05-17 00:00:00', NULL),
 (2, 'adm', 'Área administrativa', 'Área administrativa do projeto', 2, '2019-05-17 00:00:00', NULL);
 
+-- --------------------------------------------------------
 
+--
+-- Estrutura para tabela `user`
+--
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user` (
+  `idUsuario` int(11) NOT NULL,
   `cpf` char(11) DEFAULT NULL,
   `nome` varchar(100) NOT NULL,
   `email` varchar(60) NOT NULL,
   `telefone` varchar(11) DEFAULT NULL,
   `senha` varchar(20) NOT NULL,
   `dataNascimento` date DEFAULT NULL,
-  `adm` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+  `adm` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `user`
+--
 
 INSERT INTO `user` (`idUsuario`, `cpf`, `nome`, `email`, `telefone`, `senha`, `dataNascimento`, `adm`) VALUES
 (5, '16118554706', 'Renan Gomes Poggian', 'renanpoggiangomes@gmail.com', '28999871283', 'rerenanjsudn', '2000-12-02', 1),
 (6, '18745968731', 'Renan', 'admin@admin.com', NULL, 'admin', NULL, 1),
 (21, NULL, 'Renan', 'renanpoggiangomes@gmail.com', NULL, '123', NULL, NULL);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `usuarios`;
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Estrutura para tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `idUsuario` int(11) NOT NULL,
   `cpf` char(111) DEFAULT NULL,
   `imagem` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `nome` varchar(40) NOT NULL,
@@ -507,10 +597,12 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(100) NOT NULL,
   `dataNascimento` date DEFAULT NULL,
   `adm` tinyint(1) DEFAULT '0',
-  `data_criacao` date NOT NULL,
-  PRIMARY KEY (`idUsuario`),
-  UNIQUE KEY `cpf` (`cpf`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+  `data_criacao` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `usuarios`
+--
 
 INSERT INTO `usuarios` (`idUsuario`, `cpf`, `imagem`, `nome`, `sobrenome`, `genero`, `telefone`, `senha`, `email`, `dataNascimento`, `adm`, `data_criacao`) VALUES
 (8, NULL, 'download.jpg', 'Renan-ADM', 'Gomes Poggian', 'm', '999857846', 'e10adc3949ba59abbe56e057f20f883e', 'renanpoggiangomes@gmail.com', '2001-12-02', 1, '2019-09-08'),
@@ -526,32 +618,309 @@ INSERT INTO `usuarios` (`idUsuario`, `cpf`, `imagem`, `nome`, `sobrenome`, `gene
 (31, NULL, '20180217-140925.jpg', 'Vitória', 'Gomes', 'o', '999857463', 'e10adc3949ba59abbe56e057f20f883e', 'vic@gmail.com', '1999-02-15', 0, '2019-10-02'),
 (32, NULL, 'perwomjpg.jpg', 'Laís', 'Carvalho', 'f', '999272788', 'e10adc3949ba59abbe56e057f20f883e', 'lais@gmail.com', '1998-10-03', 0, '2019-10-17');
 
+-- --------------------------------------------------------
 
+--
+-- Estrutura para tabela `video`
+--
 
-DROP TABLE IF EXISTS `video`;
-CREATE TABLE IF NOT EXISTS `video` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `video` (
+  `id` int(11) NOT NULL,
   `titulo` varchar(100) NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `link` varchar(250) NOT NULL,
   `data_criacao` datetime NOT NULL,
-  `data_modificacao` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `data_modificacao` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `video`
+--
 
 INSERT INTO `video` (`id`, `titulo`, `descricao`, `link`, `data_criacao`, `data_modificacao`) VALUES
 (1, 'O que é reciclagem?', 'Reciclagem é o processo em que há a transformação do resíduo sólido que não seria aproveitado, com mudanças em seus estados físico, físico-químico ou biológico.', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OQ5jpiKzNqg\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '2019-05-18 00:00:00', NULL);
 
+--
+-- Índices de tabelas apagadas
+--
 
+--
+-- Índices de tabela `adm_cor`
+--
+ALTER TABLE `adm_cor`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `adm_situacao`
+--
+ALTER TABLE `adm_situacao`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `bairro`
+--
+ALTER TABLE `bairro`
+  ADD PRIMARY KEY (`idBairro`);
+
+--
+-- Índices de tabela `bolo`
+--
+ALTER TABLE `bolo`
+  ADD PRIMARY KEY (`idBolo`);
+
+--
+-- Índices de tabela `bolodepote`
+--
+ALTER TABLE `bolodepote`
+  ADD PRIMARY KEY (`idBoloDePote`);
+
+--
+-- Índices de tabela `carousel`
+--
+ALTER TABLE `carousel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `categoria_noticia`
+--
+ALTER TABLE `categoria_noticia`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `contato`
+--
+ALTER TABLE `contato`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `endereco`
+--
+ALTER TABLE `endereco`
+  ADD PRIMARY KEY (`idEndereco`),
+  ADD KEY `idCliente` (`idCliente`) USING BTREE;
+
+--
+-- Índices de tabela `estoque`
+--
+ALTER TABLE `estoque`
+  ADD PRIMARY KEY (`idEstoque`),
+  ADD KEY `idBolodePote` (`idBolodePote`);
+
+--
+-- Índices de tabela `noticia`
+--
+ALTER TABLE `noticia`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `pagina`
+--
+ALTER TABLE `pagina`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `pedido`
+--
+ALTER TABLE `pedido`
+  ADD PRIMARY KEY (`idPedido`),
+  ADD KEY `idCliente` (`idCliente`),
+  ADD KEY `pedido_endereco` (`idEndereco`);
+
+--
+-- Índices de tabela `pedido_bolodepote`
+--
+ALTER TABLE `pedido_bolodepote`
+  ADD PRIMARY KEY (`idPedido`,`idBoloDePote`),
+  ADD KEY `idBoloDePote` (`idBoloDePote`),
+  ADD KEY `idPedido` (`idPedido`);
+
+--
+-- Índices de tabela `quem_somos`
+--
+ALTER TABLE `quem_somos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `robots`
+--
+ALTER TABLE `robots`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `servico`
+--
+ALTER TABLE `servico`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `tipo_noticia`
+--
+ALTER TABLE `tipo_noticia`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `tipo_pagina`
+--
+ALTER TABLE `tipo_pagina`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`idUsuario`);
+
+--
+-- Índices de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idUsuario`),
+  ADD UNIQUE KEY `cpf` (`cpf`);
+
+--
+-- Índices de tabela `video`
+--
+ALTER TABLE `video`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas apagadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `adm_cor`
+--
+ALTER TABLE `adm_cor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT de tabela `adm_situacao`
+--
+ALTER TABLE `adm_situacao`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `bairro`
+--
+ALTER TABLE `bairro`
+  MODIFY `idBairro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de tabela `bolo`
+--
+ALTER TABLE `bolo`
+  MODIFY `idBolo` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `bolodepote`
+--
+ALTER TABLE `bolodepote`
+  MODIFY `idBoloDePote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `carousel`
+--
+ALTER TABLE `carousel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `categoria_noticia`
+--
+ALTER TABLE `categoria_noticia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `contato`
+--
+ALTER TABLE `contato`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de tabela `endereco`
+--
+ALTER TABLE `endereco`
+  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+--
+-- AUTO_INCREMENT de tabela `estoque`
+--
+ALTER TABLE `estoque`
+  MODIFY `idEstoque` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `noticia`
+--
+ALTER TABLE `noticia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de tabela `pagina`
+--
+ALTER TABLE `pagina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+--
+-- AUTO_INCREMENT de tabela `pedido`
+--
+ALTER TABLE `pedido`
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT de tabela `pedido_bolodepote`
+--
+ALTER TABLE `pedido_bolodepote`
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT de tabela `quem_somos`
+--
+ALTER TABLE `quem_somos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `robots`
+--
+ALTER TABLE `robots`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de tabela `servico`
+--
+ALTER TABLE `servico`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `tipo_noticia`
+--
+ALTER TABLE `tipo_noticia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `tipo_pagina`
+--
+ALTER TABLE `tipo_pagina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de tabela `user`
+--
+ALTER TABLE `user`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
+-- AUTO_INCREMENT de tabela `video`
+--
+ALTER TABLE `video`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Restrições para dumps de tabelas
+--
+
+--
+-- Restrições para tabelas `endereco`
+--
 ALTER TABLE `endereco`
   ADD CONSTRAINT `endereço_cliente` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+--
+-- Restrições para tabelas `pedido`
+--
 ALTER TABLE `pedido`
   ADD CONSTRAINT `pedido_cliente` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`idUsuario`),
   ADD CONSTRAINT `pedido_endereco` FOREIGN KEY (`idEndereco`) REFERENCES `endereco` (`idEndereco`);
 
-
+--
+-- Restrições para tabelas `pedido_bolodepote`
+--
 ALTER TABLE `pedido_bolodepote`
   ADD CONSTRAINT `pedidobolo_bolo` FOREIGN KEY (`idBoloDePote`) REFERENCES `bolodepote` (`idBoloDePote`),
   ADD CONSTRAINT `pedidobolo_pedido` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

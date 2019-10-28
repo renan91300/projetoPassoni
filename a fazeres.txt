@@ -12,8 +12,6 @@ Pedido:
 	*Na alteração de pedido, adicionar a opção do administrador poder 
 	remover ou adicionar um novo bolo ao pedido, alterar a quantidade/sabor ou tamanho de um bolo
 
-Carrinho:
-	(*)Implementar a adição da observação do pedido
 
 Usuário:
 	(*)Alterar senha;

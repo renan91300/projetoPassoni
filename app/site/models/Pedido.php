@@ -30,13 +30,12 @@ class Pedido{
 
         $verBolosPedido = new \Site\models\helper\ModelsRead();
         $verBolosPedido->exeReadEspecifico("SELECT b.sabor, b.tamanho, b.imagem, b.preco, 
-            pb.idBoloDePote, pb.quantidade
+            pb.idBoloDePote, pb.quantidade, pb.idPedido
             FROM {$this->tabela} p, bolodepote b, pedido_bolodepote pb 
             WHERE p.idPedido = pb.idPedido AND pb.idBoloDePote = b.idBoloDePote 
             AND p.idPedido = {$this->idPedido}
             ORDER BY p.idPedido ASC");
         $this->result['bolos'] = $verBolosPedido->getResult();
-
         
 		//var_dump($this->result['usuario']);
 		return $this->result;

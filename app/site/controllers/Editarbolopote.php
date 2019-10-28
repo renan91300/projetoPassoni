@@ -17,14 +17,14 @@ class EditarBoloPote{
                 unset($this->dados['formEditPedido']);
 
 
-                $editarPedido = new \Site\Models\Pedido();
+                $editarPedido = new \Site\models\Pedido();
                 $editarPedido->altPedido($this->dados);
 
                 $urlDestino = URL . 'visualizarBoloDePote/index/' . $this->idPedido;
                 header("Location: $urlDestino");
             }
             else{
-                    $visualizar_pedido = new \Site\Models\Pedido();
+                    $visualizar_pedido = new \Site\models\Pedido();
         			$this->dados['pedido'] = $visualizar_pedido->visualizar($this->idPedido);
 
                     $carregarView = new \Config\ConfigView("editarBoloPote/index", $this->dados);

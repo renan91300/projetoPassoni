@@ -11,7 +11,7 @@ class BoloPote{
 	private $dados;
 	
     public function index(){
-    	$listar_bolosdepote = new \Site\Models\Produto();
+    	$listar_bolosdepote = new \Site\models\Produto();
 	    $this->dados['bolos'] = $listar_bolosdepote->listar();
 
         $carregarView = new \Config\ConfigView("boloPote/index", $this->dados);

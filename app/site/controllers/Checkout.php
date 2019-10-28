@@ -11,7 +11,7 @@ class Checkout{
     public function index(){
 	    if(isset($_SESSION['user'])){
 	    	if(!empty($_SESSION['carrinho'])){
-		    	$verEndereco = new \Site\Models\Endereco();
+		    	$verEndereco = new \Site\models\Endereco();
 		        $this->dados['endereco'] = $verEndereco->verEndereco("", true);
 
 		        $carregarView = new \Config\ConfigView("checkout/index", $this->dados);
@@ -39,13 +39,13 @@ class Checkout{
 		$this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 		if(isset($_SESSION['user'])){
-			$verEndereco = new \Site\Models\Endereco();
+			$verEndereco = new \Site\models\Endereco();
 	        $this->dados['endereco'] = $verEndereco->verEndereco("", true);
 
 	        $this->dados['idEndereco'] = $this->dados['endereco'][0]['idEndereco'];
 	        unset($this->dados['endereco'], $this->dados['paymentMethod']);
 
-	        $addPedido = new \Site\Models\Pedido($this->dados);
+	        $addPedido = new \Site\models\Pedido($this->dados);
             $addPedido->addPedido($this->dados);
 
             $urlDestino = URL . 'listarPedidosCliente/index';

@@ -12,7 +12,7 @@ class Pedido{
     public function listarPedidos(){
         
     	if(isset($_SESSION['user']) && ($_SESSION['nivel']==1)){
-    		$listar_pedido = new \Site\Models\Pedido();
+    		$listar_pedido = new \Site\models\Pedido();
 	        $this->dados['pedidos'] = $listar_pedido->listar();
 
 	        $carregarView = new \Config\ConfigView("pedido/index", $this->dados);
@@ -26,10 +26,10 @@ class Pedido{
     public function visualizar($idPedido){
             $this->idPedido = $idPedido;
 
-            $visualizar_pedido = new \Site\Models\Pedido();
+            $visualizar_pedido = new \Site\models\Pedido();
             $this->dados['pedido'] = $visualizar_pedido->visualizar($this->idPedido);   
         
-            $carregarView = new \Config\ConfigView("visualizarBoloDePote/index", $this->dados);
+            $carregarView = new \Config\ConfigView("visualizarPedido/index", $this->dados);
             $carregarView->renderizarAdm();
     }
 
@@ -41,7 +41,7 @@ class Pedido{
                 if(!empty($this->dados['formEditPedido'])){
                     unset($this->dados['formEditPedido']);
 
-                    $editarPedido = new \Site\Models\Pedido();
+                    $editarPedido = new \Site\models\Pedido();
                     $editarPedido->altPedido($this->dados);
 
                     $urlDestino = URL . 'Pedido/visualizar/' . $this->idPedido;
@@ -49,10 +49,10 @@ class Pedido{
                 }
                 else{
                         $this->idPedido = $idPedido;
-                        $visualizar_pedido = new \Site\Models\Pedido();
+                        $visualizar_pedido = new \Site\models\Pedido();
                         $this->dados['pedido'] = $visualizar_pedido->visualizar($this->idPedido);
 
-                        $carregarView = new \Config\ConfigView("editarBoloPote/index", $this->dados);
+                        $carregarView = new \Config\ConfigView("editarPedido/index", $this->dados);
                         $carregarView->renderizarAdm();
                 }
             }

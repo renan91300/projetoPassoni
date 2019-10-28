@@ -17,7 +17,7 @@ class Listarclientes{
             if(!empty($this->dados['btnFiltrarClientes'])){
                 unset($this->dados['btnFiltrarClientes']);
                 //CHAMADA DO MODELS USUARIO
-                $listar_usuarios = new \Site\Models\Usuario();
+                $listar_usuarios = new \Site\models\Usuario();
                 $this->dados['usuarios'] = $listar_usuarios->listar($this->dados);
 
                 $carregarView = new \Config\ConfigView("listarClientes/index", $this->dados);
@@ -25,7 +25,7 @@ class Listarclientes{
             }
             else{
                 //CHAMADA DO MODELS USUARIO
-                $listar_usuarios = new \Site\Models\Usuario();
+                $listar_usuarios = new \Site\models\Usuario();
                 $this->dados['usuarios'] = $listar_usuarios->listar();
 
                 $carregarView = new \Config\ConfigView("listarClientes/index", $this->dados);

@@ -9,7 +9,7 @@ if (!defined('URL')){
 <div class="container">
   <?php
     if(isset($this->dados['pedido'])){
-      var_dump($this->dados['pedido']['pedido']);
+      var_dump($this->dados['pedido']);
       extract($this->dados['pedido']['pedido'][0]);
     }
   ?>
@@ -91,6 +91,52 @@ if (!defined('URL')){
   								<textarea style="background:white; height: 150px" name="observacao" id="observacao" class="form-control" placeholder="Observação" maxlength="500"><?=$observacao;?></textarea>
   							</div>
   						</div>
+            </div>
+            <h5>Itens:</h5><br>
+            <div >
+                <?php
+                  foreach ($this->dados['pedido']['bolos'] as $bolo) {
+                    extract($bolo);
+                    ?>
+                    <div class="row">
+                      <div class="col-md-2">
+                        <img src="/projetoPassoni/assets/img/bolos/bolosdepote/<?=$idBoloDePote;?>/<?=$imagem;?>" alt="" width="100" class="img-fluid rounded shadow-sm">    
+                      </div>
+                      
+                      <div class="col-md-3">
+                        <span>
+                          <b>Bolo de Pote de <?=$sabor;?></b>
+                        </span>
+
+                        <div class="form-group">
+                          <label for="">
+                              Sabor:
+                          </label>
+                          <select name="" id="" class="form-control">
+                            <option value="<?=$sabor;?>"><?=$sabor;?></option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="">
+                              Tamanho:
+                          </label>
+                          <select name="" id="" class="form-control">
+                            <option value="<?=$tamanho;?>"><?=$tamanho;?></option>
+                          </select>
+                        </div>
+
+                          <div class="form-group">
+                            <label for="qtd">Quantidade:</label>
+                            <input type="text" id="qtd" class="form-control" value="<?=$quantidade;?>">                         
+                          </div>
+                      </div>
+                    </div>
+                    <hr>
+                    
+              <?php
+                }
+              ?>
             </div>
             <div class="row">
             	<div class="col-sm-2">
