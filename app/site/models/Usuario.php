@@ -124,7 +124,7 @@
         }
 
         public function confirmarUser(){
-            $verUsuario = new \Site\Models\helper\ModelsRead();
+            $verUsuario = new \Site\models\helper\ModelsRead();
             $verUsuario->exeReadEspecifico("SELECT user.imagem FROM usuarios as user
                     WHERE user.idUsuario =:id LIMIT :limit", "id=" . $this->id . "&limit=1");
             $this->dados = $verUsuario->getResult();
@@ -134,10 +134,10 @@
             $this->id = (int) $id;  
             $this->confirmarUser();
             if ($this->dados) {
-                $apagarUsuario = new \Site\Models\helper\ModelsDelete();
+                $apagarUsuario = new \Site\models\helper\ModelsDelete();
                 $apagarUsuario->exeDelete("usuarios", "WHERE idUsuario =:id", "id={$this->id}");
                 if ($apagarUsuario->getResult()) {
-                    $apagarImg = new \Site\Models\helper\ModelsDelete();
+                    $apagarImg = new \Site\models\helper\ModelsDelete();
                     $apagarImg->apagarImg('assets/img/usuario/' . $this->id . '/' . $this->dados[0]['imagem'], 'assets/img/usuario/' . $this->id);
                     $_SESSION['msg'] = "<div id='message_div' class='alert alert-success'>Usuário excluído com sucesso!</div>";
                     $this->result = true;
@@ -200,7 +200,7 @@
         }
 
         private function updateEditUsuario(){
-            $upUser = new \Site\Models\helper\ModelsUpdate();
+            $upUser = new \Site\models\helper\ModelsUpdate();
             $upUser->exeUpdate("usuarios", $this->dados, "WHERE idUsuario =:id", "id=" . $this->dados['idUsuario']);
 
             if ($upUser->getResult()) {
