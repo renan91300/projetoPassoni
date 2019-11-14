@@ -542,7 +542,7 @@ a {
     height: 10em;
     font-family: proxima-nova;
     color: white;
-    padding-top: 2em;
+    padding-top: 0;
     margin-right: 4em;
 }
 
@@ -584,17 +584,17 @@ a {
 }
 
 .aboutussec {
-    background-image: url("../img/bolos/cafe.jpeg");
-    background-repeat: no-repeat;
-    background-color: #e67422;
-    background-attachment: fixed;
-    background-position-x: right;
-    background-size: 50%;
-    padding-left: 2em;
+    background-color: #e67422; 
     height: 22rem;
-    padding-top: 2em;
+    
     display: flex;
-    position: relative;
+    justify-content: space-between;
+}
+.aboutussec .idPresent{
+    padding-left: 2em;
+}
+.aboutussec #imgCafe{
+    height: 22rem;
 }
 
 .aboutussec p {
@@ -652,11 +652,12 @@ a {
     }
 
     .aboutustop .aboutussub {
-        height: 7em;
+        height: 11em;
         width: 20em;
         font-size: 1em;
         margin-top: 2em;
     }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -668,14 +669,14 @@ a {
     }
 
     .aboutustop .aboutussub {
-        height: 7em;
-        width: 50em;
+        height: 9em;
+        width: 30em;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
@@ -684,6 +685,10 @@ a {
         height: 4em;
         width: 20em;
         font-weight: bolder;
+    }
+    .aboutustop .aboutussub {
+        height: 7em;
+        width: 50em;
     }
 
 }
