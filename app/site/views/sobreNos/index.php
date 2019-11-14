@@ -16,14 +16,19 @@ if (!defined('URL')){
 
         </div>
     </div>
+    
 </div>
 <hr><br>
 <section class="aboutussec">
-    <div class="anima_left">
+    <div class="idPresent anima_left">
         <p>Estamos presentes no seu
             <br>cotidiano também!</p><br>
         <span>Bolos de potão congeláveis</span>
     </div>
+    <div>
+        <img src="<?=URL;?>/assets/img/bolos/cafe.jpeg" id="imgCafe">
+    </div>
+
 </section>
 <hr>
 <section class="sectionaboutus">
