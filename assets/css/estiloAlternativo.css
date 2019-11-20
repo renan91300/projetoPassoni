@@ -585,16 +585,16 @@ a {
 
 .aboutussec {
     background-color: #e67422; 
-    height: 22rem;
-    
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
 }
 .aboutussec .idPresent{
     padding-left: 2em;
 }
 .aboutussec #imgCafe{
     height: 22rem;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .aboutussec p {
@@ -614,11 +614,11 @@ a {
     text-align: right;
 }
 
-.sectionaboutus .row {
+.sectionaboutus{
     height: 20em;
     padding-top: 3em;
     padding-bottom: 3em;
-    width: 100%;
+    max-width: 100%;
     background-color: #333232;
     text-align: center;
 }

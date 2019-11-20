@@ -19,20 +19,22 @@ if (!defined('URL')){
     
 </div>
 <hr><br>
-<section class="aboutussec">
-    <div class="idPresent anima_left">
-        <p>Estamos presentes no seu
-            <br>cotidiano também!</p><br>
-        <span>Bolos de potão congeláveis</span>
-    </div>
-    <div>
-        <img src="<?=URL;?>/assets/img/bolos/cafe.jpeg" id="imgCafe">
-    </div>
+<div class="aboutussec">
+        <div class="idPresent anima_left">
+            <p>Estamos presentes no seu
+                <br>cotidiano também!</p><br>
+            <span>Bolos de potão congeláveis</span>
+        </div>
 
-</section>
+        <div>
+            <img src="<?=URL;?>/assets/img/bolos/cafe.jpeg" id="imgCafe">
+        </div>
+    </div>
+</div>
+
 <hr>
-<section class="sectionaboutus">
-    <br>
+<br><br><br><br><br><br><br><br>
+<div class="sectionaboutus">
     <div class="row">
         <div class="col">
             <p class="cardtitle">Missão</p>
@@ -53,4 +55,4 @@ if (!defined('URL')){
             <hr>
         </div>
     </div>
-</section>
+</div>
