@@ -531,8 +531,8 @@ a {
     background-size: cover;
     background-position-y: -3em;
     background-position-x: center;
-    padding-top: 10em;
     padding-bottom: 360px;
+    height: 35em;
 
     /*background-size: 100% 45%; 
 	background-attachment: initial;*/
@@ -542,7 +542,7 @@ a {
     height: 10em;
     font-family: proxima-nova;
     color: white;
-    padding-top: 0;
+    padding-top: 5em;
     margin-right: 4em;
 }
 
@@ -584,21 +584,24 @@ a {
 }
 
 .aboutussec {
-    background-color: #e67422; 
-    height: 22rem;
+    background-color: #e67422;     
+    margin-right: 0;
     
-    display: flex;
-    justify-content: space-between;
 }
 .aboutussec .idPresent{
     padding-left: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
-.aboutussec #imgCafe{
-    height: 22rem;
+.aboutussec .imgSec{
+    background-image: url("../img/bolos/cafe.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: right;
+    background-size: 50%;
+    
 }
-
 .aboutussec p {
-    padding-top: 2em;
     color: white;
     font-family: Roboto;
     font-size: 2em;
@@ -614,17 +617,18 @@ a {
     text-align: right;
 }
 
-.sectionaboutus .row {
-    height: 20em;
+.sectionaboutus .row{
+    margin-right: 0;
+}
+
+.sectionaboutus .row .col{
     padding-top: 3em;
-    padding-bottom: 3em;
     width: 100%;
     background-color: #333232;
     text-align: center;
-}
-
-.sectionaboutus .col {
+    height: 20em;
     border-left: 2px solid;
+    margin-bottom: 1em;
 }
 
 .cardtitle {
@@ -632,6 +636,7 @@ a {
     color: #DCDCDC;
     vertical-align: middle;
     font-size: 5em;
+    
 }
 
 .cardtitle hr {
