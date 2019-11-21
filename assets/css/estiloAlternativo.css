@@ -531,8 +531,8 @@ a {
     background-size: cover;
     background-position-y: -3em;
     background-position-x: center;
-    padding-top: 10em;
     padding-bottom: 360px;
+    height: 40em;
 
     /*background-size: 100% 45%; 
 	background-attachment: initial;*/
@@ -542,8 +542,8 @@ a {
     height: 10em;
     font-family: proxima-nova;
     color: white;
-    padding-top: 0;
-    margin-right: 4em;
+    padding-top: 5em;
+    margin-right: 2em;
 }
 
 .aboutustop .titaboutus {
@@ -584,21 +584,23 @@ a {
 }
 
 .aboutussec {
-    background-color: #e67422; 
-    display: flex;
-    flex-direction: row;
+    background-color: #e67422;     
+    margin-right: 0;
 }
 .aboutussec .idPresent{
     padding-left: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
-.aboutussec #imgCafe{
-    height: 22rem;
-    padding-left: 1em;
-    padding-right: 1em;
+.aboutussec .imgSec{
+    background-image: url("../img/bolos/cafe.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: right;
+    background-size: 50%;
+    
 }
-
 .aboutussec p {
-    padding-top: 2em;
     color: white;
     font-family: Roboto;
     font-size: 2em;
@@ -614,17 +616,18 @@ a {
     text-align: right;
 }
 
-.sectionaboutus{
-    height: 20em;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    max-width: 100%;
-    background-color: #333232;
-    text-align: center;
+.sectionaboutus .row{
+    margin-right: 0;
 }
 
-.sectionaboutus .col {
+.sectionaboutus .row .col{
+    padding-top: 3em;
+    width: 100%;
+    background-color: #333232;
+    text-align: center;
+    height: 20em;
     border-left: 2px solid;
+    margin-bottom: 1em;
 }
 
 .cardtitle {
@@ -632,6 +635,7 @@ a {
     color: #DCDCDC;
     vertical-align: middle;
     font-size: 5em;
+    
 }
 
 .cardtitle hr {
@@ -646,7 +650,10 @@ a {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .aboutustop .titaboutus {
+    .aboutustop{
+        padding-top: 2em;
+    }
+    .aboutusbg .titaboutus {
         font-size: 2em;      
         height: 9em;
     }
@@ -656,6 +663,7 @@ a {
         width: 20em;
         font-size: 1em;
         margin-top: 2em;
+        margin-left: 2em;
     }
 
 }
