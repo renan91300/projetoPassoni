@@ -20,4 +20,9 @@ Endereço:
 	Criar visualizar endereço
 
 
+Diminuir o footer e criar uma separação sutil
+Criar inserir novo sabor na dashboard
+Alterar sabor na dash
+
+
 
