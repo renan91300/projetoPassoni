@@ -7,7 +7,7 @@
         <div class="row">
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+            <div class="col-md-2 mx-auto my-md-4 my-0 mt-4 mb-1">
 
                 <!-- Links -->
                 <h5 class="font-weight-bold text-uppercase mb-4">Acesso</h5>
@@ -41,7 +41,7 @@
             <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+            <div class="col-md-4 mx-auto my-md-4 my-0 mt-4">
 
                 <!-- Contact details -->
                 <h5 class="font-weight-bold text-uppercase mb-4">Endereço</h5>
@@ -68,16 +68,13 @@
 
             </div>
 
-            <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1"></div>
-            <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1"></div>
-
 
             <!-- Grid column -->
 
             <hr class="clearfix w-100 d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+            <div class="col-md-2 text-center mx-auto my-4">
 
                 <!-- Social buttons -->
                 <h5 class="font-weight-bold text-uppercase mb-4">Siga-nos</h5>
