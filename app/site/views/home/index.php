@@ -20,7 +20,6 @@ if (!defined('URL')){
     </div>
 </div>
 <hr>
-
 <div class="container-fluid bloco1">
     <img src="<?=URL;?>assets/img/bolos/boloo.jpg" class="img1 anima_left" />
     <div class="bodyCard anima_right">

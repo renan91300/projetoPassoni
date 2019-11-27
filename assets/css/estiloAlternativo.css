@@ -1,7 +1,7 @@
 .principal {
     background-image: url("../img/bolos/casamento-festa-3.jpg");
     background-position-x: center;
-    background-position-y: 70px;
+    background-position-y: 20px;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -199,6 +199,7 @@ hr {
 
 
 /*FIM DO MODAL*/
+
 
 /*DROPDOWN USUARIO LOGADO*/
 .dropdown-toggle {
@@ -533,6 +534,7 @@ a {
     background-position-x: center;
     padding-bottom: 360px;
     height: 40em;
+    z-index: 1000;
 
     /*background-size: 100% 45%; 
 	background-attachment: initial;*/
@@ -561,8 +563,6 @@ a {
     height: 7em;
     width: 50em;
     text-align: center;
-    /*background-color: rgb(2,2,2);
-		background-color: rgba(0,0,0,0.4);*/
     margin-left: auto;
     background-color: rgba(0, 191, 255, 0.692);
     margin-top: 10em;
@@ -597,7 +597,7 @@ a {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-x: right;
-    background-size: 50%;
+    background-size: 55%;
     
 }
 .aboutussec p {

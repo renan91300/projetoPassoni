@@ -7,9 +7,9 @@ if(!defined('URL')){
     exit();
 }
 
-class visualizar{
+class AdmBoloPote{
 	private $dados;
-    public function index($idPedido){
+    public function listar($idPedido){
         $this->idPedido = $idPedido;
 
         $visualizar_pedido = new \Site\Models\Pedido();
@@ -18,10 +18,8 @@ class visualizar{
         $carregarView = new \Config\ConfigView("visualizarBoloDePote/index", $this->dados);
         $carregarView->renderizarAdm();
     }
-}
 
-class editar{
-    public function index($idPedido){
+    public function editar($idPedido){
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
         if(isset($_SESSION['user']) ){

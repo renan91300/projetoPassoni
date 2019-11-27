@@ -9,11 +9,38 @@
     </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarMenu">
         <ul class="navbar-nav">
-            <li class="nav-item active"><a class="nav-link" href="<?=URL;?>home" style="color: #FF6347;">Início
-                <span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="<?=URL;?>montarBolo">Monte seu bolo</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?=URL;?>boloPote">Bolo de pote</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?=URL;?>sobreNos">Sobre Nós</a></li>
+        <?php
+            $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        ?>
+            <li class="nav-item "><a class="nav-link" href="<?=URL;?>home"
+                <?php
+                    if($url == URL."home" || $url == URL){
+                        echo "style='color: #FF6347;'";
+                    }
+                ?>
+            >Início
+            </a></li>
+            <li class="nav-item"><a class="nav-link" href="<?=URL;?>montarBolo"
+            <?php
+                if($url == URL."montarBolo"){
+                    echo "style='color: #FF6347;'";
+                }
+            ?>
+            >Monte seu bolo</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?=URL;?>boloPote"
+            <?php
+                if($url == URL."boloPote"){
+                    echo "style='color: #FF6347;'";
+                }
+            ?>
+            >Bolo de pote</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?=URL;?>sobreNos"
+            <?php
+                if($url == URL."sobreNos"){
+                    echo "style='color: #FF6347;'";
+                }
+            ?>
+            >Sobre Nós</a></li>
         </ul>   
             <!--CLIENTE -->
             <div class="nav-item ml-auto" id="spBtnLogado" style="display: 
