@@ -13,7 +13,55 @@ if (!defined('URL')){
             echo $_SESSION['msg'];
             unset($_SESSION['msg']);
         }
-    ?>  
+    ?> 
+    <div class="card">
+			<div class="card-header"><i class="fa fa-fw fa-globe"></i> <strong>Filtrar pedidos</strong></div>
+			<div class="card-body">
+				<div class="col-sm-12">
+					<form method="POST">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="userName">Cliente</label>
+									<input type="text" name="nome" id="userName" class="form-control" value="" placeholder="Nome do cliente">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="userEmail">Email</label>
+									<input type="email" name="email" id="userEmail" class="form-control" value="" placeholder="Email">
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="form-group">
+									<label for="userFone">Telefone</label>
+									<input type="text" style="background:white;" name="telefone" id="userFone" class="form-control" value="" placeholder="Telefone">
+								</div>
+							</div>
+							<div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="estado">Status</label>
+                                    <select class="form-control" id="estado" name="status">
+                                        <option>Todos</option>
+                                        <option>Entregue</option>
+                                        <option>Em entrega</option>
+                                        <option>Em andamento</option>
+                                        <option>Recusado</option>
+                                    </select>
+                                </div>
+                            </div>
+							<div class="col-sm-2">
+								<div class="form-group">
+									<label>&nbsp;</label>
+									<div><button type="submit" name="submit" value="buscar" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-search"></i> Buscar</button></div>
+								</div>
+							</div>
+                        </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<hr> 
     <?php
                     foreach($this->dados['pedidos'] as $pedido){
                         extract($pedido);?>

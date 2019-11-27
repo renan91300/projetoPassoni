@@ -42,19 +42,30 @@ class Pedido{
         
 	}
 
-    public function listar(){
+    public function listar($dados = null){
+        $this->nome = $dados['nome'];
+        $this->email = $dados['email'];
+        $this->telefone = $dados['telefone'];
+        $this->status = $dados['status'];
+
+        if($this->status === "Todos"){
+            $this->status = "";
+        }
 
         $listarPedidos = new \Site\models\helper\ModelsRead();
 
         if($_SESSION['nivel'] == 1){
             $listarPedidos->exeReadEspecifico("SELECT u.idUsuario, u.nome, u.sobrenome, p.idPedido, qt.qtd as qtdBolos, p.precoTotal, p.status,
                                             e.bairro, e.logradouro, e.numero, e.cep
-            FROM {$this->tabela} AS p, usuarios AS u, endereco AS e, (SELECT COUNT(pb.idPedido) as qtd
-                                        FROM pedido_bolodepote AS pb
-                                        JOIN pedido AS pD ON pb.idPedido = pD.idPedido AND pD.idPedido = 1) as qt
-
-            WHERE p.idEndereco = e.idEndereco AND p.idCliente = u.idUsuario
-            ORDER BY p.dataPedido DESC");
+                                            FROM {$this->tabela} AS p, usuarios AS u, endereco AS e,
+                                            (SELECT COUNT(pb.idPedido) as qtd FROM pedido_bolodepote AS pb JOIN pedido AS pD ON pb.idPedido = pD.idPedido AND pD.idPedido = 1) as qt
+                                            WHERE p.idEndereco = e.idEndereco 
+                                            AND p.idCliente = u.idUsuario
+                                            AND u.nome LIKE \"%{$this->nome}%\"
+                                            AND u.email LIKE \"%{$this->email}%\"
+                                            AND u.telefone LIKE \"%{$this->telefone}%\"
+                                            AND p.status LIKE \"%{$this->status}%\"
+                                            ORDER BY p.dataPedido DESC");
         }
         else{
             $listarPedidos->exeReadEspecifico("SELECT p.idPedido, qt.qtd as qtdBolos, p.precoTotal, p.status,
