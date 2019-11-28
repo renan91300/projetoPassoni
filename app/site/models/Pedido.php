@@ -43,6 +43,8 @@ class Pedido{
 	}
 
     public function listar($dados = null){
+        var_dump($dados);
+        
         $this->nome = $dados['nome'];
         $this->email = $dados['email'];
         $this->telefone = $dados['telefone'];
@@ -78,11 +80,15 @@ class Pedido{
             ORDER BY p.idPedido ASC");
 
         }
+
+        $qtdPedidos = new \Site\models\helper\ModelsRead();
+        $qtdPedidos->exeReadEspecifico("SELECT COUNT(*) AS qtd FROM pedido");
         
         $this->result['pedidos'] = $listarPedidos->getResult();
+        $this->result['qtdPedidos'] = $qtdPedidos->getResult();
         //var_dump($this->result['pedidos']);
         //exit();
-        return $this->result['pedidos'];
+        return $this->result;
     }
 
 	public function addPedido($dados){

@@ -11,9 +11,11 @@ class Pedido{
     private $dados;
     public function listarPedidos(){
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        /*var_dump($this->dados);
+        exit;*/
     	if(isset($_SESSION['user']) && ($_SESSION['nivel']==1)){
     		$listar_pedido = new \Site\models\Pedido();
-	        $this->dados['pedidos'] = $listar_pedido->listar($this->dados);
+            $this->dados = $listar_pedido->listar($this->dados);
 
 	        $carregarView = new \Config\ConfigView("pedido/index", $this->dados);
 	        $carregarView->renderizarAdm();	

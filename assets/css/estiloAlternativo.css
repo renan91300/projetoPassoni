@@ -893,3 +893,31 @@ input[type=checkbox]:checked+label {
         transform: scale(1)
     }
 }
+
+
+/*Paginação*/
+.center {
+    text-align: center;
+  }
+  
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+  }
+  
+  .pagination a.active {
+    background-color: #c5455e;
+    color: white;
+    border: 1px solid #c5455e;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
