@@ -11,12 +11,27 @@ class Pedido{
     private $dados;
     public function listarPedidos(){
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        /*var_dump($this->dados);
-        exit;*/
+        $this->registros = filter_input_array(INPUT_GET, FILTER_DEFAULT);
+        $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1; 
+        if(isset($this->registros['registros'])){
+            $this->registros['tamanho'] = $this->registros['registros'];
+            $this->registros['inicio'] = ($this->registros['tamanho']*$pagina)-$this->registros['tamanho']; 
+            //echo $this->registros['tamanho'];
+            //echo $this->registros['inicio'];
+            //echo $pagina;
+            //exit;
+            
+        }
+        else{
+            $this->registros['tamanho'] = 5;
+            $this->registros['inicio'] = ($this->registros['tamanho']*$pagina)-$this->registros['tamanho']; 
+        }
+        
     	if(isset($_SESSION['user']) && ($_SESSION['nivel']==1)){
     		$listar_pedido = new \Site\models\Pedido();
-            $this->dados = $listar_pedido->listar($this->dados);
+            $this->dados = $listar_pedido->listar($this->dados, $this->registros);
 
+            $this->dados['registros'] = $this->registros['tamanho'];
 	        $carregarView = new \Config\ConfigView("pedido/index", $this->dados);
 	        $carregarView->renderizarAdm();	
     	}

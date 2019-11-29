@@ -921,3 +921,14 @@ input[type=checkbox]:checked+label {
   }
   
   .pagination a:hover:not(.active) {background-color: #ddd;}
+  
+  .qtdResults{
+      display: flex;
+      align-items: center;
+  }
+  .qtdResults select{
+      width: 55px;
+      margin-right: 10px;
+  }
+  
+  

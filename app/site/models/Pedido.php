@@ -42,8 +42,9 @@ class Pedido{
         
 	}
 
-    public function listar($dados = null){
-        var_dump($dados);
+    public function listar($dados = null, $registros = null){
+        $this->registros = $registros;
+        
         
         $this->nome = $dados['nome'];
         $this->email = $dados['email'];
@@ -67,7 +68,8 @@ class Pedido{
                                             AND u.email LIKE \"%{$this->email}%\"
                                             AND u.telefone LIKE \"%{$this->telefone}%\"
                                             AND p.status LIKE \"%{$this->status}%\"
-                                            ORDER BY p.dataPedido DESC");
+                                            ORDER BY p.dataPedido DESC
+                                            LIMIT {$this->registros['inicio']}, {$this->registros['tamanho']}");
         }
         else{
             $listarPedidos->exeReadEspecifico("SELECT p.idPedido, qt.qtd as qtdBolos, p.precoTotal, p.status,

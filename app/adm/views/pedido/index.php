@@ -61,15 +61,46 @@ if (!defined('URL')){
             </div>
         </div>
     </div>
-    <form name="formResults" method="POST">
-        <label>
-            <select onChange="formResults.submit()" name="table_length" aria-controls="table" class="custom-select custom-select-sm form-control form-control-sm">
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-            </select> resultados por página
-        </label>
+    <form name="formResults" method="GET">
+        <div class="qtdResults">
+            <div>
+                <select onChange="formResults.submit()" name="registros" aria-controls="table" class="custom-select custom-select-sm form-control form-control-sm">
+                    <option value="5"
+                        <?php
+                            if($this->dados['registros'] == 5){
+                                echo "selected";
+                            }
+                        ?>
+                    >5</option>
+                    <option value="10"
+                        <?php
+                            if($this->dados['registros'] == 10){
+                                echo "selected";
+                            }
+                        ?>
+                    >10</option>
+                    <option value="25"
+                        <?php
+                            if($this->dados['registros'] == 25){
+                                echo "selected";
+                            }
+                        ?>
+                    >25</option>
+                    <option value="50"
+                        <?php
+                            if($this->dados['registros'] == 50){
+                                echo "selected";
+                            }
+                        ?>
+                    >50</option>
+                </select> 
+            </div>
+            <div>
+                <label>
+                    resultados por página
+                </label>
+            </div>
+        </div>
     </form>
     
     <hr> 
@@ -123,25 +154,25 @@ if (!defined('URL')){
             <?php 
                 $num = $this->dados['qtdPedidos'][0]['qtd'];
                 //$paginas = (substr((($num%100)/10), 0, 1 ) + 1);
-                $numPaginas = ceil($num/10);
+                $numPaginas = ceil($num/$this->dados['registros']);
                 $pagina = (isset($_GET['pagina']) && !empty($_GET['pagina']))? $_GET['pagina'] : 1; 
                 
                 if($pagina > 1){
-                    echo "<a href='?pagina=". ($pagina-1) ."'>&laquo;</a>";
+                    echo "<a href='?pagina=". ($pagina-1) ."&registros=".$this->dados['registros']."'>&laquo;</a>";
                 }
 
                 for($i=1; $i<=$numPaginas; $i++){     
                     if($i == $pagina){
-                        echo "<a href='?pagina=$i' class='active'>".$i."</a>";
+                        echo "<a href='?pagina=$i&registros=".$this->dados['registros']."' class='active'>".$i."</a>";
                     }
                     else{
-                        echo "<a href='?pagina=$i'>".$i."</a>";
+                        echo "<a href='?pagina=$i&registros=".$this->dados['registros']."'>".$i."</a>";
                     }
                     
                 }
 
                 if($pagina < $numPaginas){
-                    echo "<a href='?pagina=". ($pagina-1) ."'>&raquo;</a>";
+                    echo "<a href='?pagina=". ($pagina+1) ."&registros=".$this->dados['registros']."'>&raquo;</a>";
                 }
 
             ?>
