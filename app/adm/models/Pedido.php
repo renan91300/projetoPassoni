@@ -1,6 +1,6 @@
 <?php
 
-namespace Site\models;
+namespace App\adm\models;
 
 if( !defined('URL')){
 	header("location: /");
@@ -42,16 +42,34 @@ class Pedido{
         
 	}
 
-    public function listar(){
+    public function listar($dados = null, $registros = null){
+        $this->registros = $registros;
+        
+        
+        $this->nome = $dados['nome'];
+        $this->email = $dados['email'];
+        $this->telefone = $dados['telefone'];
+        $this->status = $dados['status'];
+
+        if($this->status === "Todos"){
+            $this->status = "";
+        }
+
         $listarPedidos = new \Site\models\helper\ModelsRead();
+
         if($_SESSION['nivel'] == 1){
             $listarPedidos->exeReadEspecifico("SELECT u.idUsuario, u.nome, u.sobrenome, p.idPedido, qt.qtd as qtdBolos, p.precoTotal, p.status,
                                             e.bairro, e.logradouro, e.numero, e.cep
-            FROM {$this->tabela} AS p, usuarios AS u, endereco AS e, (SELECT COUNT(pb.idPedido) as qtd
-                                        FROM pedido_bolodepote AS pb
-                                        JOIN pedido AS pD ON pb.idPedido = pD.idPedido AND pD.idPedido = 1) as qt
-            WHERE p.idEndereco = e.idEndereco AND p.idCliente = u.idUsuario
-            ORDER BY p.dataPedido DESC");
+                                            FROM {$this->tabela} AS p, usuarios AS u, endereco AS e,
+                                            (SELECT COUNT(pb.idPedido) as qtd FROM pedido_bolodepote AS pb JOIN pedido AS pD ON pb.idPedido = pD.idPedido AND pD.idPedido = 1) as qt
+                                            WHERE p.idEndereco = e.idEndereco 
+                                            AND p.idCliente = u.idUsuario
+                                            AND u.nome LIKE \"%{$this->nome}%\"
+                                            AND u.email LIKE \"%{$this->email}%\"
+                                            AND u.telefone LIKE \"%{$this->telefone}%\"
+                                            AND p.status LIKE \"%{$this->status}%\"
+                                            ORDER BY p.dataPedido DESC
+                                            LIMIT {$this->registros['inicio']}, {$this->registros['tamanho']}");
         }
         else{
             $listarPedidos->exeReadEspecifico("SELECT p.idPedido, qt.qtd as qtdBolos, p.precoTotal, p.status,
@@ -64,8 +82,12 @@ class Pedido{
             ORDER BY p.idPedido ASC");
 
         }
+
+        $qtdPedidos = new \Site\models\helper\ModelsRead();
+        $qtdPedidos->exeReadEspecifico("SELECT COUNT(*) AS qtd FROM pedido");
         
-        $this->result = $listarPedidos->getResult();
+        $this->result['pedidos'] = $listarPedidos->getResult();
+        $this->result['qtdPedidos'] = $qtdPedidos->getResult();
         //var_dump($this->result['pedidos']);
         //exit();
         return $this->result;
