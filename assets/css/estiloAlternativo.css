@@ -898,13 +898,13 @@ input[type=checkbox]:checked+label {
 /*Paginação*/
 .center {
     text-align: center;
-  }
-  
-  .pagination {
+}
+
+.page {
     display: inline-block;
-  }
-  
-  .pagination a {
+}
+
+.page a {
     color: black;
     float: left;
     padding: 8px 16px;
@@ -912,23 +912,25 @@ input[type=checkbox]:checked+label {
     transition: background-color .3s;
     border: 1px solid #ddd;
     margin: 0 4px;
-  }
-  
-  .pagination a.active {
-    background-color: #c5455e;
+}
+
+.page a.active {
+    background-color: rgb(149, 104, 214);
     color: white;
-    border: 1px solid #c5455e;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ddd;}
-  
-  .qtdResults{
-      display: flex;
-      align-items: center;
-  }
-  .qtdResults select{
-      width: 55px;
-      margin-right: 10px;
-  }
+    border: 1px solid rgb(149, 104, 214);
+}
+
+.page a:hover:not(.active) {
+    background-color: rgba(150, 104, 214, 0.514);
+}
+
+.qtdResults{
+    display: flex;
+    align-items: center;
+}
+.qtdResults select{
+    width: 55px;
+    margin-right: 10px;
+}
   
   

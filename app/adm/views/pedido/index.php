@@ -149,7 +149,7 @@ if (!defined('URL')){
     </div>
     
     <div class="center">
-        <div class="pagination">
+        <div class="page">
             
             <?php 
                 $num = $this->dados['qtdPedidos'][0]['qtd'];

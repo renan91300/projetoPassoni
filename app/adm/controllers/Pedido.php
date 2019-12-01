@@ -28,7 +28,7 @@ class Pedido{
         }
         
     	if(isset($_SESSION['user']) && ($_SESSION['nivel']==1)){
-    		$listar_pedido = new \Site\models\Pedido();
+    		$listar_pedido = new \App\adm\models\Pedido();
             $this->dados = $listar_pedido->listar($this->dados, $this->registros);
 
             $this->dados['registros'] = $this->registros['tamanho'];
@@ -43,7 +43,7 @@ class Pedido{
     public function visualizar($idPedido){
             $this->idPedido = $idPedido;
 
-            $visualizar_pedido = new \Site\models\Pedido();
+            $visualizar_pedido = new \App\adm\models\Pedido();
             $this->dados['pedido'] = $visualizar_pedido->visualizar($this->idPedido);   
         
             $carregarView = new \Config\ConfigView("visualizarPedido/index", $this->dados);
@@ -58,7 +58,10 @@ class Pedido{
                 if(!empty($this->dados['formEditPedido'])){
                     unset($this->dados['formEditPedido']);
 
-                    $editarPedido = new \Site\models\Pedido();
+                    var_dump($this->dados);
+                    exit;
+
+                    $editarPedido = new \App\adm\models\Pedido();
                     $editarPedido->altPedido($this->dados);
 
                     $urlDestino = URL . 'Pedido/visualizar/' . $this->idPedido;
@@ -66,7 +69,7 @@ class Pedido{
                 }
                 else{
                         $this->idPedido = $idPedido;
-                        $visualizar_pedido = new \Site\models\Pedido();
+                        $visualizar_pedido = new \App\adm\models\Pedido();
                         $this->dados['pedido'] = $visualizar_pedido->visualizar($this->idPedido);
 
                         $carregarView = new \Config\ConfigView("editarPedido/index", $this->dados);

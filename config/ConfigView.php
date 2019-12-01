@@ -8,7 +8,6 @@ class ConfigView{
     public function __construct($nome, array $dados = null){
         $this->nome = (string) $nome;
         $this->dados = $dados;
-        
     }
     
     public function renderizar(){
@@ -36,6 +35,14 @@ class ConfigView{
     public function renderizarAuth(){
         if (file_exists("app/adm/views/{$this->nome}.php")){
             include_once("app/adm/views/{$this->nome}.php");
+        }else{
+            echo "Erro ao carregar a página: {$this->nome}";
+        }
+    }
+
+    public function renderizarIndividual(){
+        if (file_exists("app/site/views/{$this->nome}.php")){
+            include_once("app/site/views/{$this->nome}.php");
         }else{
             echo "Erro ao carregar a página: {$this->nome}";
         }

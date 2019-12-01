@@ -93,7 +93,7 @@ if (!defined('URL')){
   						</div>
             </div>
             <h5>Itens:</h5><br>
-            <div >
+            <div>
                 <?php
                   foreach ($this->dados['pedido']['bolos'] as $bolo) {
                     extract($bolo);

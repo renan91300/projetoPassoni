@@ -21,13 +21,14 @@ if (!defined('URL')){
     }
 ?>
 
+
 <div class="container">
     <h3>BOLO NO POTÃO</h3>
     <hr>
     <!-- Rows -->
     <div class="row product">
         <?php
-            if(isset($_POST['sabor'])){
+            /*if(isset($_POST['sabor'])){
                 $this->escolhaSabor = $_POST['sabor'];
                 foreach ($this->dados['bolos'] as $bolos) {
                     if($bolos['sabor'] == $this->escolhaSabor){
@@ -38,17 +39,19 @@ if (!defined('URL')){
             }
             else{
                 extract($this->dados['bolos'][0]);
-            }
+            }*/
         ?>
 
         <div class="col-md-5 imageCakepot">
-            <img id="cake_photo" src="<?=URL;?>assets/img/bolos/bolosdepote/<?=$idBoloDePote;?>/<?=$imagem;?>" class="imgproduct"
+            <!--<img id="cake_photo" src="<?=URL;?>assets/img/bolos/bolosdepote/<?=$idBoloDePote;?>/<?=$imagem;?>" class="imgproduct"
+                alt="error">-->
+                <img id="cake_photo" src="" class="imgproduct"
                 alt="error">
         </div>
         <div class="col-md-7 brief">
             
-            <label class="cake_price">R$<?=$preco;?>,00</label>
-            <label><?=$tamanho;?></label>
+            <label id="precoBolo" class="cake_price">R$<?=$preco;?>,00</label>
+            <label id="tamanhoBolo"><?=$tamanho;?></label>
             <br>
             <form action="<?=URL;?>carrinho/addProdCarrinho" method="POST" name="formProd">
                 <input type="hidden" name="idBoloDePote" value="<?=$idBoloDePote;?>" />

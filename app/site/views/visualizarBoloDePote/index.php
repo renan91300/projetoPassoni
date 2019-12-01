@@ -34,9 +34,11 @@ if (!defined('URL')){
                     echo "text-warning";
                   }?>
                 ">&#x2605;</span> <?=$status;?>
-      <br><strong>Data do Pedido: </strong><?=date("d/m/Y", strtotime($dataPedido));?>
+                <br><strong>Data do Pedido: </strong><?=date("d/m/Y", strtotime($dataPedido));?>
       <br><strong>Data de Entrega: </strong><?=date("d/m/Y", strtotime($dataEntrega));?>         
       <br><strong>Forma de entrega: </strong> <?=$formaEntrega;?>
+      <br><strong>Método de pagamento: </strong> <?=$formaPagamento;?>
+      <br><strong>Observacao: </strong> <?=$observacao;?>
       <br><br><strong>Valor Total: </strong> R$<?=$precoTotal;?>,00</p>
       <h5>Itens:</h5><br>
         <div>
