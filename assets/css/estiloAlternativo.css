@@ -469,6 +469,7 @@ a {
     /* Safari */
     transition-duration: 0.4s;
     margin-bottom: 0.5em;
+    margin-right: 3px;
     border-style: none;
     height: 3em;
     width: 32%;

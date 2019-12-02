@@ -3,8 +3,8 @@ session_start();
 ob_start();
 
 //url padrao do site
-define('URL', 'http://192.168.1.4/projetoPassoni/');
-define('URLADM', 'http://192.168.1.4/projetoPassoni/adm/');
+define('URL', 'http://localhost/projetoPassoni/');
+define('URLADM', 'http://localhost/projetoPassoni/adm/');
 
 //controller e métodos padrão
 define('CONTROLLER', 'Home');

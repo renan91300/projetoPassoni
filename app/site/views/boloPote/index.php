@@ -50,14 +50,14 @@ if (!defined('URL')){
         </div>
         <div class="col-md-7 brief">
             
-            <label id="precoBolo" class="cake_price">R$<?=$preco;?>,00</label>
-            <label id="tamanhoBolo"><?=$tamanho;?></label>
+            <label id="precoBolo" class="cake_price"></label>
+            <label id="tamanhoBolo"></label>
             <br>
             <form action="<?=URL;?>carrinho/addProdCarrinho" method="POST" name="formProd">
-                <input type="hidden" name="idBoloDePote" value="<?=$idBoloDePote;?>" />
-                <input type="hidden" name="sabor" value="<?=$sabor;?>" />
-                <input type="hidden" name="preco" value="<?=$preco;?>" />
-                <input type="hidden" name="imagem" value="<?=$imagem;?>" />
+                <input type="hidden" name="idBoloDePote" value="" />
+                <input type="hidden" name="sabor" value="" />
+                <input type="hidden" name="preco" value="" />
+                <input type="hidden" name="imagem" value="" />
 
                 <div class="nice-number quantity">
                     <input type="number" name="qtd" class="qtd" value="1" min="1" max="100" style="width: 1.5em;">
@@ -70,21 +70,8 @@ if (!defined('URL')){
 
             <div class="flavors">              
                 <p>Escolha um sabor</p>
-                <form method="post" action="">
-                    <?php
-                        foreach ($this->dados['bolos'] as $boloDescricao) {
-                            extract($boloDescricao);?>
-                            <div class="buttonCake_flavor">
-                                <label  for="<?=$sabor;?>"><?=$sabor;?></label>
-                                <input type="radio" id="<?=$sabor;?>" name="sabor" value="<?=$sabor;?>" onchange="form.submit()">
-                                <input type="radio" id="foto" name="imagem" value="<?=$imagem;?>">
-                            </div>
-                        <?php }
-
-                    ?>
+                <form method="post" name="formFlavors" action="">
                 </form>
-                
-
             </div>
 
 
