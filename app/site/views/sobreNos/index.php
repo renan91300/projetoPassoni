@@ -35,20 +35,20 @@ if (!defined('URL')){
     <div class="row">
         <div class="anima_left col">
             <p class="cardtitle">Missão</p>
-            <p class="cardsubtitle">Nossa missão é são bla bla bla</p>
+            <p class="cardsubtitle">Nossa missão é são ...</p>
             <hr>
         </div>
 
         <div class="anima_bottom col">
             <p class="cardtitle">Valores</p>
-            <p class="cardsubtitle">Nossos valores são são bla bla bla</p>
+            <p class="cardsubtitle">Nossos valores são ...</p>
             <hr>
         </div>
 
 
         <div class="anima_right col">
             <p class="cardtitle">Visão</p>
-            <p class="cardsubtitle">Nossa visão são bla bla bla</p>
+            <p class="cardsubtitle">Nossa visão são ...</p>
             <hr>
         </div>
     </div>
