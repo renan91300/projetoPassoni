@@ -28,7 +28,8 @@ function inicializarPagina(){
         this.inputPreco.value = bolo.preco;
         this.inputImagem.value = bolo.imagem;
         
-        var imgUrl = `./assets/img/bolos/bolosdepote/${bolo.idBoloDePote}/${bolo.imagem}`;
+        var imgUrl = `/projetoPassoni/assets/img/bolos/bolosdepote/${bolo.idBoloDePote}/${bolo.imagem}`;
+        
         this.imagem.src = imgUrl;
 
         this.preco.textContent = `R$${bolo.preco},00`;
@@ -85,7 +86,7 @@ function alterarSabor(id){
         this.inputPreco.value = bolo.preco;
         this.inputImagem.value = bolo.imagem;
         
-        var imgUrl = `./assets/img/bolos/bolosdepote/${bolo.idBoloDePote}/${bolo.imagem}`;
+        var imgUrl = `/projetoPassoni/assets/img/bolos/bolosdepote/${bolo.idBoloDePote}/${bolo.imagem}`;
         this.imagem.src = imgUrl;
 
         this.preco.textContent = `R$${bolo.preco},00`;
@@ -96,9 +97,8 @@ function alterarSabor(id){
 }
 
 function pegarBolos(){
-    var url_atual = window.location.href;
-    return $.getJSON({
-        url: "Bolopote/getBolos", 
+    /*return $.getJSON({
+        url: "http://localhost/projetoPassoni/Bolopote/getBolos/index", 
         type: "POST",
         dataType: "JSON"
     }).done(function(data) {
@@ -108,5 +108,25 @@ function pegarBolos(){
     
     }).always(function() {
         console.log("completou");
-    }); 
+    }); */
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "/projetoPassoni/Bolopote/getBolos",
+        "method": "POST",
+        "dataType": "JSON",
+        "headers": {
+          "cookie": "PHPSESSID=1006hmglrvfp6djc4hs6tg15c7",
+          "content-type": "application/json"
+        },
+        "processData": false,
+        "data": ""
+      }
+      
+      return $.ajax(settings).done(function (data) {
+        console.log(data);
+        return data;
+      });
+
 }
