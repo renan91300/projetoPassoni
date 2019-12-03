@@ -1,0 +1,1651 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+
+    <title>Aplicação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="app.css" />
+
+
+
+</head>
+
+<body>
+
+    <!-- seleção de forma -->
+    <div class="container">
+        <div class="buttons">
+            <img id="bQuad" src="CamadaButton/Quadrado.png" onMouseOut="getElementById('bQuad').src='CamadaButton/Quadrado.png'" onMouseOver="getElementById('bQuad').src='CamadaButton/QuadradoOVER.png'">
+            <img id="bCirc" src="CamadaButton/Redondo.png" onMouseOut="getElementById('bCirc').src='CamadaButton/Redondo.png'" onMouseOver="getElementById('bCirc').src='CamadaButton/RedondoOver.png'">
+        </div>
+
+        <!-- seleção de quantidade de camadas -->
+        <div class="bts">
+            <div id="OpsQuad">
+                <img id="bTwoQuad" class="itens" src="CamadaButton/2.png" onMouseOut="getElementById('bTwoQuad').src='CamadaButton/2.png'" onMouseOver="getElementById('bTwoQuad').src='CamadaButton/2OVER.png'" onClick="showQuad(2, cor1, cor2)">
+                <img id="bThreeQuad" class="itens" src="CamadaButton/3.png" onMouseOut="getElementById('bThreeQuad').src='CamadaButton/3.png'" onMouseOver="getElementById('bThreeQuad').src='CamadaButton/3OVER.png'" onClick="showQuad(3, cor1, cor2)">
+                <img id="bFourQuad" class="itens" src="CamadaButton/4.png" onMouseOut="getElementById('bFourQuad').src='CamadaButton/4.png'" onMouseOver="getElementById('bFourQuad').src='CamadaButton/4OVER.png'" onClick="showQuad(4, cor1, cor2)">
+                <img id="bFiveQuad" class="itens" src="CamadaButton/5.png" onMouseOut="getElementById('bFiveQuad').src='CamadaButton/5.png'" onMouseOver="getElementById('bFiveQuad').src='CamadaButton/5OVER.png'" onClick="showQuad(5, cor1, cor2)">
+                <img id="bSixQuad" class="itens" src="CamadaButton/6.png" onMouseOut="getElementById('bSixQuad').src='CamadaButton/6.png'" onMouseOver="getElementById('bSixQuad').src='CamadaButton/6OVER.png'" onClick="showQuad(6, cor1, cor2)">
+            </div>
+            <div id="OpsCirc">
+                <img id="bTwoCirc" class="itens" src="CamadaButton/2.png" onMouseOut="getElementById('bTwoCirc').src='CamadaButton/2.png'" onMouseOver="getElementById('bTwoCirc').src='CamadaButton/2OVER.png'" onClick="showCirc(2, cor1, cor2)">
+                <img id="bThreeCirc" class="itens" src="CamadaButton/3.png" onMouseOut="getElementById('bThreeCirc').src='CamadaButton/3.png'" onMouseOver="getElementById('bThreeCirc').src='CamadaButton/3OVER.png'" onClick="showCirc(3, cor1, cor2)">
+                <img id="bFourCirc" class="itens" src="CamadaButton/4.png" onMouseOut="getElementById('bFourCirc').src='CamadaButton/4.png'" onMouseOver="getElementById('bFourCirc').src='CamadaButton/4OVER.png'" onClick="showCirc(4, cor1, cor2)">
+                <img id="bFiveCirc" class="itens" src="CamadaButton/5.png" onMouseOut="getElementById('bFiveCirc').src='CamadaButton/5.png'" onMouseOver="getElementById('bFiveCirc').src='CamadaButton/5OVER.png'" onClick="showCirc(5, cor1, cor2)">
+                <img id="bSixCirc" class="itens" src="CamadaButton/6.png" onMouseOut="getElementById('bSixCirc').src='CamadaButton/6.png'" onMouseOver="getElementById('bSixCirc').src='CamadaButton/6OVER.png'" onClick="showCirc(6, cor1, cor2)">
+            </div>
+            <img id="pross1" src="Buttons/proximo.png" onClick="mostrarCamCor()" onMouseOut="getElementById('pross1').src='Buttons/proximo.png'" onMouseOver="getElementById('pross1').src='Buttons/proximoOVER.png'">
+        </div>
+        <!-- seleção de cor -->
+        <div class="colorpicker">
+            <div class="containercor">
+                <img id="selecionarcor" src="Buttons/sel.png">
+                <div class="picker" id="color-picker-container"></div>
+                <img id="bColor1" class="CorItens" src="CamadaButton/1a.png" onClick="executar(1)">
+                <img id="bColor2" class="CorItens" src="CamadaButton/2a.png" onClick="executar(2)">
+                <img id="bColor3" class="CorItens" src="CamadaButton/3a.png" onClick="executar(3)">
+                <img id="bColor4" class="CorItens" src="CamadaButton/4a.png" onClick="executar(4)">
+                <img id="bColor5" class="CorItens" src="CamadaButton/5a.png" onClick="executar(5)">
+                <img id="bColor6" class="CorItens" src="CamadaButton/6a.png" onClick="executar(6)">
+            </div>
+            <div class="buttoncolor">
+                <img class="aplicartds" id="aplicartds" src="Buttons/aplicartodos.png" onClick="executar(7)" onMouseOut="getElementById('aplicartds').src='Buttons/aplicartodos.png'" onMouseOver="getElementById('aplicartds').src='Buttons/aplicartodosOVER.png'">
+                <img class="prosseguir" id="pross2" src="Buttons/proximo.png" onMouseOut="getElementById('pross2').src='Buttons/proximo.png'" onMouseOver="getElementById('pross2').src='Buttons/proximoOVER.png'">
+                <img class="voltar" id="volt2" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt2').src='Buttons/voltar.png'" onMouseOver="getElementById('volt2').src='Buttons/voltarOVER.png'">
+            </div>
+        </div>
+        <!-- seleção de decorações -->
+        <div class="decoracao">
+            <div class="ButtonsDec">
+                <img class="imgTitulo" src="Buttons/decoracaoOVER.png">
+                <img id="flores" class="decItens" src="Decoracao/Flores.png" onMouseOut="getElementById('flores').src='Decoracao/Flores.png'" onMouseOver="getElementById('flores').src='Decoracao/FloresOver.png'">
+                <img id="textura" class="decItens" src="Decoracao/Texturas.png" onMouseOut="getElementById('textura').src='Decoracao/Texturas.png'" onMouseOver="getElementById('textura').src='Decoracao/TexturasOVER.png'">
+                <img id="laco" class="decItens" src="Decoracao/lacos.png" onMouseOut="getElementById('laco').src='Decoracao/lacos.png'" onMouseOver="getElementById('laco').src='Decoracao/lacosOVER.png'">
+            </div>
+            <div class="buttons">
+                <img class="prosseguir" id="pross3" src="Buttons/proximo.png" onMouseOut="getElementById('pross3').src='Buttons/proximo.png'" onMouseOver="getElementById('pross3').src='Buttons/proximoOVER.png'">
+                <img class="voltar" id="volt3" src="Buttons/voltar.png" onMouseOut="getElementById('volt3').src='Buttons/voltar.png'" onMouseOver="getElementById('volt3').src='Buttons/voltarOVER.png'">
+
+            </div>
+            <button class="inicio">Voltar ao início</button>
+        </div>
+        <!-- seleção de flores -->
+        <div class="divFlores">
+            <img class="imgTitulo" src="Decoracao/FloresOVER.png">
+            <div class="row rowflores">
+                <div class="col1">
+                    <div class="funkyradio">
+                        <span>Esquerda</span>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores1" name="selectflower" value="1" onchange="showFlores()" />
+                            <label for="flores1">6ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores2" name="selectflower" value="2" onchange="showFlores()" />
+                            <label for="flores2">5ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores3" name="selectflower" value="3" onchange="showFlores()" />
+                            <label for="flores3">4ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores4" name="selectflower" value="4" onchange="showFlores()" />
+                            <label for="flores4">3ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores5" name="selectflower" value="5" onchange="showFlores()" />
+                            <label for="flores5">2ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores6" name="selectflower" value="6" onchange="showFlores()" />
+                            <label for="flores6">1ª</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="funkyradio">
+                        <span>Centro</span>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores7" name="selectflower" value="7" onchange="showFlores()" />
+                            <label for="flores7">6ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores8" name="selectflower" value="8" onchange="showFlores()" />
+                            <label for="flores8">5ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores9" name="selectflower" value="9" onchange="showFlores()" />
+                            <label for="flores9">4ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores10" name="selectflower" value="10" onchange="showFlores()" />
+                            <label for="flores10">3ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores11" name="selectflower" value="11" onchange="showFlores()" />
+                            <label for="flores11">2ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores12" name="selectflower" value="12" onchange="showFlores()" />
+                            <label for="flores12">1ª</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3">
+                    <div class="funkyradio">
+                        <span>Direita</span>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores13" name="selectflower" value="13" onchange="showFlores()" />
+                            <label for="flores13">6ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores14" name="selectflower" value="14" onchange="showFlores()" />
+                            <label for="flores14">5ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores15" name="selectflower" value="15" onchange="showFlores()" />
+                            <label for="flores15">4ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores16" name="selectflower" value="16" onchange="showFlores()" />
+                            <label for="flores16">3ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores17" name="selectflower" value="17" onchange="showFlores()" />
+                            <label for="flores17">2ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="flores18" name="selectflower" value="18" onchange="showFlores()" />
+                            <label for="flores18">1ª</label>
+                        </div>
+                    </div>
+                </div>
+                <img class="prosseguir btnflor" id="pross41" src="Buttons/proximo.png" onMouseOut="getElementById('pross41').src='Buttons/proximo.png'" onMouseOver="getElementById('pross41').src='Buttons/proximoOVER.png'">
+                <img class="voltar btnflor" id="volt41" src="Buttons/voltar.png" onMouseOut="getElementById('volt41').src='Buttons/voltar.png'" onMouseOver="getElementById('volt41').src='Buttons/voltarOVER.png'">
+            </div>
+            <div class="descFlor">
+                <div class="areaFlor">
+                    <p>Descreva na área abaixo as flores desejadas, como espécie, cores e disposição</p>
+                    <textarea rows="10" cols="40" placeholder="Exemplo: 1ª camada rosas vermelhas em buquê; 2ª camada arranjo de flores amarelas"></textarea>
+                </div>
+                <img class="prosseguir btnflor" id="pross4" src="Buttons/proximo.png" onMouseOut="getElementById('pross4').src='Buttons/proximo.png'" onMouseOver="getElementById('pross4').src='Buttons/proximoOVER.png'">
+                <img class="voltar btnflor" id="volt4" src="Buttons/voltar.png" onMouseOut="getElementById('volt4').src='Buttons/voltar.png'" onMouseOver="getElementById('volt4').src='Buttons/voltarOVER.png'">
+            </div>
+
+            <button class="inicio">Voltar ao início</button>
+        </div>
+
+        <!-- seleção da primeira textura -->
+        <div class="divTextura">
+            <img class="imgTitulo" src="Decoracao/TexturasOVER.png">
+            <div class="selecionarTextura">
+                <span id="spantextura">Escolha a textura desejada:</span>
+                <div class="funkyradio">
+
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="texture1" name="seltexture" value="0" />
+                        <label for="texture1">Listras na diagonal</label></div>
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="texture2" name="seltexture" value="1" />
+                        <label for="texture2">Triângulos</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="texture3" name="seltexture" value="2" />
+                        <label for="texture3">Círculos</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="texture4" name="seltexture" value="3" />
+                        <label for="texture4">Círculos pequenos</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="texture5" name="seltexture" value="4" />
+                        <label for="texture5">Linha pontilhada</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="texture6" name="seltexture" value="5" />
+                        <label for="texture6">Crochê</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="texture7" name="seltexture" value="6" />
+                        <label for="texture7">Escamas</label>
+                    </div>
+                </div>
+                <img class="prosseguir btnflor" id="pross5" src="Buttons/proximo.png" onMouseOut="getElementById('pross5').src='Buttons/proximo.png'" onMouseOver="getElementById('pross5').src='Buttons/proximoOVER.png'" onclick="nomeTextura(0)">
+                <img class="voltar btnflor" id="volt5" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt5').src='Buttons/voltar.png'" onMouseOver="getElementById('volt5').src='Buttons/voltarOVER.png'">
+            </div>
+            <!-- configuração das texturas -->
+            <div class="configurarTextura">
+                <span id="nomeTextura0"></span><br>
+                <div class="funkyradio">
+                    <div class="funkyradio-warning">
+                        <input type="checkbox" id="text1" name="shtexture" value="0" />
+                        <label for="text1">6ª</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="checkbox" id="text2" name="shtexture" value="1" />
+                        <label for="text2">5ª</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="checkbox" id="text3" name="shtexture" value="2" />
+                        <label for="text3">4ª</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="checkbox" id="text4" name="shtexture" value="3" />
+                        <label for="text4">3ª</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="checkbox" id="text5" name="shtexture" value="4" />
+                        <label for="text5">2ª</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="checkbox" id="text6" name="shtexture" value="5" />
+                        <label for="text6">1ª</label>
+                    </div>
+                    <img class="buttonTextura" id="aplicarTextura" src="Buttons/aplicar.png" onclick="showTexture()" onMouseOut="getElementById('aplicarTextura').src='Buttons/aplicar.png'" onMouseOver="getElementById('aplicarTextura').src='Buttons/aplicarOVER.png'">
+                </div>
+                <img class="prosseguir btnflor" id="pross6" src="Buttons/proximo.png" onMouseOut="getElementById('pross6').src='Buttons/proximo.png'" onMouseOver="getElementById('pross6').src='Buttons/proximoOVER.png'">
+                <img class="voltar btnflor" id="volt6" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt6').src='Buttons/voltar.png'" onMouseOver="getElementById('volt6').src='Buttons/voltarOVER.png'">
+            </div>
+        </div>
+        <!-- lacos -->
+        <div class="divLacos">
+            <img class="imgTitulo" src="Decoracao/lacosOVER.png">
+
+            <div class="row">
+                <div class="col1">
+                    <div class="funkyradio">
+                        <span>Esquerda</span>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos1" name="selectlacos" value="6" />
+                            <label for="lacos1">6ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos2" name="selectlacos" value="5" />
+                            <label for="lacos2">5ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos3" name="selectlacos" value="4" />
+                            <label for="lacos3">4ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos4" name="selectlacos" value="3" />
+
+                            <label for="lacos4">3ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos5" name="selectlacos" value="2" />
+                            <label for="lacos5">2ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos6" name="selectlacos" value="1" />
+                            <label for="lacos6">1ª</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="funkyradio">
+                        <span>Centro</span>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos7" name="selectlacos" value="12" />
+                            <label for="lacos7">6ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos8" name="selectlacos" value="11" />
+                            <label for="lacos8">5ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos9" name="selectlacos" value="10" />
+                            <label for="lacos9">4ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos10" name="selectlacos" value="9" />
+
+                            <label for="lacos10">3ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos11" name="selectlacos" value="8" />
+                            <label for="lacos11">2ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos12" name="selectlacos" value="7" />
+                            <label for="lacos12">1ª</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3">
+                    <div class="funkyradio">
+                        <span>Direita</span>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos13" name="selectlacos" value="18" />
+                            <label for="lacos13">6ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos14" name="selectlacos" value="17" />
+                            <label for="lacos14">5ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos15" name="selectlacos" value="16" />
+                            <label for="lacos15">4ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos16" name="selectlacos" value="15" />
+
+                            <label for="lacos16">3ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos17" name="selectlacos" value="14" />
+                            <label for="lacos17">2ª</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="checkbox" id="lacos18" name="selectlacos" value="13" />
+                            <label for="lacos18">1ª</label>
+                        </div>
+                    </div>
+                </div>
+                <img class="aplicarlaco" id="aplicalaco" src="Buttons/aplicar.png" onclick="showLacos()" onMouseOut="getElementById('aplicarlaco').src='Buttons/aplicar.png'" onMouseOver="getElementById('aplicarlaco').src='Buttons/aplicarOVER.png'">
+            </div>
+            <img class="prosseguir btnflor" id="pross7" src="Buttons/proximo.png" onMouseOut="getElementById('pross7').src='Buttons/proximo.png'" onMouseOver="getElementById('pross7').src='Buttons/proximoOVER.png'">
+            <img class="voltar btnflor" id="volt7" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt7').src='Buttons/voltar.png'" onMouseOver="getElementById('volt7').src='Buttons/voltarOVER.png'">
+            <button class="inicio">Voltar ao início</button>
+        </div>
+
+        <!-- Seleção de toppers !-->
+        <div class="divToppers">
+            <img class="imgTitulo" src="Decoracao/TopperOVER.png" /><button id="ajudaTopper" type="button" onclick="document.getElementById('containerAjuda').style.display='block'">?</button>
+            <div class="areaToppers">
+                <p>Use uma imagem de referência. </p>
+                <textarea rows="6" cols="40" placeholder="Descreva aqui o topper desejado. Exemplo: casal de noivos de pele parda com as mãos dadas. "></textarea>
+                <button class="sendImg">Enviar Imagem</button>
+            </div>
+            <img class="prosseguir btnflor" id="pross8" src="Buttons/proximo.png" onMouseOut="getElementById('pross8').src='Buttons/proximo.png'" onMouseOver="getElementById('pross8').src='Buttons/proximoOVER.png'">
+            <img class="voltar btnflor" id="volt8" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt8').src='Buttons/voltar.png'" onMouseOver="getElementById('volt8').src='Buttons/voltarOVER.png'">
+            <div id="containerAjuda">
+                <p>Toppers são detalhes, faixas, bonecos e frases que enfeitam o topo do bolo, como o casal na imagem abaixo.</p>
+                <img id="imgajuda" src="Decoracao/topper.jpg" />
+                <button id="fecharAjuda" onclick="document.getElementById('containerAjuda').style.display='none'">FECHAR</button>
+            </div>
+            <button class="inicio">Voltar ao início</button>
+        </div>
+
+
+
+        <div class="divSaborMassa">
+            <img class="imgTitulo" src="Decoracao/sabormassa.png" />
+            <div class="divradiomassa">
+                <div class="funkyradio">
+
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="massa0" name="massa" value="0">
+                        <label for="massa0">Tradicional(Massa branca)</label>
+                    </div>
+                    <div class="funkyradio-warning">
+                        <input type="radio" id="massa1" name="massa" value="1">
+                        <label for="massa1">Chocolate</label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <img class="prosseguir btnflor" id="pross9" src="Buttons/proximo.png" onMouseOut="getElementById('pross9').src='Buttons/proximo.png'" onMouseOver="getElementById('pross9').src='Buttons/proximoOVER.png'">
+            <img class="voltar btnflor" id="volt9" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt9').src='Buttons/voltar.png'" onMouseOver="getElementById('volt9').src='Buttons/voltarOVER.png'">
+            <button class="inicio ">Voltar ao início</button>
+        </div>
+
+
+        <div class="divSaborRecheio">
+            <img class="imgTitulo" src="Decoracao/saborrecheio.png" />
+            <div class="divradiorecheio">
+                <div class="funkyradio">
+
+                    <div class="col1">
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio0" name="recheio" value="0">
+                            <label for="recheio0">Nozes</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio1" name="recheio" value="1">
+                            <label for="recheio1">Brigadeiro</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio2" name="recheio" value="2">
+                            <label for="recheio2">Ganache</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio3" name="recheio" value="3">
+                            <label for="recheio3">Coco</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio4" name="recheio" value="4">
+                            <label for="recheio4">Ameixa</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio5" name="recheio" value="5">
+                            <label for="recheio5">Mix de frutas</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio6" name="recheio" value="6">
+                            <label for="recheio6">Creme branco</label>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio7" name="recheio" value="7">
+                            <label for="recheio7">Morango</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio8" name="recheio" value="8">
+                            <label for="recheio8">Damasco</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio9" name="recheio" value="9">
+                            <label for="recheio9">Amendoim</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio10" name="recheio" value="10">
+                            <label for="recheio10">Abacaxi</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio11" name="recheio" value="11">
+                            <label for="recheio11">Baba de moça</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio12" name="recheio" value="12">
+                            <label for="recheio12">Doce de leite</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio13" name="recheio" value="13">
+                            <label for="recheio13">Leite ninho</label>
+                        </div>
+                        <div class="funkyradio-warning">
+                            <input type="radio" id="recheio14" name="recheio" value="1">
+                            <label for="recheio14">Nutella</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="prosseguir btnflor" id="pross10" src="Buttons/proximo.png" onMouseOut="getElementById('pross10').src='Buttons/proximo.png'" onMouseOver="getElementById('pross10').src='Buttons/proximoOVER.png'">
+            <img class="voltar btnflor" id="volt10" src="Buttons/voltar.png" onClick="ocultarCamCor()" onMouseOut="getElementById('volt10').src='Buttons/voltar.png'" onMouseOver="getElementById('volt10').src='Buttons/voltarOVER.png'">
+            <button class="inicio ">Voltar ao início</button>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!--<script type="text/javascript " src="app.js "></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js "></script>
+    <script src="jquery.js "></script>
+    <script src="iro.min.js "></script>
+    <script src="tinycolor.js "></script>
+    <script>
+        var n;
+        var qtdCam;
+        var circ;
+        var cor1 = "#ADD8E6 ";
+        var cor2 = "#fafbff ";
+        var x;
+        var flores;
+        var contFlor1 = 0;
+        var resetCanva = 1;
+        var increment;
+        var colorPicker = new iro.ColorPicker('#color-picker-container', {
+            width: 140
+        });
+        var botaoSelecTextura = document.getElementsByName("seltexture ");
+
+        function setup() {}
+
+        function draw() {}
+
+
+        function mostrarCamCor() {
+
+            for (var i = 1; i <= qtdCam; i++) {
+                document.getElementById("bColor" + i).style.display = 'flex';
+            }
+        }
+
+        function ocultarCamCor() {
+
+            for (var i = 1; i <= 6; i++) {
+                document.getElementById("bColor" + i).style.display = 'none';
+            }
+        }
+
+        function executar(n) {
+            /*for (var i = 0; i < w; i++) {
+            }*/
+            var cor = tinycolor(colorPicker.color.hexString);
+            cor1 = cor.desaturate(20).toHexString();
+            cor2 = cor.lighten().toHexString();
+            if (circ) {
+                if (n == 1) {
+                    circ1(cor1, cor2);
+                }
+                if (n == 2 & qtdCam >= n) {
+                    circ2(cor1, cor2);
+                }
+                if (n == 3 & qtdCam >= n) {
+                    circ3(cor1, cor2);
+                }
+                if (n == 4 & qtdCam >= n) {
+                    circ4(cor1, cor2);
+                }
+                if ((n == 5) & (qtdCam >= n)) {
+                    circ5(cor1, cor2);
+                }
+                if (n == 6 & qtdCam >= n) {
+                    circ6(cor1, cor2);
+                }
+                if (n == 7) {
+                    showCirc(qtdCam, cor1, cor2);
+                }
+
+            } else {
+                if (n == 1) {
+                    quad1(cor1, cor2);
+                }
+                if (n == 2 & qtdCam >= n) {
+                    quad2(cor1, cor2);
+                }
+                if (n == 3 & qtdCam >= n) {
+                    quad3(cor1, cor2);
+                }
+                if (n == 4 & qtdCam >= n) {
+                    quad4(cor1, cor2);
+                }
+                if ((n == 5) & (qtdCam >= n)) {
+                    quad5(cor1, cor2);
+                }
+                if (n == 6 & qtdCam >= n) {
+                    quad6(cor1, cor2);
+                }
+                if (n == 7) {
+                    showQuad(qtdCam, cor1, cor2);
+                }
+            }
+        }
+
+        function showQuad(n, x, y) {
+            createCanvas(500, 550);
+            qtdCam = n;
+            circ = false;
+            if (n >= 1) {
+                quad1(x, y);
+            }
+            if (n >= 2) {
+                quad2(x, y);
+            }
+            if (n >= 3) {
+                quad3(x, y);
+            }
+            if (n >= 4) {
+                quad4(x, y);
+            }
+            if (n >= 5) {
+                quad5(x, y);
+            }
+            if (n >= 6) {
+                quad6(x, y);
+            }
+        }
+
+        function showCirc(n, x, y) {
+            qtdCam = n;
+            createCanvas(500, 550);
+            circ = true;
+            if (n >= 1) {
+                circ1(x, y);
+            }
+            if (n >= 2) {
+                circ2(x, y);
+            }
+            if (n >= 3) {
+                circ3(x, y);
+            }
+            if (n >= 4) {
+                circ4(x, y);
+            }
+            if (n >= 5) {
+                circ5(x, y);
+            }
+            if (n >= 6) {
+                circ6(x, y);
+            }
+        }
+
+        function showLacos() {
+
+            var lacos = document.getElementsByName("selectlacos");
+
+            for (var i = 0; i <= 18; i++) {
+
+                if (lacos[i].checked) {
+
+                    var contLacos = (lacos[i].value);
+
+                    if ((contLacos == 1) || (contLacos == 7) || (contLacos == 13)) {
+
+                        push();
+                        if (contLacos == 7) {
+                            translate(110, 0);
+                        } else if (contLacos == 13) {
+                            translate(190, 0);
+                        }
+
+                        translate(150, 430);
+                        scale(0.7);
+                        DrawLacos();
+                        pop();
+                    }
+                    if (contLacos == 2 || contLacos == 8 || contLacos == 14) {
+                        push();
+                        if (contLacos == 8) {
+                            translate(80, 0);
+                        } else if (contLacos == 14) {
+                            translate(160, 0);
+                        }
+                        translate(170, 330);
+                        scale(0.65)
+                        DrawLacos();
+                        pop();
+                    }
+                    if (contLacos == 3 || contLacos == 9 || contLacos == 15) {
+                        push();
+                        if (contLacos == 9) {
+                            translate(60, 0);
+                        } else if (contLacos == 15) {
+                            translate(130, 0);
+                        }
+                        translate(190, 270);
+                        scale(0.6);
+                        DrawLacos();
+                        pop();
+                    }
+                }
+                if (contLacos == 4 || contLacos == 10 || contLacos == 16) {
+                    if (contLacos >= 4) {
+                        push();
+                        if (contLacos == 10) {
+                            translate(40, 0);
+                        } else if (contFlor == 16) {
+                            translate(110, 0);
+                        }
+                        translate(200, 140);
+                        scale(0.55)
+                        translate(10, 120);
+                        DrawLacos();
+                        pop();
+                    }
+                }
+                if (contLacos == 5 || contLacos == 11 || contLacos == 17) {
+                    if (qtdCam >= 5) {
+                        push();
+                        if (contLacos == 11) {
+                            translate(20, 0);
+                        } else if (contLacos == 17) {
+                            translate(90, 0);
+                        }
+                        translate(200, 140);
+                        scale(0.50)
+                        translate(18, -20);
+                        translate(10, 50);
+                        DrawLacos();
+                        pop();
+
+                    }
+                }
+                if (contLacos == 6 || contLacos == 12 || contLacos == 18) {
+                    if (qtdCam >= 6) {
+                        push();
+                        if (contLacos == 12) {
+                            translate(0, 0);
+                        } else if (contLacos == 18) {
+                            translate(70, 0);
+                        }
+                        translate(200, 140);
+                        scale(0.4);
+                        translate(45, -60);
+                        DrawLacos();
+                        pop();
+                    }
+                }
+            }
+
+
+        }
+
+
+
+        function DrawLacos() {
+            push();
+            noStroke();
+            scale(1.3);
+            translate(-29, -120);
+            fill("#FFB6C1 ");
+            quad(185, 453, 145, 445, 185, 435, 185, 430);
+            quad(165, 445, 125, 453, 125, 435, 125, 435);
+            fill("#FFC0CB ")
+            quad(150, 450, 150, 440, 159, 440, 159, 450);
+            triangle(180, 450, 145, 445, 180, 438);
+            triangle(165, 445, 130, 450, 130, 438);
+            quad(145, 490, 155, 445, 125, 470, 140, 470);
+            quad(186, 470, 156, 445, 166, 490, 170, 470);
+            pop();
+        }
+
+        function nomeTextura(n) {
+            for (var i = 0; i < 7; i++) {
+                if (botaoSelecTextura[i].checked) {
+                    var contTipoText = (botaoSelecTextura[i].value);
+                    if (contTipoText == 0) {
+                        if (n) {
+                            document.getElementById("nomeTextura1 ").innerHTML = "Listras na diagonal ";
+                        } else {
+                            document.getElementById("nomeTextura0 ").innerHTML = "Listras na diagonal ";
+                        }
+                    }
+                    if (contTipoText == 1) {
+                        if (n) {
+                            document.getElementById("nomeTextura1 ").innerHTML = "Triângulos ";
+                        } else {
+                            document.getElementById("nomeTextura0 ").innerHTML = "Triângulos ";
+                        }
+                    }
+                    if (contTipoText == 2) {
+                        if (n) {
+                            document.getElementById("nomeTextura1 ").innerHTML = "Círculos ";
+                        } else {
+                            document.getElementById("nomeTextura0 ").innerHTML = "Círculos ";
+                        }
+                    }
+                    if (contTipoText == 3) {
+                        if (n) {
+                            document.getElementById("nomeTextura1 ").innerHTML = "Círculos pequenos ";
+                        } else {
+                            document.getElementById("nomeTextura0 ").innerHTML = "Círculos pequenos ";
+                        }
+                    }
+                    if (contTipoText == 4) {
+                        if (n) {
+                            document.getElementById("nomeTextura1 ").innerHTML = "Linha pontilhada ";
+                        } else {
+                            document.getElementById("nomeTextura0 ").innerHTML = "Linha pontilhada ";
+                        }
+                    }
+                    if (contTipoText == 5) {
+                        if (n) {
+                            document.getElementById("nomeTextura1 ").innerHTML = "Crochê ";
+                        } else {
+                            document.getElementById("nomeTextura0 ").innerHTML = "Crochê ";
+                        }
+                    }
+                    if (contTipoText == 6) {
+                        if (n) {
+                            document.getElementById("nomeTextura1 ").innerHTML = "Escamas ";
+                        } else {
+
+                            document.getElementById("nomeTextura0 ").innerHTML = "Escamas ";
+                        }
+                    }
+                }
+            }
+        }
+
+        function showTexture() {
+
+            var textArray = document.getElementsByName("shtexture");
+            for (var j = 0; j < 6; j = j + 1) {
+                if (textArray[j].checked) {
+                    var contTexture = (textArray[j].value);
+                    if (contTexture == 5) {
+                        DrawTextures();
+                    }
+                    if (contTexture == 4) {
+                        if (circ) {
+                            push();
+                            scale(0.83);
+                            translate(50, -18);
+                            DrawTextures();
+                            pop();
+                        } else {
+                            push();
+                            scale(0.82);
+                            translate(52, -10);
+                            DrawTextures();
+                            pop();
+                        }
+                    }
+                    if (contTexture == 3) {
+                        if (circ) {
+                            push();
+                            scale(0.65);
+                            translate(131, -12);
+                            DrawTextures();
+                            pop();
+                        } else {
+                            push();
+                            scale(0.65);
+                            translate(129, -12);
+                            DrawTextures();
+                            pop();
+                        }
+                    }
+                    if (contTexture == 2) {
+                        if (circ) {
+                            push();
+                            scale(0.54);
+                            translate(207, -35);
+                            DrawTextures();
+                            pop();
+                        } else if (botaoSelecTextura[0].checked) {
+                            push();
+                            scale(0.520);
+                            translate(221, -12);
+                            DrawTextures();
+                            pop();
+                        } else {
+                            push();
+                            scale(0.520);
+                            translate(224, -12);
+                            DrawTextures();
+                            pop();
+                        }
+                    }
+                    if (contTexture == 1) {
+                        if (circ) {
+                            push();
+                            scale(0.43);
+                            translate(322, -46);
+                            DrawTextures();
+                            pop();
+                        } else {
+                            push();
+                            scale(0.43);
+                            translate(322, -46);
+                            DrawTextures();
+                            pop();
+                        }
+                    }
+
+                    if (contTexture == 0) {
+                        if (circ) {
+                            push();
+                            scale(0.34);
+                            translate(473, -63);
+                            DrawTextures();
+                            pop();
+                        } else if (botaoSelecTextura[0].checked) {
+                            push();
+                            scale(0.35);
+                            translate(450, -68);
+                            DrawTextures();
+                            pop();
+                        } else if (botaoSelecTextura[1].checked || botaoSelecTextura[6].checked) {
+                            push();
+                            scale(0.35);
+                            translate(450, -71);
+                            DrawTextures();
+                            pop();
+                        } else {
+                            push();
+                            scale(0.35);
+                            translate(450, -75);
+                            DrawTextures();
+                            pop();
+                        }
+                    }
+
+                } else {}
+            }
+        }
+
+        function DrawTextures() {
+
+            for (var i = 0; i < 7; i++) {
+                if (botaoSelecTextura[i].checked) {
+                    var contTipoText = (botaoSelecTextura[i].value);
+                    if (contTipoText == 0) {
+                        if (circ) {
+                            push();
+                            x = "#FFFFFF ";
+                            stroke(x);
+                            let x1 = 107;
+                            let y1 = 490;
+                            let x2 = 384;
+                            let y2 = 412;
+                            line(x1, y1 - 50, x2 - 220, y2 + 11);
+                            line(x1, y1 - 25, x2 - 150, y2 + 17);
+                            line(x1, y1, x2, y2);
+                            line(x1 + 30, y1 + 15, x2, y2 + 25);
+                            line(x1 + 90, y1 + 22, x2, y2 + 49);
+                            line(x1 + 170, y1 + 25, x2, y2 + 70);
+                            pop();
+                        } else {
+                            push();
+                            x = "#FFFFFF ";
+                            stroke(x);
+                            let x1 = 108;
+                            let y1 = 514;
+                            let x2 = 280;
+                            let y2 = 433;
+                            line(x1, y1 - 60, x2 - 120, y2);
+                            line(x1, y1 - 40, x2 - 80, y2);
+                            line(x1, y1 - 20, x2 - 40, y2);
+                            line(x1, y1, x2, y2);
+                            line(x1 + 40, y1, x2 + 40, y2);
+                            line(x1 + 80, y1, x2 + 80, y2);
+                            line(x1 + 120, y1, x2 + 100, y2 + 10);
+                            line(x1 + 160, y1, x2 + 100, y2 + 30);
+                            line(x1 + 200, y1, x2 + 100, y2 + 50);
+                            line(x1 + 240, y1, x2 + 100, y2 + 69);
+                            pop();
+
+                        }
+
+                    }
+                    if (contTipoText == 1) {
+                        if (circ) {
+                            push();
+                            x = "#FFFFFF ";
+                            stroke(x);
+                            translate(1, -6);
+                            let x1 = 108;
+                            let y1 = 516;
+                            let x2 = 281;
+                            let y2 = 435;
+                            line(x1 - 2, y1 - 77, x2 - 145, y2 - 8);
+                            line(x1 - 2, y1 - 60, x2 - 110, y2 - 5);
+                            line(x1 - 2, y1 - 40, x2 - 80, y2);
+                            line(x1 - 2, y1 - 20, x2 - 40, y2);
+                            line(x1 + 10, y1 - 7, x2, y2);
+                            line(x1 + 40, y1, x2 + 50, y2 - 5);
+                            line(x1 + 75, y1 + 5, x2 + 100, y2 - 10);
+                            line(x1 + 120, y1 + 5, x2 + 100, y2 + 10);
+                            line(x1 + 160, y1 + 5, x2 + 100, y2 + 30);
+                            line(x1 + 200, y1 + 5, x2 + 100, y2 + 50);
+                            line(x1 + 244, y1 - 1, x2 + 100, y2 + 66);
+                            x1 = 190;
+                            y1 = 435;
+                            x2 = 382;
+                            y2 = 515;
+                            line(x1 + 40, y1, x2, y2 - 20);
+                            line(x1 + 80, y1, x2, y2 - 40);
+                            line(x1 + 120, y1, x2, y2 - 55);
+                            line(x1 + 155, y1 - 5, x2, y2 - 73);
+                            line(x1 - 5, y1 - 4, x2 - 15, y2 - 8);
+                            line(x1 - 70, y1 - 14, x2 - 40, y2 + 2);
+                            line(x1 - 83.5, y1, x2 - 80, y2 + 2.5);
+                            line(x1 - 83.5, y1 + 20, x2 - 123, y2 + 6);
+                            line(x1 - 83.5, y1 + 40, x2 - 170, y2 + 6);
+                            line(x1 - 83.5, y1 + 60, x2 - 220, y2 + 2.5);
+                            pop();
+                        } else {
+                            push();
+                            x = "#FFFFFF ";
+                            stroke(x);
+                            let x1 = 108;
+                            let y1 = 516;
+                            let x2 = 281;
+                            let y2 = 435;
+                            line(x1, y1 - 60, x2 - 120, y2);
+                            line(x1, y1 - 40, x2 - 80, y2);
+                            line(x1, y1 - 20, x2 - 40, y2);
+                            line(x1, y1, x2, y2);
+                            line(x1 + 40, y1, x2 + 40, y2);
+                            line(x1 + 80, y1, x2 + 80, y2);
+                            line(x1 + 120, y1, x2 + 100, y2 + 10);
+                            line(x1 + 160, y1, x2 + 100, y2 + 30);
+                            line(x1 + 200, y1, x2 + 100, y2 + 50);
+                            line(x1 + 240, y1, x2 + 100, y2 + 69);
+                            x1 = 190;
+                            y1 = 435;
+                            x2 = 382;
+                            y2 = 515;
+
+                            line(x1 + 40, y1, x2, y2 - 20);
+                            line(x1 + 80, y1, x2, y2 - 40);
+                            line(x1 + 120, y1, x2, y2 - 55);
+                            line(x1 + 160, y1, x2, y2 - 70);
+
+                            line(x1, y1, x2, y2);
+                            line(x1 - 40, y1, x2 - 40, y2);
+                            line(x1 - 80, y1, x2 - 80, y2);
+                            line(x1 - 83, y1 + 20, x2 - 123, y2);
+                            line(x1 - 83, y1 + 40, x2 - 170, y2);
+
+                            line(x1 - 81, y1 + 61, x2 - 220, y2);
+                            pop();
+                        }
+                    }
+                    if (contTipoText == 2) {
+                        if (circ) {
+                            push();
+                            x = "#FFFFFF ";
+                            noStroke();
+                            fill(x)
+
+                            for (var j = 0; j < 4; j++) {
+                                for (var i = 0; i < 7; i++) {
+                                    ellipse(125 + (i * 40), 434 + (j * 20), 5);
+                                }
+                            }
+                            pop();
+                        } else {
+                            push();
+                            x = "#FFFFFF ";
+                            noStroke();
+                            fill(x)
+                            for (var j = 0; j < 4; j++) {
+                                for (var i = 0; i < 7; i++) {
+                                    ellipse(120 + (i * 40), 446 + (j * 20), 5);
+                                }
+                            }
+                            pop();
+                        }
+                    }
+                    if (contTipoText == 3) {
+                        if (circ) {
+                            push();
+                            x = "#FFFFFF ";
+                            noStroke();
+                            fill(x)
+                            for (var j = 0; j < 4; j++) {
+                                for (var i = 0; i < 7; i++) {
+                                    ellipse(125 + (i * 40), 434 + (j * 20), 2.4);
+                                }
+                            }
+                            pop();
+                        } else {
+                            push();
+                            x = "#FFFFFF ";
+                            noStroke();
+                            fill(x)
+                            for (var j = 0; j < 4; j++) {
+                                for (var i = 0; i < 7; i++) {
+                                    ellipse(120 + (i * 40), 446 + (j * 20), 2.4);
+                                }
+                            }
+                            pop();
+                        }
+                    }
+
+                    if (contTipoText == 4) {
+                        if (circ) {
+
+                            push();
+                            x = "#FFFFFF ";
+                            noStroke();
+                            fill(x)
+                            x1 = 3;
+                            ellipse(61 + (x1 * 17), 485 + (x1 * x1 / 1.9), 4.5);
+                            ellipse(61 + (x1 * 17 * 1.3), 485 + (2 * x1 * x1 / 1.9), 4.5);
+                            ellipse(61 + (x1 * 17 * 1.6), 485 + (3.1 * x1 * x1 / 1.9), 4.5);
+                            ellipse(61 + (x1 * 17 * 1.9), 485 + (3.8 * x1 * x1 / 1.9), 4.5);
+                            for (i = 3; i < 6.8; i = i + 0.8) {
+                                ellipse(115 + (i * 20), 503 + (i * i / 3.8), 4.5);
+                            }
+
+                            for (i = 3; i < 6.8; i = i + 0.8) {
+                                ellipse(195 + (i * 20), 515 - (i * i / 3.6), 4.5);
+                            }
+
+                            for (i = 3; i < 6; i = i + 0.8) {
+                                ellipse(284 + (i * 17), 506 - (i * i / 1.9), 4.5);
+                            }
+                            pop();
+                        } else {
+                            push();
+                            x = "#FFFFFF ";
+                            noStroke();
+                            fill(x)
+                            for (var i = 0; i < 39; i++) {
+                                ellipse(111 + (i * 7), 512, 4.5);
+                            }
+                            pop();
+                        }
+                    }
+                    if (contTipoText == 5) {
+                        push();
+                        x = "#FFFFFF ";
+                        noStroke();
+                        fill(x)
+                        x1 = 1;
+                        x2 = 0.7;
+                        x3 = 0.34;
+                        x4 = 2.183;
+                        for (var i = 0; i < 124; i++) {
+                            ellipse(110 + (i * 2.2), 437, 1.5);
+                            if (i % 19 == 0) {
+                                ellipse(110 + ((i - x1) * x4), 439, 1.5);
+                                ellipse(110 + ((i + x1) * x4), 439, 1.5);
+                                ellipse(110 + ((i - x2) * x4), 441, 1.5);
+                                ellipse(110 + ((i + x2) * x4), 441, 1.5);
+                                ellipse(110 + ((i + x3) * x4), 440, 1.5);
+                                ellipse(110 + ((i - x3) * x4), 440, 1.5);
+                                ellipse(110 + (i * x4), 442, 1.5);
+                                ellipse(110 + (i * x4), 442, 1.5);
+                                ellipse(110 + (i * x4), 455, 2.5);
+                                ellipse(110 + (i * x4), 465, 1.9);
+                                ellipse(110 + (i * x4), 475, 1.5);
+                            }
+                        }
+                        for (i = 2; i < 9; i++) {
+                            for (var j = 0; j < 7; j++) {
+                                ellipse(30 + (82 * (i / 2)) + ((j) * (j / 2)), 444 + ((j) * 1.8), 1.5);
+                            }
+                            for (j = 6; j > 0; j--) {
+                                if (i == 8) {} else {
+                                    ellipse(50 + (82 * (i / 2)) + ((j) * (j / 2)), 456 - ((j * 1.8)), 1.5);
+                                }
+                            }
+                        }
+                        pop();
+                    }
+                    if (contTipoText == 6) {
+                        if (circ) {
+                            push();
+                            x = "#FFFFFF ";
+                            noStroke();
+                            fill(x)
+                            x1 = 32;
+                            x2 = 53;
+
+                            for (var m = 0; m < 8; m++) {
+                                for (i = 2; i < 9; i++) {
+                                    for (var j = 0; j < 6; j++) {
+                                        ellipse(x1 + (78 * (i / 2)) + (j * (j / 2)), 496 - (m * 10) + (j * 1.8), 1.5);
+                                        ellipse(x2 + (78 * (i / 2)) + (j * (j / 2)), 506 - (m * 10) - (j * 1.8), 1.5);
+                                        if (m == 0 || m % 2 == 0) {
+                                            x1 = 32;
+                                            x2 = 53;
+                                        } else {
+                                            x1 = 53;
+                                            x2 = 32;
+                                        }
+                                    }
+                                }
+                            }
+                            pop();
+                        } else {
+                            push();
+                            x = "#FFFFFF ";
+                            noStroke();
+                            fill(x)
+                            x1 = 32;
+                            x2 = 53;
+
+                            for (var m = 0; m < 8; m++) {
+                                for (i = 2; i < 9; i++) {
+                                    for (var j = 0; j < 6; j++) {
+                                        ellipse(x1 + (78 * (i / 2)) + (j * (j / 2)), 504 - (m * 10) + (j * 1.8), 1.5);
+                                        ellipse(x2 + (78 * (i / 2)) + (j * (j / 2)), 514 - (m * 10) - (j * 1.8), 1.5);
+                                        if (m == 0 || m % 2 == 0) {
+                                            x1 = 32;
+                                            x2 = 53;
+                                        } else {
+                                            x1 = 53;
+                                            x2 = 32;
+                                        }
+                                    }
+                                }
+                            }
+                            pop();
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+
+        function showLacos() {
+            var lacos = document.getElementsByName("selectlacos");
+            for (var i = 0; i <= 18; i++) {
+                if (lacos[i].checked) {
+                    var contLacos = (lacos[i].value);
+                    if ((contLacos == 1) || (contLacos == 7) || (contLacos == 13)) {
+                        push();
+                        if (contLacos == 7) {
+                            translate(72, 0);
+                        } else if (contLacos == 13) {
+                            translate(150, 0);
+                        }
+
+
+                        DrawLacos();
+                        pop();
+                    }
+                    if (contLacos == 2 || contLacos == 8 || contLacos == 14) {
+                        push();
+                        if (contLacos == 8) {
+                            translate(67, 0);
+                        } else if (contLacos == 14) {
+                            translate(140, 0);
+                        }
+                        scale(0.8);
+                        translate(50, 0);
+                        DrawLacos();
+                        pop();
+                    }
+                    if (contLacos == 3 || contLacos == 9 || contLacos == 15) {
+                        push();
+                        if (contLacos == 9) {
+                            translate(60, 0);
+                        } else if (contLacos == 15) {
+                            translate(120, 0);
+                        }
+                        scale(0.6);
+                        translate(140, 20);
+                        DrawLacos();
+                        pop();
+                    }
+                }
+                if (contLacos == 4 || contLacos == 10 || contLacos == 16) {
+                    if (qtdCam >= 4) {
+
+                        push();
+                        if (contLacos == 10) {
+                            translate(50, 0);
+
+                        }
+                        if (contLacos == 16) {
+                            translate(100, 0);
+                        }
+                        scale(0.45);
+                        translate(270, 40);
+                        DrawLacos();
+                        pop();
+                    }
+                }
+                if (contLacos == 5 || contLacos == 11 || contLacos == 17) {
+                    if (qtdCam >= 5) {
+                        push();
+                        if (contLacos == 11) {
+                            translate(41, 0);
+                        } else if (contLacos == 17) {
+                            translate(80, 0)
+                        }
+                        scale(0.4);
+                        translate(340, -34);
+
+                        DrawLacos();
+                        pop();
+                    }
+                }
+                if (contLacos == 6 || contLacos == 12 || contLacos == 18) {
+                    if (qtdCam >= 6) {
+                        push();
+                        if (contLacos == 12) {
+                            translate(36, 0);
+                        } else if (contLacos == 18) {
+                            translate(60, 0);
+                        }
+                        scale(0.4);
+                        translate(360, -130);
+                        DrawLacos();
+                        pop();
+                    }
+                }
+            }
+        }
+
+
+
+
+
+        function showFlores() {
+            //rosas, hibisco, Margarida, Capuchinha, violetas, Bem-me-quer, Girassol, 
+            //recria o canvas
+
+            if (qtdCam == 6) {
+                executar(7);
+            } else {
+                executar(qtdCam);
+            }
+
+
+            //caso a função seja chamada pelo botão, o atributo increment será verdadeiro
+            showTexture();
+            //se a função for chamada por outra função, será falso
+            noStroke();
+            fill(255, 255, 255, 127);
+            var flowers = document.getElementsByName("selectflower ");
+
+            if (qtdCam == 6) {
+                executar(7);
+            } else {
+                executar(qtdCam);
+            }
+            for (var i = 0; i <= 17; i++) {
+                if (flowers[i].checked) {
+                    var contFlor = (flowers[i].value);
+                    if (contFlor == 6 || contFlor == 12 || contFlor == 18) {
+                        push();
+                        if (contFlor == 12) {
+                            translate(102, 0);
+                        } else if (contFlor == 18) {
+                            translate(196, 0);
+                        }
+                        translate(150, 430);
+                        scale(0.7);
+                        drawFlores();
+                        pop();
+                    }
+                    if (contFlor == 5 || contFlor == 11 || contFlor == 17) {
+                        push();
+                        if (contFlor == 11) {
+                            translate(80, 0);
+                        } else if (contFlor == 17) {
+                            translate(160, 0);
+                        }
+                        translate(170, 330);
+                        scale(0.65)
+                        drawFlores();
+                        pop();
+                    }
+                    if (contFlor == 4 || contFlor == 10 || contFlor == 16) {
+                        push();
+                        if (contFlor == 10) {
+                            translate(60, 0);
+                        } else if (contFlor == 16) {
+                            translate(120, 0);
+                        }
+                        translate(190, 270);
+                        scale(0.6);
+                        drawFlores();
+                        pop();
+                    }
+                }
+                if (contFlor == 3 || contFlor == 9 || contFlor == 15) {
+                    if (qtdCam >= 4) {
+                        push();
+                        if (contFlor == 9) {
+                            translate(45, 0);
+                        } else if (contFlor == 15) {
+                            translate(90, 0);
+                        }
+                        translate(194, 140);
+                        scale(0.55)
+                        translate(10, 120);
+                        drawFlores();
+                        pop();
+                    }
+                }
+                if (contFlor == 2 || contFlor == 8 || contFlor == 14) {
+                    if (qtdCam >= 5) {
+                        push();
+                        if (contFlor == 8) {
+                            translate(35, 0);
+                        } else if (contFlor == 14) {
+                            translate(69, 0);
+                        }
+                        translate(200, 140);
+                        scale(0.50)
+                        translate(18, -20);
+                        translate(10, 50);
+                        drawFlores();
+                        pop();
+                    }
+                }
+                if (contFlor == 1 || contFlor == 7 || contFlor == 13) {
+                    if (qtdCam >= 6) {
+                        push();
+                        if (contFlor == 7) {
+
+                            translate(40, 0);
+                        } else if (contFlor == 13) {
+
+                            translate(80, 0);
+                        }
+                        translate(185, 140);
+                        scale(0.4);
+                        translate(45, -60);
+                        drawFlores();
+                        pop();
+                    }
+                }
+            }
+        }
+
+        function drawFlores() {
+            noStroke();
+            fill(124, 252, 0, 220);
+            for (let i = 0; i < 4; i++) {
+                ellipse(0, 30, 20, 70);
+                rotate(PI / 7);
+            }
+            translate(-10, 0);
+            fill(240, 248, 255, 170);
+            for (let i = 0; i < 20; i++) {
+                ellipse(0, 30, 20, 50);
+                rotate(PI / 10);
+            }
+
+        }
+
+        function quad1(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(1.7);
+                translate(44, 143);
+                // Set colors
+                fill(x);
+                stroke(x);
+                // base
+                rect(20, 110, 160, 50);
+                //parte superior
+                fill(y);
+                stroke(y);
+                triangle(20, 110, 30, 81, 40, 110);
+                rect(30, 80, 140, 30);
+                triangle(180, 110, 170.5, 82, 160, 110);
+                pop();
+            }
+
+        }
+
+        function quad2(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(1.4);
+                translate(74, 136);
+                // Set colors
+                fill(x);
+                stroke(x);
+                // base
+                rect(20, 110, 160, 50);
+                //parte superior
+                fill(y);
+                stroke(y);
+                triangle(20, 110, 30, 81, 40, 110);
+                rect(30, 80, 140, 30);
+                triangle(180, 110, 170.5, 82, 160, 110);
+                pop();
+            }
+        }
+
+        function quad3(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(1.1);
+                translate(120, 138);
+                fill(x);
+                stroke(x);
+                // base
+                rect(20, 110, 160, 50);
+                //parte superior
+                fill(y);
+                stroke(y);
+                triangle(20, 110, 30, 81, 40, 110);
+                rect(30, 80, 140, 30);
+                triangle(180, 110, 172, 82, 160, 110);
+                pop();
+            }
+        }
+
+        function quad4(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(0.9);
+                translate(170, 132);
+                fill(x);
+                stroke(x);
+                rect(20, 110, 160, 50);
+                fill(y);
+                stroke(y);
+                triangle(20, 110, 30, 81, 40, 110);
+                rect(30, 80, 140, 30);
+                triangle(180, 110, 170.5, 81.5, 160, 110);
+                pop();
+            }
+        }
+
+        function quad5(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(0.75);
+                translate(224, 110);
+                fill(x);
+                stroke(x);
+                rect(20, 110, 160, 50);
+                fill(y);
+                stroke(y);
+                triangle(20, 110, 30, 81, 40, 110);
+                rect(30, 80, 140, 30);
+                triangle(180, 110, 170.5, 81.5, 160, 110);
+                pop();
+            }
+
+        }
+
+        function quad6(x, y) {
+            for (var i = 0; i < 30; i++) {
+                push();
+                scale(0.6);
+                translate(305, 100);
+                fill(x);
+                stroke(x);
+                rect(20, 110, 160, 50);
+                fill(y);
+                stroke(y);
+                triangle(20, 110, 30, 81, 40, 110);
+                rect(30, 80, 140, 30);
+                triangle(180, 110, 170.5, 81.5, 160, 110);
+                pop();
+            }
+
+        }
+
+        function circ1(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                scale(2.3);
+                //setando cores
+                fill(x);
+                stroke(x);
+                //movendo
+                translate(6.6, 55);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+                // Set colors
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+        }
+
+        function circ2(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                scale(1.9);
+                fill(x);
+                stroke(x);
+                translate(29.2, 48);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+        }
+
+        function circ3(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                scale(1.5);
+                fill(x);
+                stroke(x);
+                translate(63.2, 48.5);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+        }
+
+        function circ4(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                scale(1.25);
+                fill(x);
+                stroke(x);
+                translate(96, 38);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+        }
+
+        function circ5(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                scale(1);
+                fill(x);
+                stroke(x);
+                translate(144.6, 32);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+        }
+
+        function circ6(x, y) {
+            for (var i = 0; i < 1; i++) {
+                push();
+                scale(0.8);
+                fill(x);
+                stroke(x);
+                translate(206, 24);
+                rect(40, 120, 120, 40);
+                ellipse(100, 160, 120, 20);
+                fill(y);
+                stroke(y);
+                ellipse(100, 120, 120, 20);
+                pop();
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -40,7 +40,7 @@ class Carrinho{
 
     	$_SESSION['ProdAdd'] = true;
 
-	    $urlDestino = URL . 'boloPote/index';
+	    $urlDestino = URL . 'boloPote';
         header("Location: $urlDestino");
 
     }

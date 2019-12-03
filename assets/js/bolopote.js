@@ -13,6 +13,7 @@ function inicializarPagina(){
         this.imagem = document.getElementById("cake_photo");
         this.preco = document.getElementById("precoBolo");
         this.tamanho = document.getElementById("tamanhoBolo");
+        this.descricao = document.getElementById("desc");
 
         this.inputId = document.querySelector('input[name=idBoloDePote]');
         this.inputSabor = document.querySelector('input[name=sabor]');
@@ -23,15 +24,16 @@ function inicializarPagina(){
         var bolo = data[0]; //Pega o primeiro bolo do array
 
         this.inputId.value = bolo.idBoloDePote;
-        this.inputSabor = bolo.sabor;
-        this.inputPreco = bolo.preco;
-        this.inputImagem = bolo.imagem;
+        this.inputSabor.value = bolo.sabor;
+        this.inputPreco.value = bolo.preco;
+        this.inputImagem.value = bolo.imagem;
         
         var imgUrl = `./assets/img/bolos/bolosdepote/${bolo.idBoloDePote}/${bolo.imagem}`;
         this.imagem.src = imgUrl;
 
         this.preco.textContent = `R$${bolo.preco},00`;
         this.tamanho.textContent = bolo.tamanho;
+        this.descricao.textContent = bolo.descricao;
 
         //Criando os botões de sabores
 
@@ -69,6 +71,7 @@ function alterarSabor(id){
         this.imagem = document.getElementById("cake_photo");
         this.preco = document.getElementById("precoBolo");
         this.tamanho = document.getElementById("tamanhoBolo");
+        this.descricao = document.getElementById("desc");
 
         this.inputId = document.querySelector('input[name=idBoloDePote]');
         this.inputSabor = document.querySelector('input[name=sabor]');
@@ -77,26 +80,27 @@ function alterarSabor(id){
         
 
         var bolo = data.find(bolo => bolo.idBoloDePote == id);
-
         this.inputId.value = bolo.idBoloDePote;
-        this.inputSabor = bolo.sabor;
-        this.inputPreco = bolo.preco;
-        this.inputImagem = bolo.imagem;
+        this.inputSabor.value = bolo.sabor;
+        this.inputPreco.value = bolo.preco;
+        this.inputImagem.value = bolo.imagem;
         
         var imgUrl = `./assets/img/bolos/bolosdepote/${bolo.idBoloDePote}/${bolo.imagem}`;
         this.imagem.src = imgUrl;
 
         this.preco.textContent = `R$${bolo.preco},00`;
         this.tamanho.textContent = bolo.tamanho;
+        this.descricao.textContent = bolo.descricao;
 
     });
 }
 
 function pegarBolos(){
+    var url_atual = window.location.href;
     return $.getJSON({
-        url: "./Bolopote/getBolos", 
+        url: "Bolopote/getBolos", 
         type: "POST",
-        dataType: "json"
+        dataType: "JSON"
     }).done(function(data) {
         return data;
     }).fail(function(jqXHR, textStatus ) {

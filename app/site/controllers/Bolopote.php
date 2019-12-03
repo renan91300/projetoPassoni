@@ -21,7 +21,7 @@ class BoloPote{
     public function getBolos(){
         $listar_bolosdepote = new \Site\models\Produto();
         $this->dados['bolos'] = $listar_bolosdepote->listar();
-        
+
         echo json_encode($this->dados['bolos']);
     }
 

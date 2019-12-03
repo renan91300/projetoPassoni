@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 
-.container {
+#container {
     width: 960px;
     height: 614px;
     position: relative;
@@ -20,9 +20,23 @@ body {
     left: 532px;
 }
 
+.buttoncolor {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 410px;
+    top: 61px;
+    left: 532px;
+}
+
+.btnflor {
+    margin-left: 33.25em;
+    margin-top: 3.8em;
+}
+
 .bts {
     max-width: 400px;
-    height: 500px;
+    height: 400px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -34,7 +48,7 @@ body {
     padding-top: 10px;
 }
 
-#OpsHex {
+#OpsQuad {
     width: 175px;
     visibility: hidden;
     /*animation: fadeIn 3s;*/
@@ -45,18 +59,18 @@ body {
     visibility: hidden;
 }
 
-.prosseguir {
+#pross1 {
     position: absolute;
     display: flex;
-    top: 21.5em;
-    left: 7em;
+    top: 21.8em;
+    left: 12.6em;
 }
 
 .aplicartds {
     position: absolute;
     display: flex;
     top: 21em;
-    left: 5em;
+    left: 5.7em;
 }
 
 #bColor1 {
@@ -83,30 +97,34 @@ body {
     display: none;
 }
 
-#pross2 {
-    position: absolute;
-    display: flex;
-    margin-top: 50px;
-}
-
-#pross3 {
-    position: absolute;
-    display: flex;
-    margin-top: 50px;
-}
-
 #selecionarcor {
     position: absolute;
     display: flex;
-    width: 410px;
     top: 61px;
     left: 532px;
 }
 
 .voltar {
     position: absolute;
-    top: 28em;
-    left: 7em;
+    top: 27.7em;
+    left: 0em;
+}
+
+.inicio {
+    position: absolute;
+    top: 43em;
+    font-size: 13px;
+    left: 53.5em;
+    color: rgb(253, 127, 0);
+    font-family: 'Lucida Sans';
+    border: none!important;
+    background-color: white!important;
+}
+
+.inicio:hover {
+    border: none!important;
+    color: rgb(224, 94, 0) !important;
+    background-color: white!important;
 }
 
 .colorpicker {
@@ -120,7 +138,7 @@ body {
 .CorItens {
     position: relative;
     justify-content: space-between;
-    top: 105px;
+    top: 115px;
     margin-top: 5px;
     max-width: 140px;
     left: 538px;
@@ -134,13 +152,55 @@ body {
     position: absolute;
 }
 
-.decoracao .decItens {
-    position: relative;
+.imgTitulo {
+    position: absolute;
     max-width: 400px;
     display: flex;
+    top: 3.8em;
+    margin-left: 33.25em;
     justify-content: space-between;
-    margin-top: 50px;
-    left: 538px;
+}
+
+.imgFlor {
+    position: absolute;
+    max-width: 400px;
+    display: flex;
+    top: 4em;
+    margin-left: 33em;
+}
+
+.imgTextura {
+    position: absolute;
+    max-width: 400px;
+    display: flex;
+    top: 4em;
+    margin-left: 33em;
+}
+
+.rowflores {
+    visibility: inherit;
+}
+
+.descFlor {
+    visibility: hidden;
+}
+
+.areaFlor {
+    margin-left: 1.5em;
+    top: 7em;
+    color: rgb(253, 127, 0);
+    font-size: 17px;
+    position: absolute;
+    margin-left: 31.5em;
+    visibility: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+textarea {
+    background-color: rgb(205, 231, 235);
+    color: rgb(253, 127, 0);
+    border: white;
+    font-size: 17px;
 }
 
 .picker {
@@ -152,41 +212,42 @@ body {
 
 Canvas {
     position: absolute;
-    z-index: 20;
+    z-index: 202;
     top: 0;
+    left: 0;
 }
 
-#oneHex {
+#oneQuad {
     position: absolute;
     bottom: 80px;
     left: 90px;
 }
 
-#twoHex {
+#twoQuad {
     position: absolute;
     bottom: 185px;
     left: 120px;
 }
 
-#threeHex {
+#threeQuad {
     position: absolute;
     bottom: 265px;
     left: 135px;
 }
 
-#fourHex {
+#fourQuad {
     position: absolute;
     bottom: 335px;
     left: 150px;
 }
 
-#fiveHex {
+#fiveQuad {
     position: absolute;
     bottom: 395px;
     left: 172px;
 }
 
-#sixHex {
+#sixQuad {
     position: absolute;
     bottom: 445px;
     left: 185px;
@@ -226,6 +287,402 @@ Canvas {
     position: absolute;
     bottom: 430px;
     left: 203px;
+}
+
+.ButTextura {
+    visibility: hidden;
+}
+
+.ButLaco {
+    visibility: hidden;
+}
+
+.divFlores {
+    position: absolute;
+    visibility: hidden;
+    width: 960px;
+    top: 0;
+    height: 614px;
+}
+
+.divTextura {
+    visibility: hidden;
+    width: 960px;
+    top: 0;
+    height: 614px;
+    position: absolute;
+}
+
+.col1 {
+    position: absolute;
+    top: 9em !important;
+    left: 540px;
+}
+
+.col2 {
+    margin-top: 9em !important;
+    margin-left: 690px;
+}
+
+.col3 {
+    position: relative;
+    top: -17em !important;
+    margin-left: 840px;
+}
+
+@import 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css';
+.funkyradio div {
+    clear: both;
+    overflow: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.funkyradio label {
+    width: 100%;
+    font-weight: normal;
+}
+
+.funkyradio input[type="radio"]:empty,
+.funkyradio input[type="checkbox"]:empty {
+    display: none;
+}
+
+.funkyradio input[type="radio"]:empty~label,
+.funkyradio input[type="checkbox"]:empty~label {
+    position: relative;
+    line-height: 2.5em;
+    text-indent: 3.25em;
+    margin-top: 2em;
+    padding-left: 3em;
+    padding-top: 0.7em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: rgb(253, 127, 0);
+    font-size: 17px;
+}
+
+.funkyradio input[type="radio"]:empty~label:before,
+.funkyradio input[type="checkbox"]:empty~label:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 2.5em;
+    background: #D1D3D4;
+    border-radius: 2px 0 0 2px;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked)~label,
+.funkyradio input[type="checkbox"]:hover:not(:checked)~label {
+    color: #888;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked)~label:before,
+.funkyradio input[type="checkbox"]:hover:not(:checked)~label:before {
+    content: '\2714';
+    text-indent: .9em;
+    color: #C2C2C2;
+}
+
+.funkyradio input[type="radio"]:checked~label,
+.funkyradio input[type="checkbox"]:checked~label {
+    color: #777;
+}
+
+.funkyradio input[type="radio"]:checked~label:before,
+.funkyradio input[type="checkbox"]:checked~label:before {
+    content: '\2714';
+    text-indent: .9em;
+    color: #333;
+    background-color: #ccc;
+}
+
+.funkyradio input[type="radio"]:focus~label:before,
+.funkyradio input[type="checkbox"]:focus~label:before {
+    box-shadow: 0 0 0 3px #999;
+}
+
+.funkyradio-default input[type="radio"]:checked~label:before,
+.funkyradio-default input[type="checkbox"]:checked~label:before {
+    color: #333;
+    background-color: #ccc;
+}
+
+.funkyradio-primary input[type="radio"]:checked~label:before,
+.funkyradio-primary input[type="checkbox"]:checked~label:before {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.funkyradio-success input[type="radio"]:checked~label:before,
+.funkyradio-success input[type="checkbox"]:checked~label:before {
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.funkyradio-danger input[type="radio"]:checked~label:before,
+.funkyradio-danger input[type="checkbox"]:checked~label:before {
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.funkyradio-warning input[type="radio"]:checked~label:before,
+.funkyradio-warning input[type="checkbox"]:checked~label:before {
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.funkyradio-info input[type="radio"]:checked~label:before,
+.funkyradio-info input[type="checkbox"]:checked~label:before {
+    color: #fff;
+    background-color: #5bc0de;
+}
+
+.prosseguir {
+    display: flex;
+    z-index: 10;
+    position: absolute;
+    top: 27.7em;
+    left: 13em;
+}
+
+.buttonsTextura {
+    top: 0;
+    margin-top: 10px;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    left: 540px;
+    position: relative;
+}
+
+.buttonTextura {
+    max-width: 130px;
+    margin-left: 0em;
+    margin-top: -0.4em;
+}
+
+.aplicarlaco {
+    max-width: 130px;
+    left: 33.9em;
+    position: absolute;
+    top: 26em;
+}
+
+.divLacos {
+    position: absolute;
+    visibility: hidden;
+    width: 960px;
+    top: 0;
+    height: 614px;
+}
+
+#spantextura {
+    position: absolute;
+    top: 6.5em;
+    color: rgba(248, 35, 35, 0.808);
+    font-size: 19px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nomeTextura0 {
+    position: absolute;
+    top: 6.5em;
+    color: rgba(248, 35, 35, 0.808);
+    font-size: 19px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#ediText0 {
+    display: none;
+}
+
+#ediText1 {
+    display: none;
+}
+
+#ediText2 {
+    display: none;
+}
+
+#ediText3 {
+    display: none;
+}
+
+#ediText4 {
+    display: none;
+}
+
+#ediText5 {
+    display: none;
+}
+
+#ediText6 {
+    display: none;
+}
+
+.funkyradio span {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(248, 35, 35, 0.808);
+}
+
+.decItens {
+    top: 150px;
+    margin-top: 10px;
+    position: relative;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    left: 540px;
+}
+
+.selecionarTextura {
+    margin-top: 10.2em;
+    margin-left: 33.75em;
+}
+
+.configurarTextura .funkyradio {
+    margin-top: -27.5em;
+    left: 33em;
+}
+
+.configurarTextura {
+    visibility: hidden;
+    margin-top: 8em;
+    margin-left: 33.75em;
+}
+
+.divToppers {
+    visibility: hidden;
+    height: 500px;
+}
+
+.areaToppers {
+    margin-left: 1.5em;
+    top: 10em;
+    color: rgb(253, 127, 0);
+    font-size: 16px;
+    position: absolute;
+    margin-left: 33.5em;
+    visibility: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+textarea {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #4B9AA5;
+    font-size: 15px;
+}
+
+textarea::placeholder {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #4B9AA5;
+    font-size: 15px;
+}
+
+.sendImg {
+    margin-left: 10em;
+    padding: 1em 1em;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    color: #4B9AA5;
+    background-color: #a6d9e0;
+    border: none;
+}
+
+.tema {
+    position: relative;
+    left: 40em;
+    top: -2.7em;
+    margin-left: 1em;
+    padding: 0.5em 0.5em;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    color: #4B9AA5;
+    border: none;
+}
+
+#temaclaro {
+    background-color: #c4edf2;
+}
+
+#temaescuro {
+    background-color: #a6d9e0;
+}
+
+.sendImg:hover {
+    color: white;
+    ;
+    background-color: #4B9AA5;
+}
+
+.divradiomassa {
+    position: absolute;
+    top: 12em;
+    left: 34em;
+}
+
+.divSaborRecheio {
+    visibility: hidden;
+}
+
+.divradiorecheio {
+    position: absolute;
+    top: 0;
+}
+
+#ajudaTopper {
+    margin-left: 55em;
+    top: 5.5em;
+    position: absolute;
+    padding: 0.5em 0.5em;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    color: white;
+    background-color: #4B9AA5;
+    border: none;
+}
+
+.divSaborMassa {
+    visibility: hidden;
+    height: 500px;
+}
+
+#imgajuda {
+    height: 60%;
+    width: 80%;
+}
+
+#fecharAjuda {
+    padding: 1em 1em;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    color: #4B9AA5;
+    ;
+    background-color: #a6d9e0;
+    border: none;
+}
+
+#fecharAjuda:hover {
+    color: white;
+    ;
+    background-color: #4B9AA5;
+}
+
+#containerAjuda {
+    position: absolute;
+    top: 5em;
+    left: 33em;
+    /*background-color: hsla(120,0%,0%,0.85);*/
+    background-color: hsla(220, 70%, 90%, 0.85);
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    color: #4B9AA5;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: none;
 }
 
 @media screen and (max-width: 600px) {}

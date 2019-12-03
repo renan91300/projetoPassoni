@@ -46,7 +46,7 @@ if (!defined('URL')){
             <!--<img id="cake_photo" src="<?=URL;?>assets/img/bolos/bolosdepote/<?=$idBoloDePote;?>/<?=$imagem;?>" class="imgproduct"
                 alt="error">-->
                 <img id="cake_photo" src="" class="imgproduct"
-                alt="error">
+                >
         </div>
         <div class="col-md-7 brief">
             
@@ -79,12 +79,12 @@ if (!defined('URL')){
                 <p>
                     <h4 id="desc">
                         <?php
-                            if(isset($this->dados['boloDescricao'])){
+                            /*if(isset($this->dados['boloDescricao'])){
                                 echo $this->dados['boloDescricao'];
                             }
                             else{
                                 echo $this->dados['bolos'][0]['descricao'];
-                            }
+                            }*/
                         ?>
                     </h4>
                     <ul>
