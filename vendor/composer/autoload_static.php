@@ -11,6 +11,10 @@ class ComposerStaticInite3929cfb1bcdb571e859876c2f697ebe
         array (
             'Site\\' => 5,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'C' => 
         array (
             'Config\\' => 7,
@@ -25,6 +29,10 @@ class ComposerStaticInite3929cfb1bcdb571e859876c2f697ebe
         'Site\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/site',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Config\\' => 
         array (

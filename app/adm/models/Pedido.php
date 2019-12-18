@@ -25,7 +25,7 @@ class Pedido{
             FROM {$this->tabela} p, usuarios AS u, endereco AS e
             WHERE p.idCliente = u.idUsuario AND p.idPedido = {$this->idPedido} 
             AND p.idEndereco = e.idEndereco AND p.idCliente = u.idUsuario
-            ORDER BY p.idPedido ASC");
+            ORDER BY p.dataPedido DESC");
 		$this->result['pedido'] = $verPedido->getResult();
 
         $verBolosPedido = new \Site\models\helper\ModelsRead();

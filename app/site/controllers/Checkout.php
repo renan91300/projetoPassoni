@@ -2,6 +2,12 @@
 
 namespace App\site\controllers;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+	
+require "vendor/autoload.php";
+
 if(!defined('URL')){
     header("location: /");
     exit();
@@ -46,17 +52,60 @@ class Checkout{
 	        unset($this->dados['endereco'], $this->dados['paymentMethod']);
 
 	        $addPedido = new \Site\models\Pedido($this->dados);
-            $addPedido->addPedido($this->dados);
+			$addPedido->addPedido($this->dados);
 
-            $urlDestino = URL . 'listarPedidosCliente/index';
-        	header("Location: $urlDestino");	
-		
-
+			$urlDestino = URL . 'listarPedidosCliente/index';
+			header("Location: $urlDestino");
 
 	    }
 	    else{
 	    	$urlDestino = URL . 'home/index';
         	header("Location: $urlDestino");
 	    }
+	}
+	
+	public function sendEmail(){
+		$mail = new PHPMailer();
+		try {
+			//Server settings
+			$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+			$mail->isSMTP();                                            // Send using SMTP
+			$mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+			$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+			$mail->Username   = 'renangomespoggian@gmail.com';                     // SMTP username
+			$mail->Password   = 'renanebruna';                               // SMTP password
+			$mail->SMTPSecure = 'tls';      // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+			$mail->Port       = 587;                                    // TCP port to connect to
+
+			$mail->SMTPOptions = array(
+				'ssl' => array(
+					'verify_peer' => false,
+					'verify_peer_name' => false,
+					'allow_self_signed' => true
+					)
+				);
+		
+			//Recipients
+			$mail->setFrom('nicepoggian@gmail.com', 'Valdenice');
+			$mail->addReplyTo('renanpoggiangomes@hotmail.com');
+			$mail->addAddress('renanpoggiangomes@gmail.com', 'Renan');     // Add a recipient
+			
+			$usuario = strtolower($_SESSION['user']);
+			$mail->addAttachment('./assets/img/usuario/'.$_SESSION['id'].'/'.$usuario.'.jpg', 'fotoPerfil.jpg');
+
+			echo './assets/img/usuario/'.$_SESSION['id'].'/'.$usuario.'.jpg', 'fotoPerfil.jpg';
+
+			// Content
+			$mail->isHTML(true);                                  // Set email format to HTML
+			$mail->Subject = 'Teste PHPMailer';
+			$mail->Body    = 'Olá '.$_SESSION['user'].'!';
+			$mail->AltBody = 'Este email é um <strong>TESTE</strong>';
+		
+			$mail->send();
+			echo 'Message has been sent';
+			exit();
+		} catch (Exception $e) {
+			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		}
 	}
 }

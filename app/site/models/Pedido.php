@@ -61,7 +61,7 @@ class Pedido{
                                         JOIN pedido AS pD ON pb.idPedido = pD.idPedido AND pD.idPedido = 1) as qt
 
             WHERE p.idCliente = {$_SESSION['id']} AND p.idEndereco = e.idEndereco
-            ORDER BY p.idPedido ASC");
+            ORDER BY p.dataPedido DESC");
 
         }
         
