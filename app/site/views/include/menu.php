@@ -20,13 +20,13 @@
                 ?>
             >Início
             </a></li>
-            <li class="nav-item"><a class="nav-link" href="<?=URL;?>montarBolo"
+            <!--<li class="nav-item"><a class="nav-link" href="<?=URL;?>montarBolo"
             <?php
-                if($url == URL."montarBolo"){
+                /*if($url == URL."montarBolo"){
                     echo "style='color: #FF6347;'";
-                }
+                }*/
             ?>
-            >Monte seu bolo</a></li>
+            >Monte seu bolo</a></li>-->
             <li class="nav-item"><a class="nav-link" href="<?=URL;?>boloPote"
             <?php
                 if($url == URL."boloPote"){
